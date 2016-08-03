@@ -38,7 +38,7 @@
 				<div class="" style="<?php if(isset($banner)){ if(!empty($banner)){ echo "background-image: url(".base_url().$banner[0]->image.")"; }} ?> ">
 					<div class="container">
 						<div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
-							<div class="bread-heading"><h1 style="<?php if(isset($banner)){ if(empty($banner)){ echo "color: gray"; }} ?> "><?php if($cat=='video') {echo get_lang('videos'); }elseif($cat=='tips'){echo  get_lang('tips'); ;}else{echo get_lang('news');} ?></h1></div>
+							<div class="bread-heading"><h1 style="<?php if(isset($banner)){ if(empty($banner)){ echo "color: gray"; }} ?> "><?php if($cat=='video') {echo get_lang('videos'); }elseif($cat=='tips'){echo  get_lang('tips');}else{echo get_lang('news');} ?></h1></div>
 						</div>
 					 </div>
 				</div>
@@ -76,29 +76,29 @@
 											<?php foreach($data as $row) { ?>
 												<div class="row">
 
-														<div class="col-xs-12 col-sm-12 col-md-5" >
-															<div class="zoom-wrap">
-															  <div class="zoom-icon"></div>
-																<a  href="<?php echo base_url();?><?php echo $lang;?>/blogs/<?php echo $row->slug; ?>">
-																	<img alt="" data-src=" <?php echo base_url()?><?php echo $row->image ?> " src=" " class="img-responsive">
+													<div class="col-xs-12 col-sm-12 col-md-5" >
+														<div class="zoom-wrap">
+														  <div class="zoom-icon"></div>
+															<a  href="<?php echo base_url();?><?php echo $lang;?>/blogs/<?php echo $row->slug; ?>">
+																<img alt="" data-src=" <?php echo base_url()?><?php echo $row->image ?> " src=" " class="img-responsive">
+															</a>
+														</div>
+													</div>
+													<div class="col-xs-12 col-sm-12 col-md-7" >
+														<div>
+															<div class="blogs-box-title blogs-box-title-news">
+																<a  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>">
+																	<?php echo $row->title ?>
 																</a>
 															</div>
-														</div>
-														<div class="col-xs-12 col-sm-12 col-md-7" >
-															<div>
-																<div class="blogs-box-title blogs-box-title-news">
-																	<a  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>">
-																		<?php echo $row->title ?>
-																	</a>
-																</div>
-																<span  class="post-date"><b><i class="fa fa-calendar"></i>:  <?php echo date_format1($row->created_dt) ?> </b></span>
-																<p >
-																	<?php echo $row->pre_content ?>
-																</p>
+															<span  class="post-date"><b><i class="fa fa-calendar"></i>:  <?php echo date_format1($row->created_dt) ?> </b></span>
+															<p >
+																<?php echo $row->pre_content ?>
+															</p>
 
-																<a style="float:right"  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>"><?php echo get_lang('read more');?> &gt;&gt;</a>
-															</div>
+															<a style="float:right"  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>"><?php echo get_lang('read more');?> &gt;&gt;</a>
 														</div>
+													</div>
 
 												</div>
 												<hr />

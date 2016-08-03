@@ -31,7 +31,7 @@
 				<div class="container pd-right-0">
 					<div class="col-xs-12">
 						<section class="nopadding clearfix text-center">
-							<h2 class="color-red border-red">Specialization </h2>
+							<h2 class="color-red border-red"><?php echo get_lang('specialization'); ?></h2>
 							<div class="col-sm-12 text-center">
 								<ul class="spe-list">
 									<li>
@@ -77,7 +77,7 @@
 				<div class="container pd-right-0">
 					<div class="col-xs-12">
 						<section class="nopadding clearfix">
-							<h2 class="color-red border-red">Health Tips </h2>
+							<h2 class="color-red border-red"><?php echo get_lang('tips');?></h2>
 							<div class="col-sm-8">
 								<div id="search_result_container" class="container-fluid">
 									<?php if(!empty($data)){?>
