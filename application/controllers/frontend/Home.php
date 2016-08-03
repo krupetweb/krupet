@@ -20,7 +20,7 @@ class Home extends Frontend_base {
 		
         $this->page_data['potential_partners']				= $this->model->get_potential_partners();
 		$this->page_data['official_sponsors']				= $this->model->get_official_sponsors();
-        $this->page_data['featured_blogs'] 							= $this->model->get_blogs();
+        $this->page_data['featured_blogs'] 					= $this->model->get_blogs();
 		$this->page_data['ads_v'] 							= $this->model->get_vertical_ads(1);
 		$this->page_data['page_name'] 						= 'home';
 		$this->load->view('frontend/index', $this->page_data);

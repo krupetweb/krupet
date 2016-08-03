@@ -1,4 +1,4 @@
-				
+
 				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.carousel.css">
 				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.theme.css">
 				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.transitions.css">
@@ -9,23 +9,23 @@
 				 <br />
 				<div class="container">
 					<div class="row ">
-						
+
 						<div class="col-xs-12">
-							<div class="container-fluid">
+
 							<div id="owl-programs" style="margin-bottom:10px" class="owl-carousel owl-theme">
 								<?php foreach($programes as $row){ ?>
-								
+
 									<div class="owl-item" class="border_slide">
 										<a href="<?php echo $row->url?>"><img alt="" class="img-responsive" data-src="<?=$src_url?><?php echo $row->image?>" src="" /></a>
-									    
+
 									</div>
-								
+
 								<?php }?>
-								
+
 							</div>
-							</div>
+						
 						</div>
-					
+
 						<!--
 						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="   padding-right: 0px; padding-left: 0px;">
 							<a href="<?=$lang_url?>health-consultant">
@@ -36,9 +36,9 @@
 							</a>
 						</div>
 						-->
-						
+
 					</div>
-					
+
 				</div>
 				
 				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Hospitals << ?>

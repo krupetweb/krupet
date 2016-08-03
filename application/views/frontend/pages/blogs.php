@@ -1,7 +1,7 @@
-<?php 
+<?php
   $cat=isset($_GET['cat'])?$_GET['cat']:"";
-  
-?>				
+
+?>
 				<style>
 	.ui-autocomplete {
     position: absolute;
@@ -45,18 +45,18 @@
 				<br />
 				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Ads << ?>
 				<?php if(isset($ads_v)) include('parts/ads_v.php'); ?>
-				
+
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12 col-sm-9" >
 										<div class="container-fluid">
-											
+
 											<div class="row">
 												<div class="col-xs-12">
 													<div class="tags-widget">
-                    	
+
 								                        <div class="side-blogs-title">
-								                        	
+
 								                        	<div class="form-group ui-widget">
 															  <div class="input-group">
 															  	<?php $tag=isset($_GET['tag']) ? $_GET['tag'] : "";; ?>
@@ -66,7 +66,7 @@
 															  </div>
 															</div>
 								                        </div>
-								                        
+
 								                    </div>
 												</div>
 											</div>
@@ -75,7 +75,7 @@
 										<?php if(!empty($data)){?>
 											<?php foreach($data as $row) { ?>
 												<div class="row">
-													
+
 														<div class="col-xs-12 col-sm-12 col-md-5" >
 															<div class="zoom-wrap">
 															  <div class="zoom-icon"></div>
@@ -89,44 +89,44 @@
 																<div class="blogs-box-title blogs-box-title-news">
 																	<a  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>">
 																		<?php echo $row->title ?>
-																	</a> 
+																	</a>
 																</div>
 																<span  class="post-date"><b><i class="fa fa-calendar"></i>:  <?php echo date_format1($row->created_dt) ?> </b></span>
 																<p >
-																	<?php echo $row->pre_content ?> 
-																</p> 
-																
+																	<?php echo $row->pre_content ?>
+																</p>
+
 																<a style="float:right"  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>"><?php echo get_lang('read more');?> &gt;&gt;</a>
 															</div>
 														</div>
-														
+
 												</div>
-												<hr />												
-											<?php } ?> 		
-										<?php }else echo ' <h3>'.get_lang('blog-caption').'</h3>'; ?> 	
+												<hr />
+											<?php } ?>
+										<?php }else echo ' <h3>'.get_lang('blog-caption').'</h3>'; ?>
 										</div>
-								
+
 										<div class="row">
 											<div class="col-xs=12">
 												<?php echo $links; ?>
 											</div>
 										</div>
 							</div>
-										
+
 							<div class="col-xs-12 col-sm-3">
-								
+
 								<div class="container-fluid">
 									<div class="row">
 									<!--:::::::::::::::::::::::::::::::::::::: Aside-->
 									<?php include("parts/ads_h.php"); ?>
 									</div>
 								</div>
-							
+
 							</div>
 						</div>
-						
+
 					</div>
-			
+
 					<script>
 					  function search(){
 					  	var cat="<?php echo isset($_GET['cat'])?$_GET['cat']:""; ?>";
@@ -135,7 +135,7 @@
 					  }
 
 					  </script>
-				
+
 
 
 					
