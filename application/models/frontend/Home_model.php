@@ -105,4 +105,22 @@ class Home_model extends Frontend_base_model {
     	return $data;
 
 	}
+
+	function get_data($limit, $start, $id_category, $tag){
+		$this->db->select($this->lang.'_title as title, '.$this->lang.'_pre_content as pre_content, created_dt, image , slug');
+		if($tag!=""){
+	 		$this->db->from('view_blog_for_search'); 
+	 	}else{
+	 		$this->db->from('tbl_blogs'); 
+	 	}
+		$this->db->where('id_category=', $id_category);
+		$this->db->limit($limit, $start);
+		$this->db->group_by($this->lang.'_title');
+		if($tag!=""){
+	 		$this->db->like($this->lang.'_tag', $tag);
+	 	}
+		$data= $this->db->get()->result();
+		return $data;
+		
+	}
 }	
