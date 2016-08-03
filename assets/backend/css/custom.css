@@ -1,0 +1,27 @@
+/**
+ *
+ * Apply Here your Custom CSS
+ *
+*/
+
+body {
+	
+}
+
+i.glyphicon-check, i.glyphicon-unchecked{
+	font-size:20px;
+	cursor:pointer;
+}
+table tbody tr td img.thumbnail{
+	max-height:150px;
+	margin:auto;
+}
+.control-label{
+	text-transform: capitalize;
+}
+.btn{
+	text-transform: capitalize;
+}
+li a span{
+	text-transform: capitalize;
+}

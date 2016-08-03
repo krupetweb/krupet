@@ -1,0 +1,22 @@
+/* Fonts */
+	/*@import url(http://fonts.googleapis.com/css?family=Kdam+Thmor);*/
+	@import url(//fonts.googleapis.com/css?family=Hanuman);
+
+	
+	
+body {
+    /*font-family:Kdam Thmor;
+	font-weight:5;*/
+	font-family: "Hanuman",Arial,serif !important;
+    
+}
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6
+	{
+	/*font-family:Kdam Thmor;*/
+	font-family: 'Hanuman',"Trebuchet MS" !important;
+	font-weight:700;
+	}
+.doctor-bg p{/*font-family: 'Hanuman',"Trebuchet MS";
+	font-weight:500;*/
+	    font-family: 'Source Sans Pro', sans-serif;
+	}
