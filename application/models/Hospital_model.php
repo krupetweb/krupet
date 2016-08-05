@@ -71,7 +71,7 @@ class Hospital_model extends Frontend_base_model {
 		}
 
 		$this->db->group_by($this->lang.'_name'); 
-		return sizeof($this->db->get()->result());
+		// return sizeof($this->db->get()->result());
 	}
 	function hospital_detail_info($id_hospital=0){
 		$this->db->select(			$this->lang.'_name as name, '.

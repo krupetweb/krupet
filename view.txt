@@ -1,0 +1,71 @@
+
+
+SELECT hospitals.*,province.id_province,province.id_distrit,specialists.id_specialist,
+(SELECT en_name FROM tbl_hospital_types WHERE id = hospitals.id_hospital_type and is_published=1) as en_type,
+(SELECT kh_name FROM tbl_hospital_types WHERE id = hospitals.id_hospital_type and is_published=1) as kh_type,
+(SELECT en_name FROM tbl_hospital_categories WHERE id = hospitals.id_hospital_category and is_published=1) as en_cat,
+(SELECT kh_name FROM tbl_hospital_categories WHERE id = hospitals.id_hospital_category and is_published=1) as kh_cat,
+(SELECT en_name FROM tbl_provinces WHERE id = province.id_province and is_published=1) as en_province,
+(SELECT kh_name FROM tbl_provinces WHERE id = province.id_province and is_published=1) as kh_province,
+(SELECT en_name FROM tbl_distrits WHERE id = province.id_distrit and is_published=1) as en_distrit,
+(SELECT kh_name FROM tbl_distrits WHERE id = province.id_distrit and is_published=1) as kh_distrit,
+(SELECT en_name FROM tbl_specialists WHERE id = specialists.id_specialist and is_published=1) as en_specification,
+(SELECT kh_name FROM tbl_specialists WHERE id = specialists.id_specialist and is_published=1) as kh_specification
+FROM `tbl_hospitals` AS hospitals
+INNER JOIN `tbl_hospital_branches` as province
+ON province.id_hospital= hospitals.id
+INNER JOIN `tbl_hospital_specialists` as specialists
+ON specialists.id_hospital= hospitals.id
+
+
+SELECT hospitals.*,province.id_province,province.id_distrit,province.en_address,province.kh_address,specialists.id_specialist,
+(SELECT en_name FROM tbl_hospital_types WHERE id = hospitals.id_hospital_type and is_published=1) as en_type,
+(SELECT kh_name FROM tbl_hospital_types WHERE id = hospitals.id_hospital_type and is_published=1) as kh_type,
+(SELECT en_name FROM tbl_hospital_categories WHERE id = hospitals.id_hospital_category and is_published=1) as en_cat,
+(SELECT kh_name FROM tbl_hospital_categories WHERE id = hospitals.id_hospital_category and is_published=1) as kh_cat,
+(SELECT en_name FROM tbl_provinces WHERE id = province.id_province and is_published=1) as en_province,
+(SELECT kh_name FROM tbl_provinces WHERE id = province.id_province and is_published=1) as kh_province,
+(SELECT en_name FROM tbl_distrits WHERE id = province.id_distrit and is_published=1) as en_distrit,
+(SELECT kh_name FROM tbl_distrits WHERE id = province.id_distrit and is_published=1) as kh_distrit,
+(SELECT en_name FROM tbl_specialists WHERE id = specialists.id_specialist and is_published=1) as en_specification,
+(SELECT kh_name FROM tbl_specialists WHERE id = specialists.id_specialist and is_published=1) as kh_specification
+FROM `tbl_hospitals` AS hospitals
+INNER JOIN `tbl_hospital_branches` as province
+ON province.id_hospital= hospitals.id
+INNER JOIN `tbl_hospital_specialists` as specialists
+ON specialists.id_hospital= hospitals.id
+
+----------------CREATE VIEW ON view_hospitals_for_searhing ---------------------
+CREATE VIEW `view_hospitals_for_searhing` AS 
+select `h`.`id` AS `id`,`h`.`slug` AS `slug`,`h`.`en_name` AS `en_name`,`h`.`kh_name` AS `kh_name`,`h`.`en_background` AS `en_background`,`h`.`kh_background` AS `kh_background`,`h`.`image` AS `image`,`c`.`en_name` AS `en_cat`,`c`.`kh_name` AS `kh_cat`,`t`.`en_name` AS `en_type`,`t`.`kh_name` AS `kh_type`,`s`.`en_name` AS `en_specification`,`s`.`kh_name` AS `kh_specification`,`b`.`phone` AS `phone`,`b`.`email` AS `email`,`b`.`en_address` AS `en_address`,`b`.`kh_address` AS `kh_address`,`b`.`lat` AS `lat`,`b`.`lon` AS `lon`,`p`.`en_name` AS `en_province`,`p`.`kh_name` AS `kh_province`,`d`.`en_name` AS `en_distrit`,`d`.`kh_name` AS `kh_distrit` from (((((((`krupet`.`tbl_hospitals` `h` join `krupet`.`tbl_hospital_categories` `c` on((`h`.`id_hospital_category` = `c`.`id`))) join `krupet`.`tbl_hospital_types` `t` on((`h`.`id_hospital_type` = `t`.`id`))) join `krupet`.`tbl_hospital_specialists` `h_s` on((`h`.`id` = `h_s`.`id_hospital`))) join `krupet`.`tbl_specialists` `s` on((`h_s`.`id_specialist` = `s`.`id`))) join `krupet`.`tbl_hospital_branches` `b` on((`h`.`id` = `b`.`id_hospital`))) join `krupet`.`tbl_provinces` `p` on((`b`.`id_province` = `p`.`id`))) join `krupet`.`tbl_distrits` `d` on((`b`.`id_distrit` = `d`.`id`))) where ((`h`.`is_published` = 1) and (`p`.`is_published` = 1) and (`d`.`is_published` = 1) and (`b`.`is_default` = 1))
+
+
+-------------------------view_blog_for_search---------------------------
+
+CREATE VIEW `view_blog_for_search` AS select `b`.`slug` AS `slug`,`b`.`id_category` AS `id_category`,`b`.`en_title` AS `en_title`,`b`.`kh_title` AS `kh_title`,`b`.`en_pre_content` AS `en_pre_content`,`b`.`kh_pre_content` AS `kh_pre_content`,`b`.`image` AS `image`,`b`.`created_dt` AS `created_dt`,`t`.`en_name` AS `en_tag`,`t`.`kh_name` AS `kh_tag` from ((`krupet`.`tbl_blogs` `b` join `krupet`.`tbl_blog_tags` `b_t` on((`b_t`.`id_blog` = `b`.`id`))) join `krupet`.`tbl_tags` `t` on((`t`.`id` = `b_t`.`id_tag`))) where ((`b`.`is_published` = 1) and (`t`.`is_published` = 1))
+
+-----------------------view_doctors_for_searching-----------------------
+CREATE VIEW `view_doctors_for_searching`AS select `d`.`id` AS `id`,`d`.`slug` AS `slug`,`d`.`en_name` AS `en_name`,`d`.`kh_name` AS `kh_name`,`d`.`en_title` AS `en_title`,`d`.`kh_title` AS `kh_title`,`d`.`en_degree` AS `en_degree`,`d`.`kh_degree` AS `kh_degree`,`d`.`phone` AS `phone`,`d`.`email` AS `email`,`d`.`en_background` AS `en_background`,`d`.`kh_background` AS `kh_background`,`d`.`en_experien` AS `en_experience`,`d`.`kh_experien` AS `kh_experience`,`d`.`image` AS `image`,`s`.`en_name` AS `en_specification`,`s`.`kh_name` AS `kh_specification`,`p`.`en_name` AS `en_province`,`p`.`kh_name` AS `kh_province`,`di`.`en_name` AS `en_distrit`,`di`.`kh_name` AS `kh_distrit` from (((`krupet`.`tbl_doctors` `d` join `krupet`.`tbl_specialists` `s` on((`s`.`id` = `d`.`id_specialist`))) join `krupet`.`tbl_provinces` `p` on((`p`.`id` = `d`.`id_province`))) join `krupet`.`tbl_distrits` `di` on((`di`.`id` = `d`.`id_distrit`))) where ((`d`.`is_published` = 1) and (`s`.`is_published` = 1) and (`di`.`is_published` = 1) and (`p`.`is_published` = 1))
+
+
+CREATE VIEW `view_doctor_hospitals`AS
+select `h_d`.`id_hospital` AS `id_hospital`,`h_d`.`id_doctor` AS `id_doctor`,`h`.`slug` AS `slug`,`h`.`en_name` AS `en_name`,`h`.`kh_name` AS `kh_name`,`p`.`en_name` AS `en_province`,`p`.`kh_name` AS `kh_province`,`h`.`en_background` AS `en_background`,`h`.`kh_background` AS `kh_background`,`h`.`image` AS `image` from (((`krupet`.`tbl_hospital_doctors` `h_d` join `krupet`.`tbl_hospitals` `h` on((`h`.`id` = `h_d`.`id_hospital`))) join `krupet`.`tbl_hospital_branches` `b` on((`b`.`id_hospital` = `h_d`.`id`))) join `krupet`.`tbl_provinces` `p` on((`p`.`id` = `b`.`id_province`))) where ((`b`.`is_default` = 1) and (`p`.`is_published` = 1))
+
+CREATE VIEW `view_doctor_services` AS select `d_s`.`id_doctor` AS `id_doctor`,`s`.`en_name` AS `en_name`,`s`.`kh_name` AS `kh_name`,`d_s`.`price` AS `price`,`d_s`.`en_note` AS `en_note`,`d_s`.`kh_note` AS `kh_note` from (`krupet`.`tbl_doctor_services` `d_s` join `krupet`.`tbl_services` `s` on((`s`.`id` = `d_s`.`id_service`)))
+
+CREATE VIEW `view_feedback_rating_score`AS select `f_s`.`id` AS `id`,`f_s`.`id_feedback` AS `id_feedback`,`f_q`.`en_name` AS `en_name`,`f_q`.`en_question` AS `en_question`,`f_s`.`score` AS `score` from (`krupet`.`tbl_feedback_scores` `f_s` join `krupet`.`tbl_feedback_questions` `f_q` on((`f_q`.`id` = `f_s`.`id_question`)))
+
+CREATE VIEW `view_hospitals_for_searhing` AS select `h`.`id` AS `id`,`h`.`slug` AS `slug`,`h`.`en_name` AS `en_name`,`h`.`kh_name` AS `kh_name`,`h`.`en_background` AS `en_background`,`h`.`kh_background` AS `kh_background`,`h`.`image` AS `image`,`c`.`en_name` AS `en_cat`,`c`.`kh_name` AS `kh_cat`,`t`.`en_name` AS `en_type`,`t`.`kh_name` AS `kh_type`,`s`.`en_name` AS `en_specification`,`s`.`kh_name` AS `kh_specification`,`b`.`phone` AS `phone`,`b`.`email` AS `email`,`b`.`en_address` AS `en_address`,`b`.`kh_address` AS `kh_address`,`b`.`lat` AS `lat`,`b`.`lon` AS `lon`,`p`.`en_name` AS `en_province`,`p`.`kh_name` AS `kh_province`,`d`.`en_name` AS `en_distrit`,`d`.`kh_name` AS `kh_distrit` from (((((((`krupet`.`tbl_hospitals` `h` join `krupet`.`tbl_hospital_categories` `c` on((`h`.`id_hospital_category` = `c`.`id`))) join `krupet`.`tbl_hospital_types` `t` on((`h`.`id_hospital_type` = `t`.`id`))) join `krupet`.`tbl_hospital_specialists` `h_s` on((`h`.`id` = `h_s`.`id_hospital`))) join `krupet`.`tbl_specialists` `s` on((`h_s`.`id_specialist` = `s`.`id`))) join `krupet`.`tbl_hospital_branches` `b` on((`h`.`id` = `b`.`id_hospital`))) join `krupet`.`tbl_provinces` `p` on((`b`.`id_province` = `p`.`id`))) join `krupet`.`tbl_distrits` `d` on((`b`.`id_distrit` = `d`.`id`))) where ((`h`.`is_published` = 1) and (`p`.`is_published` = 1) and (`d`.`is_published` = 1) and (`b`.`is_default` = 1))
+
+CREATE VIEW `view_hospital_doctors` AS select `h_d`.`id_hospital` AS `id_hospital`,`h_d`.`id_doctor` AS `id_doctor`,`d`.`slug` AS `slug`,`d`.`en_name` AS `en_name`,`d`.`kh_name` AS `kh_name`,`s`.`en_name` AS `en_specialist`,`s`.`kh_name` AS `kh_specialist`,`d`.`en_background` AS `en_background`,`d`.`kh_background` AS `kh_background`,`d`.`image` AS `image` from ((`krupet`.`tbl_hospital_doctors` `h_d` join `krupet`.`tbl_doctors` `d` on((`h_d`.`id_doctor` = `d`.`id`))) join `krupet`.`tbl_specialists` `s` on((`d`.`id_specialist` = `s`.`id`)))
+
+CREATE VIEW `view_hospital_info`AS select `h`.`id` AS `id`,`h`.`slug` AS `slug`,`h`.`en_name` AS `en_name`,`h`.`kh_name` AS `kh_name`,`h`.`en_director` AS `en_director`,`h`.`kh_director` AS `kh_director`,`h`.`en_background` AS `en_background`,`h`.`kh_background` AS `kh_background`,`h`.`image` AS `image`,`h`.`id_hospital_category` AS `id_hospital_category`,`b`.`phone` AS `phone`,`b`.`email` AS `email`,`b`.`en_address` AS `en_address`,`b`.`kh_address` AS `kh_address`,`b`.`website` AS `website`,`b`.`lat` AS `lat`,`b`.`lon` AS `lon`,`b`.`working_hours` AS `working_hours`,`c`.`en_name` AS `en_cat`,`c`.`kh_name` AS `kh_cat`,`t`.`en_name` AS `en_type`,`t`.`kh_name` AS `kh_type` from (((`krupet`.`tbl_hospitals` `h` join `krupet`.`tbl_hospital_categories` `c` on((`h`.`id_hospital_category` = `c`.`id`))) join `krupet`.`tbl_hospital_types` `t` on((`h`.`id_hospital_type` = `t`.`id`))) join `krupet`.`tbl_hospital_branches` `b` on((`b`.`id_hospital` = `h`.`id`))) where ((`h`.`is_published` = 1) and (`b`.`is_default` = 1))
+
+CREATE VIEW `view_hospital_info2`AS select `h`.`id` AS `id`,`h`.`slug` AS `slug`,`h`.`en_name` AS `en_name`,`h`.`kh_name` AS `kh_name`,`h`.`en_director` AS `en_director`,`h`.`kh_director` AS `kh_director`,`h`.`en_background` AS `en_background`,`h`.`kh_background` AS `kh_background`,`h`.`image` AS `image`,`h`.`id_hospital_category` AS `id_hospital_category`,`b`.`phone` AS `phone`,`b`.`email` AS `email`,`b`.`en_address` AS `en_address`,`b`.`kh_address` AS `kh_address`,`b`.`website` AS `website`,`b`.`lat` AS `lat`,`b`.`lon` AS `lon`,`b`.`working_hours` AS `working_hours`,`c`.`en_name` AS `en_cat`,`c`.`kh_name` AS `kh_cat`,`t`.`en_name` AS `kh_type`,`t`.`kh_name` AS `en_type` from (((`krupet`.`tbl_hospitals` `h` join `krupet`.`tbl_hospital_categories` `c` on((`h`.`id_hospital_category` = `c`.`id`))) join `krupet`.`tbl_hospital_types` `t` on((`h`.`id_hospital_type` = `t`.`id`))) join `krupet`.`tbl_hospital_branches` `b` on((`b`.`id_hospital` = `h`.`id`))) where ((`h`.`is_published` = 1) and (`b`.`is_default` = 1))
+
+CREATE VIEW `view_hospital_rating_score` AS select `q`.`en_name` AS `name`,`q`.`en_question` AS `question`,`h_r_s`.`score` AS `score`,`h_r_s`.`id_hospital_rating` AS `id_hospital_rating` from (`krupet`.`tbl_servay_questions` `q` join `krupet`.`tbl_hospital_rating_scores` `h_r_s` on((`h_r_s`.`id_question` = `q`.`id`)))
+
+CREATE VIEW `view_hospital_services`AS select `h_s`.`id_hospital` AS `id_hospital`,`d`.`en_name` AS `en_department`,`d`.`kh_name` AS `kh_department`,`s`.`en_name` AS `en_name`,`s`.`kh_name` AS `kh_name`,`h_s`.`price` AS `price`,`h_s`.`en_note` AS `en_note`,`h_s`.`kh_note` AS `kh_note` from ((`krupet`.`tbl_hospital_services` `h_s` join `krupet`.`tbl_services` `s` on((`s`.`id` = `h_s`.`id_service`))) join `krupet`.`tbl_service_categores` `d` on((`d`.`id` = `s`.`id_service_category`)))
+
+CREATE VIEW `view_phamacy_for_search`AS select `ph`.`id` AS `id`,`ph`.`slug` AS `slug`,`ph`.`image` AS `image`,`ph`.`en_name` AS `en_name`,`ph`.`kh_name` AS `kh_name`,`ph`.`email` AS `email`,`ph`.`phone` AS `phone`,`pr`.`en_name` AS `en_province_name`,`pr`.`kh_name` AS `kh_province_name`,`d`.`en_name` AS `en_distrit_name`,`d`.`kh_name` AS `kh_distrit_name` from ((`krupet`.`tbl_phamacies` `ph` join `krupet`.`tbl_provinces` `pr` on((`pr`.`id` = `ph`.`id_province`))) join `krupet`.`tbl_distrits` `d` on((`d`.`id` = `ph`.`id_distrit`))) where ((`ph`.`is_published` = 1) and (`pr`.`is_published` = 1) and (`d`.`is_published` = 1))
+

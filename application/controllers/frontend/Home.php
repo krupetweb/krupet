@@ -10,6 +10,12 @@ class Home extends Frontend_base {
     }
 	
 	function index(){
+		$page 		= isset($_GET['page']) ? $_GET['page'] : 0;
+		$cat        = isset($_GET['cat'])?$_GET['cat']:"";
+		//echo $cat ;die;
+		$tag        = isset($_GET['tag'])?$_GET['tag']:"";
+		$id_category = 1;
+		$config["per_page"] = 10;
 		$this->page_data['provinces'] 						= $this->model->get_provinces();
 		$this->page_data['phone_types'] 					= $this->model->get_phone_types();
 
@@ -23,6 +29,7 @@ class Home extends Frontend_base {
         $this->page_data['featured_blogs'] 					= $this->model->get_blogs();
 		$this->page_data['ads_v'] 							= $this->model->get_vertical_ads(1);
 		$this->page_data['page_name'] 						= 'home';
+		$this->page_data["data"] = $this->model->get_data($config["per_page"], $page, $id_category, $tag);
 		$this->load->view('frontend/index', $this->page_data);
 	}
 	function get_phones(){
