@@ -3,31 +3,144 @@
 				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.theme.css">
 				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.transitions.css">
 				<script type="text/javascript" src="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.carousel.min.js"></script>
-				
+
+
+				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/flexslider.css">
+				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/jquery-ui.css">
+				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/style.css">
+				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/colors.css">
+				<script type="text/javascript" src="<?=$src_url?>assets/frontend/banner-plugin/jquery-ui.min.js"></script>
+				<script type="text/javascript" src="<?=$src_url?>assets/frontend/banner-plugin/range-slider.js"></script>
+
+
 				<?php include('parts/ads_v.php'); ?>
 				
 				 <br />
-				<div class="container">
-					<div class="row ">
+<!--				//new banner-->
+				<div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+						<?php foreach($programes as $key => $row){ ?>
 
-						<div class="col-xs-12">
+							<div class="item <?php echo $key == 0?'active':''?>">
 
-							<div id="owl-programs" style="margin-bottom:10px" class="owl-carousel owl-theme">
-								<?php foreach($programes as $row){ ?>
-
-									<div class="owl-item" class="border_slide">
-										<a href="<?php echo $row->url?>"><img alt="" class="img-responsive" data-src="<?=$src_url?><?php echo $row->image?>" src="" /></a>
-
+								<div class="description">
+									<div class="container">
+										<div class="row">
+											<div class="col-xs-12">
+												<h1><em>reserve a room for</em><br class="hidden-xs"> <span>family vacation</span></h1>
+											</div>
+										</div>
 									</div>
-
-								<?php }?>
-
+								</div>
+								<img src="<?=$src_url?><?php echo $row->image?>" alt="image description">
 							</div>
-						
+
+						<?php }?>
+
+					</div>
+					<!-- Controls -->
+					<a class="left carousel-control" href="#carousel-example-generic1" role="button" data-slide="prev"></a>
+					<a class="right carousel-control" href="#carousel-example-generic1" role="button" data-slide="next"></a>
+				</div>
+				<!-- reservation-bar -->
+				<div class="reservation-bar">
+					<div class="container">
+						<div class="row">
+							<form action="#">
+								<div class="col-md-6 col-sm-12">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="input-append date" id="dpd1" data-date="Check In" data-date-format="dd-mm-yyyy">
+												<input class="form-control" size="16" type="text" value="Arrive date">
+												<span class="icon-calendar"></span>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="input-append date" id="dpd2" data-date="Check Out" data-date-format="dd-mm-yyyy">
+												<input class="form-control" size="16" type="text" value="Departure date">
+												<span class="icon-calendar"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-12">
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												<div class="fake-select">
+													<select>
+														<option value="Adult" selected>Adult</option>
+														<option>Children</option>
+														<option>Option3</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="form-group">
+												<div class="fake-select">
+													<select>
+														<option value="Room" selected>Room</option>
+														<option>Option2</option>
+														<option>Option3</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<input type="submit" class="btn btn-default" value="check availability">
+										</div>
+									</div>
+								</div>
+							</form>
+
 						</div>
 					</div>
-
 				</div>
+
+
+<!--				end-->
+				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Hospitals << ?>
+				<div class="container">
+					<section class="nopadding clearfix">
+						<br />
+						<div class="breadcrumb_bottom">
+								<div class="container">
+									<div class="row">
+										<div class="breadcrumb_nav">
+											<div class="col-sm-12">
+												<h2><img src="<?=$src_url?>assets/frontend/images/icon/hospitals.png" style="width:40px;" > &nbsp; <?php echo get_lang('news hospitals');?></h2>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+						</div>
+						<div id="featured-hospital" class="container">
+							<?php if(isset($hospitals) && !empty($hospitals)){;// print_r($featured_hospitals) ?>	
+							<div class="row new-born">
+								<?php foreach($hospitals as $row ){ ?>
+									<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+										<br />
+										<div class="zoom-wrap">
+											<img alt="" class="img-responsive" src="<?=$src_url?><?php echo $row->image?>"  />
+										</div>
+										<div class="doc-name">
+											<a href="<?=$lang_url?>hospitals/<?php echo $row->slug; ?>">
+												<div class="doc-name-class">
+													<?php echo $row->name; ?>
+												</div>
+												<span class="doc-title"> 
+													<i class="fa fa-map-marker"></i> &nbsp; <?php echo $row->distrit.', '.$row->province?>
+												</span>
+											</a>
+											<br />
+										</div>
+								
+									</div>
+								<?php } ?>
+
 				<div class="container pd-right-0">
 					<div class="col-xs-12">
 						<section class="nopadding clearfix text-center">
@@ -65,6 +178,7 @@
 										</a>
 									</li>
 								</ul>
+
 							</div>
 						</section>
 					</div>
@@ -111,7 +225,7 @@
 											</div>
 											<hr />
 										<?php } ?>
-									<?php }else echo ' <h3>'.get_lang('blog-caption').'</h3>'; ?>
+									<?php }else echo ' <h3>'.get_lang('blog-caption').'</h3>'; }?>
 								</div>
 							</div>
 						</section>
