@@ -44,7 +44,14 @@
 				    </div>
 			    <?php } ?>
 		    </div> 
-            <script>
+		<?php } ?>
+	</section><!-- end section -->
+</div>
+
+
+<?php }?>
+			
+<script>
 	$(document).ready(function(){
 			var sponsor = $('#sponsor-carousel');
 		
@@ -56,13 +63,5 @@
 		      itemsDesktopSmall : [979,2]
 		});	
 	})
+
 </script>
-
-		<?php } ?>
-	</section><!-- end section -->
-	</div>
-
-
-<?php }?>
-
-				
