@@ -16,11 +16,7 @@ Theme URI: www.galliasoft.com/rangerelaxe-html
 .rooms .info-block:after,
 .billing-form .section:after,
 .b-container:after,
-.footer-nav:after {
-    content: '';
-    display: block;
-    clear: both;
-}
+
 .ellipsis {
     white-space: nowrap;
     /* 1 */
@@ -4216,7 +4212,11 @@ form input:disabled + .fake-input,
 form input:disabled ~ .fake-label {
     opacity: .5;
 }
-/* footer styles */
+
+
+
+
+
 
 .b-container {
     position: relative;
@@ -4279,58 +4279,8 @@ form input:disabled ~ .fake-label {
     border-color: #353535;
     color: #353535;
 }
-/* footer nav styles */
 
-.footer-nav {
-    padding: 39px 0;
-    background: #353535;
-}
-@media (max-width: 1023px) {
-    .footer-nav {
-        padding: 15px 0 60px;
-    }
-}
-@media (max-width: 767px) {
-    .footer-nav {
-        padding: 70px 0 15px;
-    }
-}
-.footer-nav [class^="col-"] {
-    position: relative;
-}
-.footer-nav .logo {
-    width: 132px;
-    height: auto;
-    position: absolute;
-    margin: -21px 0 0 -61px;
-    left: 50%;
-    top: 50%;
-}
-@media (max-width: 1023px) {
-    .footer-nav .logo {
-        margin: 20px 0 0 -61px;
-    }
-}
-@media (max-width: 767px) {
-    .footer-nav .logo {
-        top: -50px;
-        margin: 0 0 0 -61px;
-    }
-}
-.footer-nav .logo img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-.f-nav {
-    text-transform: uppercase;
-    font: 500 14px/16px "Lora", Arial, helvetica, sans-serif;
-}
-@media (max-width: 1199px) {
-    .f-nav {
-        font: 500 13px/16px "Lora", Arial, helvetica, sans-serif;
-    }
-}
+
 /*@media (max-width: 767px) {*/
     /*.f-nav .navbar-left,*/
     /*.f-nav .navbar-right {*/
@@ -4395,37 +4345,8 @@ form input:disabled ~ .fake-label {
 .f-nav li a:hover {
     background: none;
 }
-#footer {
-    color: #fff;
-    overflow: hidden;
-    padding: 13px 0;
-    font: 400 16px/25px "Lora", Arial, helvetica, sans-serif;
-}
-@media (max-width: 1023px) {
-    #footer {
-        font-size: 12px;
-    }
-}
-@media (max-width: 767px) {
-    #footer {
-        font-size: 11px;
-        line-height: 16px;
-    }
-}
-#footer .link {
-    font-style: italic;
-}
-#footer p {
-    margin: 0;
-}
-@media (max-width: 767px) {
-    #footer p {
-        margin: 0 0 10px;
-    }
-}
-#footer p a {
-    color: #fff;
-}
+
+
 .go-top {
     right: 0;
     top: -89px;

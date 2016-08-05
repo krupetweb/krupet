@@ -266,15 +266,3 @@ form [type="checkbox"]:checked + .fake-input {
   border-color: #c2a476;
 }
 
-/* footer styles */
-#footer {
-  background: #c2a476;
-}
-
-.f-nav a:hover {
-  color: #c2a476;
-}
-
-.go-top:hover {
-  color: #c2a476;
-}
