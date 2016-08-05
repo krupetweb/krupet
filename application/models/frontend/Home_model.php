@@ -105,6 +105,26 @@ class Home_model extends Frontend_base_model {
     	return $data;
 
 	}
+	public function record_count($id_category=1, $tag='') {
+	 	
+	 	$this->db->select('slug');
+	 	if($tag!=""){
+	 		$this->db->from('view_blog_for_search'); 
+	 	}else{
+	 		$this->db->from('tbl_blogs'); 
+	 	}
+	 	
+	 	$this->db->where('id_category', $id_category);
+
+	 	if($tag!=""){
+	 		$this->db->like($this->lang.'_tag', $tag);
+	 	}
+	 	$this->db->group_by($this->lang.'_title');
+
+	 	return sizeof($this->db->get()->result());
+	   	
+		
+    }
 
 	function get_data($limit, $start, $id_category, $tag){
 		$this->db->select($this->lang.'_title as title, '.$this->lang.'_pre_content as pre_content, created_dt, image , slug');
@@ -115,7 +135,7 @@ class Home_model extends Frontend_base_model {
 	 	}
 		$this->db->where('id_category=', $id_category);
 		$this->db->limit($limit, $start);
-		$this->db->group_by($this->lang.'_title');
+		// $this->db->group_by($this->lang.'_title');
 		if($tag!=""){
 	 		$this->db->like($this->lang.'_tag', $tag);
 	 	}
