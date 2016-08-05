@@ -1,9 +1,3 @@
-<!---->
-<!--				<link rel="stylesheet" href="--><?//=$src_url?><!--assets/frontend/plugin/owl-carousel/owl.carousel.css">-->
-<!--				<link rel="stylesheet" href="--><?//=$src_url?><!--assets/frontend/plugin/owl-carousel/owl.theme.css">-->
-<!--				<link rel="stylesheet" href="--><?//=$src_url?><!--assets/frontend/plugin/owl-carousel/owl.transitions.css">-->
-<!--				<script type="text/javascript" src="--><?//=$src_url?><!--assets/frontend/plugin/owl-carousel/owl.carousel.min.js"></script>-->
-
 
 				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/flexslider.css">
 				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/jquery-ui.css">
@@ -99,7 +93,6 @@
 					</div>
 				</div>
 
-
 <!--				end-->
 				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Hospitals << ?>
 				<div class="container">
@@ -140,7 +133,9 @@
 								
 									</div>
 								<?php } ?>
-
+							</div>
+						</div>
+				</div>
 				<div class="container pd-right-0">
 					<div class="col-xs-12">
 						<section class="nopadding clearfix text-center">
@@ -270,7 +265,5 @@
 				</script>
 
 
-				
-			
-			
-					 
+
+

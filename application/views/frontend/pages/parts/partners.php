@@ -7,7 +7,7 @@
 
 	<?php if(!empty($potential_partners)){ ?>
 	<div class="container">
- 	<section class="nopadding clearfix">
+ 		<section class="nopadding clearfix">
 		<br />
 		<div class="breadcrumb_bottom">
 			<div class="container">
@@ -60,7 +60,7 @@
 
 		<?php } ?>
 	</section><!-- end section -->
-</div>
+	</div>
 
 
 <?php }?>
