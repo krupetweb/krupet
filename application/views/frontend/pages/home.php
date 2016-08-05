@@ -1,3 +1,5 @@
+				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.carousel.css">
+				<script type="text/javascript" src="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.carousel.min.js"></script>
 
 				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/flexslider.css">
 				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/jquery-ui.css">
