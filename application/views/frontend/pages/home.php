@@ -225,7 +225,7 @@
 											</div>
 											<hr />
 										<?php } ?>
-									<?php }else echo ' <h3>'.get_lang('blog-caption').'</h3>'; ?>
+									<?php }else echo ' <h3>'.get_lang('blog-caption').'</h3>'; }?>
 								</div>
 							</div>
 						</section>

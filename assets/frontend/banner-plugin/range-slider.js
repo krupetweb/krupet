@@ -50,3 +50,4 @@ $('.ui-slider-range').append('<span class="price-range-both value"><i>$' + $('#s
 $('.ui-slider-handle:eq(0)').append('<span class="price-range-min value">$' + $('#slider').slider('values', 0 ) + '</span>');
 
 $('.ui-slider-handle:eq(1)').append('<span class="price-range-max value">$' + $('#slider').slider('values', 1 ) + '</span>');
+

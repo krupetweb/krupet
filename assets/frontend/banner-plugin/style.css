@@ -997,7 +997,7 @@ h1:after {
 }
 /* carousel styles */
 
-.carousel .description {
+.carousel .description{
     z-index: 9;
     color: #fff;
     position: absolute;
@@ -1006,6 +1006,8 @@ h1:after {
     bottom: 0;
     left: 0;
 }
+
+
 .carousel .description .container {
     display: table;
     height: 100%;
@@ -1125,12 +1127,30 @@ h1:after {
     opacity: 1;
     top: 50%;
     z-index: 9;
+    display: none;
+}
+
+.carousel:hover >.carousel-control{
+    background: rgba(255, 0, 0, 0.4);
+    width: 40px;
+    height: 40px;
+    margin: -40px 0 0;
+    opacity: 1;
+    top: 50%;
+    z-index: 9;
+    display: block;
+
 }
 @media (max-width: 767px) {
     .carousel .carousel-control {
         width: 30px;
         height: 30px;
         margin: -15px 0 0;
+    }
+    .carousel:hover> .carousel-control {
+        width: 30px;
+        height: 30px;
+        margin: -1px 0 0 0;
     }
 }
 .carousel .carousel-control:hover {
@@ -1142,7 +1162,7 @@ h1:after {
     content: "";
     position: absolute;
     margin: -15px 0 0 -8px;
-    width: 16px;
+    width: 8px;
     height: 30px;
     background: url(img/sprite.png) no-repeat;
 }
@@ -1154,7 +1174,7 @@ h1:after {
     background-position: 0 0;
 }
 .carousel .carousel-control.right:after {
-    background-position: -19px 0;
+    background-position: -27px 0;
 }
 .btn-default {
     text-transform: uppercase;

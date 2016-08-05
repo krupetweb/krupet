@@ -1,28 +1,28 @@
-#header .navbar-toggle {
-  background: #c2a476;
-  border: 2px solid #c2a476;
-}
+/*#header .navbar-toggle {*/
+  /*background: #c2a476;*/
+  /*border: 2px solid #c2a476;*/
+/*}*/
 
-#header .navbar-toggle:hover, #header .navbar-toggle:fosuc {
-  background: #c2a476 !important;
-}
+/*#header .navbar-toggle:hover, #header .navbar-toggle:fosuc {*/
+  /*background: #c2a476 !important;*/
+/*}*/
 
-/* main menu styles */
-.navbar-default .navbar-nav li a:hover {
-  border-color: #c2a476;
-}
+/*!* main menu styles *!*/
+/*.navbar-default .navbar-nav li a:hover {*/
+  /*border-color: #c2a476;*/
+/*}*/
 
-.navbar-default .navbar-nav li a:hover:before, .navbar-default .navbar-nav li a:hover:after {
-  background: #c2a476;
-}
+/*.navbar-default .navbar-nav li a:hover:before, .navbar-default .navbar-nav li a:hover:after {*/
+  /*background: #c2a476;*/
+/*}*/
 
-.navbar-default .navbar-nav li.active a, .navbar-default .navbar-nav li.open a {
-  border-color: #c2a476;
-}
+/*.navbar-default .navbar-nav li.active a, .navbar-default .navbar-nav li.open a {*/
+  /*border-color: #c2a476;*/
+/*}*/
 
-.navbar-default .navbar-nav li.active a:before, .navbar-default .navbar-nav li.active a:after, .navbar-default .navbar-nav li.open a:before, .navbar-default .navbar-nav li.open a:after {
-  background: #c2a476;
-}
+/*.navbar-default .navbar-nav li.active a:before, .navbar-default .navbar-nav li.active a:after, .navbar-default .navbar-nav li.open a:before, .navbar-default .navbar-nav li.open a:after {*/
+  /*background: #c2a476;*/
+/*}*/
 
 /* navigation-bar styles */
 .navigation-bar .link:hover {
