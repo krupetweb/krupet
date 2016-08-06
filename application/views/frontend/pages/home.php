@@ -41,103 +41,44 @@
 				</div>
 				<!-- reservation-bar -->
 				<div class="reservation-bar">
-					<div class="container">
-						<div class="row">
-							<form action="#">
-								<div class="col-md-6 col-sm-12">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="input-append date" id="dpd1" data-date="Check In" data-date-format="dd-mm-yyyy">
-												<input class="form-control" size="16" type="text" value="Arrive date">
-												<span class="icon-calendar"></span>
-											</div>
+					<div class="container pd-right-0">
+						<form action="#">
+							<div class="col-md-12 col-sm-12">
+								<div class="row">
+									<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+						             	<div class="no-margin-bottom form-group ">
+												<select class="form-control search-control" onchange="get_distrits()" id="province" name="id_type">
+													<option value="">Select Province</option>
+													<?php foreach($provinces as $row){ ?>
+														<option value="<?php echo $row->id; ?>"><?php echo $row->name; ?></option>
+													<?php } ?>
+												</select>
+											
 										</div>
-										<div class="col-sm-6">
-											<div class="input-append date" id="dpd2" data-date="Check Out" data-date-format="dd-mm-yyyy">
-												<input class="form-control" size="16" type="text" value="Departure date">
-												<span class="icon-calendar"></span>
-											</div>
+						            </div>
+						            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+						             	<div class="no-margin-bottom form-group ">
+												<select class="form-control search-control" id="distrit" >
+													<option value="">Select Distrit</option>
+												</select>
+											
 										</div>
+						            </div>
+									<div class="col-xs-12 col-sm-6 col-sm-4">
+										<input type="text" class="form-control search-control" value="" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" value="" autocomplete="off">
+									</div>
+									<div class="col-xs-12 col-sm-6 col-sm-2">
+										<button id="btn-search-phone" class="btn btn-default search-button"><i class="fa fa-search"></i> Search!</button>
 									</div>
 								</div>
-								<div class="col-md-6 col-sm-12">
-									<div class="row">
-										<div class="col-sm-4">
-											<div class="form-group">
-												<div class="fake-select">
-													<select>
-														<option value="Adult" selected>Adult</option>
-														<option>Children</option>
-														<option>Option3</option>
-													</select>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="form-group">
-												<div class="fake-select">
-													<select>
-														<option value="Room" selected>Room</option>
-														<option>Option2</option>
-														<option>Option3</option>
-													</select>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-4">
-											<input type="submit" class="btn btn-default" value="check availability">
-										</div>
-									</div>
-								</div>
-							</form>
-
-						</div>
+							</div>
+						</form>
 					</div>
 				</div>
 
 <!--				end-->
 				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Hospitals << ?>
-				<div class="container">
-					<section class="nopadding clearfix">
-						<br />
-						<div class="breadcrumb_bottom">
-								<div class="container">
-									<div class="row">
-										<div class="breadcrumb_nav">
-											<div class="col-sm-12">
-												<h2><img src="<?=$src_url?>assets/frontend/images/icon/hospitals.png" style="width:40px;" > &nbsp; <?php echo get_lang('news hospitals');?></h2>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-						</div>
-						<div id="featured-hospital" class="container">
-							<?php if(isset($hospitals) && !empty($hospitals)){;// print_r($featured_hospitals) ?>	
-							<div class="row new-born">
-								<?php foreach($hospitals as $row ){ ?>
-									<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-										<br />
-										<div class="zoom-wrap">
-											<img alt="" class="img-responsive" src="<?=$src_url?><?php echo $row->image?>"  />
-										</div>
-										<div class="doc-name">
-											<a href="<?=$lang_url?>hospitals/<?php echo $row->slug; ?>">
-												<div class="doc-name-class">
-													<?php echo $row->name; ?>
-												</div>
-												<span class="doc-title"> 
-													<i class="fa fa-map-marker"></i> &nbsp; <?php echo $row->distrit.', '.$row->province?>
-												</span>
-											</a>
-											<br />
-										</div>
-								
-									</div>
-								<?php } ?>
-							</div>
-						</div>
-				</div>
+				
 				<div class="container pd-right-0">
 					<div class="col-xs-12">
 						<section class="nopadding clearfix text-center">
@@ -222,7 +163,7 @@
 											</div>
 											<hr />
 										<?php } ?>
-									<?php }else echo ' <h3>'.get_lang('blog-caption').'</h3>'; }?>
+									<?php }else {echo ' <h3>'.get_lang('blog-caption').'</h3>'; }?>
 								</div>
 							</div>
 						</section>

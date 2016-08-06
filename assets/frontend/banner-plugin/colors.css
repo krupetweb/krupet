@@ -51,10 +51,6 @@
   font-weight: 400;
 }
 
-.btn-default:hover {
-  background: #c2a476;
-}
-
 /* Restaurant styles */
 .restaurant .btn-default {
   color: #c2a476;
@@ -77,9 +73,6 @@
 }
 
 /* reservation bar styles */
-.reservation-bar .btn {
-  background: #c2a476;
-}
 
 .view-type li.active a {
   color: #c2a476;
@@ -141,23 +134,7 @@
   border-color: #c2a476;
 }
 
-/* comments block styles */
-.comments-block .btn {
-  background: #c2a476;
-}
 
-.comments-block .btn:hover {
-  color: #c2a476;
-}
-
-/* contact styles */
-.contact-form .btn {
-  background: #c2a476;
-}
-
-.contact-form .btn:hover {
-  color: #c2a476 !important;
-}
 
 /* rooms-section styles */
 .info-block .holder .title {

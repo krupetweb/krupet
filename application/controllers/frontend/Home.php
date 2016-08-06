@@ -62,7 +62,7 @@ class Home extends Frontend_base {
 		$this->page_data['ads_v'] 							= $this->model->get_vertical_ads(1);
 		$this->page_data['page_name'] 						= 'home';
 		$this->page_data["data"] = $this->model->get_data($config["per_page"], $page, $id_category, $tag);
-		// var_dump($this->page_data["data"]);
+		// var_dump($this->page_data['provinces']);
 		// exit();
 		$this->load->view('frontend/index', $this->page_data);
 	}
