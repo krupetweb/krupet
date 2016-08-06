@@ -7,6 +7,7 @@
 				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/colors.css">
 				<script type="text/javascript" src="<?=$src_url?>assets/frontend/banner-plugin/jquery-ui.min.js"></script>
 				<script type="text/javascript" src="<?=$src_url?>assets/frontend/banner-plugin/range-slider.js"></script>
+				
 
 
 				<?php include('parts/ads_v.php'); ?>
