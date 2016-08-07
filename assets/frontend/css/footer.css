@@ -1,48 +1,5 @@
-/*------------------------------------------------------------------
-* Table of Content
-* 1. Header
-* 2. Navbar Mini
-* 3. Sticky Header
-* 4. Hero
-* 5. Main Search Form
-* 6. Category
-* 7. About Us
-* 8. Contributor or Author
-* 9. Featured
-* 10. Breadcrumb
-* 11. Filter
-* 12. Category Page
-* 13. Detail Page
-* 14. Testimonial
-* 15. Sidebar
-* 16. Image Overlay
-* 17. flex-video
-* 18. Pager
-* 19. Pricing
-* 20. Tab
-* 22. Upload Page
-* 23. Blog
-* 24. Footer
-* 25. Login Modal
-* 26. Social Share
-* 27. Contact Us
-* 28. Faq Page
-* 29. Static Page
--------------------------------------------------------------------*/
-
-
-/**
- * Header
- */
-
-
 
 @media (max-width: 479px) {}
-
-
-/**
- * Hero
- */
 
 .hero {
     position: relative;
@@ -4208,7 +4165,7 @@ a:hover {
 }
 
 a {
-    color: #EDB200;
+    /*color: #EDB200;*/
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
