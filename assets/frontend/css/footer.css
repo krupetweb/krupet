@@ -301,7 +301,7 @@
 .input-group-search-form-wrapper .dropdown.dropdown-select .dropdown-menu .active a,
 .input-group-search-form-wrapper .dropdown.dropdown-select .dropdown-menu a:hover {
     background: none;
-    color: #FFBF00;
+    color: red;
 }
 
 .input-group-search-form-wrapper .dropdown.dropdown-select .dropdown-menu > li > a {
@@ -3116,7 +3116,7 @@ ul.comment-item li > ul {
 }
 
 .main-footer a:hover {
-    color: #FFBF00;
+    color: red;
 }
 
 ul.menu-footer {
@@ -3180,7 +3180,7 @@ h5.footer-title {
 
 p.footer-phone-number {
     color: #A3A3A3;
-    font-size: 34px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 1.1;
     margin: 0 0 2px;

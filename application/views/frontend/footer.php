@@ -33,7 +33,12 @@
 
 					<h4 class="footer-title">Like us in social</h4>
 					<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-
+					<h4 class="footer-title">User counter</h4>
+					<div align="">
+						<a href="http://www.amazingcounters.com">
+							<img border="0" src="http://cc.amazingcounters.com/counter.php?i=3205533&c=9616912" alt="AmazingCounters.com">
+						</a>
+					</div>
 				</div>
 
 
@@ -41,11 +46,12 @@
 							<h4 class="footer-title">More information</h4>
 							<ul class="menu-footer">
 
+								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/contact-us"><?php echo get_lang('contact-us');?></a></li>
 								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/faqs"><?php echo get_lang('faq');?></a></li>
 								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/term"><?php echo get_lang('term');?></a></li>
 								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/about-us"><?php echo get_lang('about-us');?></a></li>
 								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/career"><?php echo get_lang('career');?></a></li>
-								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/contact-us"><?php echo get_lang('contact-us');?></a></li>
+
 							</ul>
 				</div>
 
@@ -58,7 +64,7 @@
 
 							<div class="clear mb-30"></div>
 
-							<h5 class="footer-title">Want to ask a question?</h5>
+							<h5 class="footer-phone-number">Want to ask a question?</h5>
 							<p class="footer-phone-number">+855(010)222 150</p>
 							<p class="footer-email uppercase">email us at <a href="#">support@krupet.com</a></p>
 
@@ -97,7 +103,7 @@
 					<ul class="secondary-footer-menu clearfix">
 						<li><a href="#">My Account</a></li>
 						<li><a href="#">Sign-in</a></li>
-						<li><a href="#">Sign-up</a></li>
+						<li><a href="<?php echo base_url();?><?php echo $lang; ?>/contact-us"><?php echo get_lang('contact-us');?></a></li>
 					</ul>
 				</div>
 
