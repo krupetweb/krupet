@@ -42,7 +42,7 @@
 				</div>
 				<!-- reservation-bar -->
 				<div class="reservation-bar">
-					<div class="container pd-right-0">
+					<div class="container">
 						<form action="#">
 							<div class="col-md-12 col-sm-12">
 								<div class="row">
