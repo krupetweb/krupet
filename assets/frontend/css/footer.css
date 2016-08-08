@@ -6904,24 +6904,8 @@ input[type="button"].btn {
  * Form
  */
 
-.form-control {
-    border-radius: 0;
-    box-shadow: none;
-    height: 40px;
-    border-color: #DEDEDE;
-    transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    padding-top: 7px;
-    font-size: 13px;
-}
 
-.form-control:focus {
-    border-color: #FFBF00;
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
+
 
 .form-icon {
     position: relative;
