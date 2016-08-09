@@ -25,7 +25,7 @@
 									<div class="container">
 										<div class="row">
 											<div class="col-xs-12">
-												<h1><em>reserve a room for</em><br class="hidden-xs"> <span>family vacation</span></h1>
+<!--												<h1><em>reserve a room for</em><br class="hidden-xs"> <span>family vacation</span></h1>-->
 											</div>
 										</div>
 									</div>
@@ -83,7 +83,7 @@
 				<div class="container pd-right-0">
 					<div class="col-xs-12">
 						<section class="nopadding clearfix text-center">
-							<h2 class="color-red border-red"><?php echo get_lang('specialization'); ?></h2>
+							<h2 class="color-black border-red"><?php echo get_lang('specialization'); ?></h2>
 							<div class="col-sm-12 text-center">
 								<ul class="spe-list">
 									<li>
@@ -130,7 +130,7 @@
 				<div class="container pd-right-0">
 					<div class="col-xs-12">
 						<section class="nopadding clearfix">
-							<h2 class="color-red border-red"><?php echo get_lang('tips');?></h2>
+							<h2 class="color-black border-red"><?php echo get_lang('tips');?></h2>
 							<div class="col-sm-8">
 								<div id="search_result_container" class="container-fluid">
 									<?php if(!empty($data)){?>
@@ -143,6 +143,7 @@
 														<a  href="<?php echo base_url();?><?php echo $lang;?>/blogs/<?php echo $row->slug; ?>">
 															<img alt="" data-src=" <?php echo base_url()?><?php echo $row->image ?> " src=" " class="img-responsive">
 														</a>
+														
 													</div>
 												</div>
 												<div class="col-xs-12 col-sm-12 col-md-7" >

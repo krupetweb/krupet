@@ -3164,11 +3164,13 @@ ul.menu-footer li a {
     margin: 5px;
 }
 
+
+
 h4.footer-title {
     text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #A3A3A3;
-    margin: 0 0 15px;
+    letter-spacing: 1px;
+    color: black;
+    margin: 15px 0 8px;
 }
 
 h5.footer-title {
@@ -3993,10 +3995,10 @@ h3,
 h4,
 h5,
 h6,
-p,
+
 blockquote,
 pre,
-a,
+
 abbr,
 acronym,
 address,
@@ -4021,7 +4023,7 @@ tt,
 var,
 b,
 u,
-i,
+
 center,
 dl,
 dt,
@@ -4068,6 +4070,7 @@ video {
     font-family: inherit;
     vertical-align: baseline;
     zoom: 1;
+    color: #718ECA;
 }
 
 
@@ -4171,10 +4174,11 @@ a {
     -moz-transition: all 0.3s ease;
     cursor: poitner;
     text-decoration: none;
+    font-weight: bolder;
 }
 
 a:hover {
-    color: #FFBF00;
+    color:red;
     text-decoration: none;
 }
 

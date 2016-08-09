@@ -32,9 +32,9 @@
 				<div class="col-xs-12 col-sm-12 col-sm-4 col-md-4 mb-30-xs">
 
 					<h4 class="footer-title">Like us in social</h4>
-					<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-					<h4 class="footer-title">User counter</h4>
-					<div align="">
+					<div class="fb-like" data-href="https://www.facebook.com/Krupetcom-137344823272389/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+					<h4 class="footer-title mg-top-5">Visitor counter</h4>
+					<div align="" style="margin-top: -1px">
 						<a href="http://www.amazingcounters.com">
 							<img border="0" src="http://cc.amazingcounters.com/counter.php?i=3205533&c=9616912" alt="AmazingCounters.com">
 						</a>
@@ -43,15 +43,11 @@
 
 
 				<div class="col-xs-12 col-sm-12 col-md-4">
-							<h4 class="footer-title">More information</h4>
+							<h4 class="footer-title">Information</h4>
 							<ul class="menu-footer">
-
-								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/contact-us"><?php echo get_lang('contact-us');?></a></li>
-								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/faqs"><?php echo get_lang('faq');?></a></li>
-								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/term"><?php echo get_lang('term');?></a></li>
-								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/about-us"><?php echo get_lang('about-us');?></a></li>
-								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/career"><?php echo get_lang('career');?></a></li>
-
+								<li><a href="#">Terms and Conditions</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Press</a></li>
 							</ul>
 				</div>
 
@@ -101,8 +97,11 @@
 
 				<div class="col-sm-6">
 					<ul class="secondary-footer-menu clearfix">
-						<li><a href="#">My Account</a></li>
-						<li><a href="#">Sign-in</a></li>
+
+						<!--								<li><a href="--><?php //echo base_url();?><!----><?php //echo $lang; ?><!--/faqs">--><?php //echo get_lang('faq');?><!--</a></li>-->
+						<!--								<li><a href="--><?php //echo base_url();?><!----><?php //echo $lang; ?><!--/term">--><?php //echo get_lang('term');?><!--</a></li>-->
+						<li><a href="<?php echo base_url();?><?php echo $lang; ?>/career"><?php echo get_lang('career');?></a></li>
+						<li><a href="<?php echo base_url();?><?php echo $lang; ?>/about-us"><?php echo get_lang('about-us');?></a></li>
 						<li><a href="<?php echo base_url();?><?php echo $lang; ?>/contact-us"><?php echo get_lang('contact-us');?></a></li>
 					</ul>
 				</div>

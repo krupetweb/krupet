@@ -2,7 +2,7 @@
 <div class="container pd-right-0">
 	<div class="col-xs-12">
 		<section class="nopadding clearfix text-center">
-			<h2 class="color-red border-red">Hotline </h2>
+			<h2 class="color-black border-red">Hotline </h2>
 			<div class="col-sm-12 text-center">
 				<div class="row text-center">
 		          	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
