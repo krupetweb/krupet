@@ -455,7 +455,7 @@
     background: rgba(0, 0, 0, 0.3);
     color: #FFF;
     text-transform: uppercase;
-    font-family: 'Catamaran', sans-serif;
+    /*font-family: 'Catamaran', sans-serif;*/
     font-weight: 600;
     line-height: 250px;
     text-align: center;
@@ -843,7 +843,7 @@ ul.home-category-list li a:hover {
     line-height: 1.5;
     letter-spacing: 0.5px;
     font-size: 14px;
-    font-family: 'Catamaran', sans-serif;
+    /*font-family: 'Catamaran', sans-serif;*/
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -3166,7 +3166,7 @@ ul.menu-footer li a {
 
 
 
-h4.footer-title {
+p.footer-title {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: black;
@@ -3973,14 +3973,14 @@ ul.static-page-menu li.active a {
 * 18. Customized Flex Grid from FOundation
 -------------------------------------------------------------------*/
 
-@import url(https://fonts.googleapis.com/css?family=Catamaran:400,500,300,600,700,800);
-@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
-html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-}
+/*@import url(https://fonts.googleapis.com/css?family=Catamaran:400,500,300,600,700,800);*/
+/*@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);*/
+/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);*/
+/*html {*/
+    /*font-family: sans-serif;*/
+    /*-ms-text-size-adjust: 100%;*/
+    /*-webkit-text-size-adjust: 100%;*/
+/*}*/
 
 html,
 body,
@@ -4214,7 +4214,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: 'Catamaran', sans-serif;
+    /*font-family: 'Catamaran', sans-serif;*/
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-decoration: none!important;
@@ -4270,6 +4270,7 @@ h6 {
 
 p {
     margin-bottom: 18px;
+
 }
 
 p.lead {
@@ -6627,7 +6628,7 @@ a.link-alt:hover {
     font-weight: 700;
     padding: 11px 25px 7px;
     line-height: 1.42857143;
-    font-family: 'Catamaran', sans-serif;
+    /*font-family: 'Catamaran', sans-serif;*/
 }
 
 input[type="submit"].btn,

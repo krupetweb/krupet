@@ -29,11 +29,11 @@
 
 			<div class="row">
 
-				<div class="col-xs-12 col-sm-12 col-sm-4 col-md-4 mb-30-xs">
+				<div class="col-xs-12 col-sm-12 col-sm-3 col-md-3 col-lg-3">
 
-					<h4 class="footer-title">Like us in social</h4>
-					<div class="fb-like" data-href="https://www.facebook.com/Krupetcom-137344823272389/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-					<h4 class="footer-title mg-top-5">Visitor counter</h4>
+					<p class="footer-title">Like us in social</p>
+					<div class="fb-like" data-href="https://www.facebook.com/Krupetcom-137344823272389/" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+					<p class="footer-title mg-top-5">Visitor counter</p>
 					<div align="" style="margin-top: -1px">
 						<a href="http://www.amazingcounters.com">
 							<img border="0" src="http://cc.amazingcounters.com/counter.php?i=3205533&c=9616912" alt="AmazingCounters.com">
@@ -42,8 +42,43 @@
 				</div>
 
 
-				<div class="col-xs-12 col-sm-12 col-md-4">
-							<h4 class="footer-title">Information</h4>
+				<div class="col-xs-12 col-sm-12 col-sm-3 col-md-3 col-lg-3">
+					<p class="footer-title">Medical resource</p>
+					<div class="row">
+						<a href="http://www.medscape.com/" target="_blank">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/a.png"></div></div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Medscape</div>
+						</a>
+					</div>
+					<div class="row">
+						<a href="http://www.ncbi.nlm.nih.gov/pubmed" target="_blank">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/a.png"></div></div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Pubmed</div>
+						</a>
+					</div>
+					<div class="row">
+						<a href="http://www.uptodate.com/" target="_blank">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/a.png"></div></div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Uptodate</div>
+						</a>
+					</div>
+					<div class="row">
+						<a href="http://www.who.int/hinari/en/" target="_blank">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/a.png"></div></div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Hinari</div>
+						</a>
+					</div>
+					<div class="row">
+						<a href="http://www.cochrane.org/" target="_blank">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/a.png"></div></div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Cochrane</div>
+						</a>
+					</div>
+				</div>
+
+
+				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+							<p class="footer-title">Information</p>
 							<ul class="menu-footer">
 								<li><a href="#">Terms and Conditions</a></li>
 								<li><a href="#">Privacy Policy</a></li>
@@ -51,8 +86,8 @@
 							</ul>
 				</div>
 
-				<div class="col-xs-12 col-sm-12 col-md-4 mt-30-sm">
-							<h4 class="footer-title">Subscribe For Special Update</h4>
+				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+							<p class="footer-title">Subscribe For Special Update</p>
 								<form id="subscribe_form" action="">
 									<input id="subscribe-email" type="email" required class="news-tb" placeholder="Email Address" />
 									<button id="btn-subscription" type="submit" class="news-button"><i class="fa fa-send"></i>&nbsp; <?php echo get_lang('subscribe');?></button><br />
@@ -60,22 +95,22 @@
 
 							<div class="clear mb-30"></div>
 
-							<h5 class="footer-phone-number">Want to ask a question?</h5>
-							<p class="footer-phone-number">+855(010)222 150</p>
-							<p class="footer-email uppercase">email us at <a href="#">support@krupet.com</a></p>
+							<p class="footer-title">Want to ask a question?</p>
+							<p class="footer-phone-number">(+855) 17 567 099</p>
+							<p class="footer-email">EMAIL US AT <a href="#">support@krupet.com</a></p>
 
 				</div>
 
 
 
-
-
 			</div>
+
+		</div>
 
 			<div class="bb mt-40"></div>
 			<div class="mb-40"></div>
 			<div class="social-footer clearfix">
-				<a href="#"><i class="fa fa-facebook-official"></i></a>
+				<a target="_blank" href="https://www.facebook.com/Krupetcom-137344823272389/"><i class="fa fa-facebook-official"></i></a>
 				<a href="#"><i class="fa fa-twitter"></i></a>
 				<a href="#"><i class="fa fa-google-plus "></i></a>
 				<a href="#"><i class="fa fa-linkedin "></i></a>

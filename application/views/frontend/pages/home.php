@@ -48,7 +48,7 @@
 								<div class="row">
 									<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 						             	<div class="no-margin-bottom form-group ">
-												<select class="form-control search-control" onchange="get_distrits()" id="province" name="id_type">
+												<select class="form-control search-control" onchange="get_distrits()" id="province_B" name="id_type">
 													<option value="">Select Province</option>
 													<?php foreach($provinces as $row){ ?>
 														<option value="<?php echo $row->id; ?>"><?php echo $row->name; ?></option>
@@ -59,7 +59,7 @@
 						            </div>
 						            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 						             	<div class="no-margin-bottom form-group ">
-												<select class="form-control search-control" id="distrit" >
+												<select class="form-control search-control" id="distrit_B" >
 													<option value="">Select Distrit</option>
 												</select>
 											
@@ -69,7 +69,7 @@
 										<input type="text" class="form-control search-control" value="" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" value="" autocomplete="off">
 									</div>
 									<div class="col-xs-12 col-sm-6 col-sm-2">
-										<button id="btn-search-phone" class="btn btn-default search-button"><i class="fa fa-search"></i> Search!</button>
+										<button id="btn-search-phone_B" class="btn btn-default search-button"><i class="fa fa-search"></i> Search!</button>
 									</div>
 								</div>
 							</div>
@@ -89,7 +89,7 @@
 									<li>
 										<a href="">
 											<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-											<p>Dentist</p>
+											<p class="text-center">Dentist</p>
 										</a>
 									</li>
 									<li>
@@ -119,7 +119,84 @@
 								</ul>
 
 							</div>
+
 						</section>
+
+					</div>
+					<div class="row">
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+							<a href="" class="thumbnail text-center">
+								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
+								Dentist
+							</a>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+							<a href="" class="thumbnail text-center">
+								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
+								Dentist
+							</a>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+							<a href="" class="thumbnail text-center">
+								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
+								Dentist
+							</a>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+							<a href="" class="thumbnail text-center">
+								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
+								Dentist
+							</a>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+							<a href="" class="thumbnail text-center">
+								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
+								Dentist
+							</a>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+							<a href="" class="thumbnail text-center">
+								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
+								Dentist
+							</a>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+							<a href="" class="thumbnail text-center">
+								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
+								Dentist
+							</a>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+							<a href="" class="thumbnail">
+								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
+								Dentist
+							</a>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+							<a href="" class="thumbnail text-center">
+								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
+								Dentist
+							</a>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+							<a href="" class="thumbnail text-center">
+								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
+								Dentist
+							</a>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+							<a href="" class="thumbnail text-center">
+								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
+								Dentist
+							</a>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+							<a href="" class="thumbnail text-center">
+								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
+								Dentist
+							</a>
+						</div>
+
 					</div>
 				</div>
 				
