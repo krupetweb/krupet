@@ -21,7 +21,7 @@ class Blogs_model extends Frontend_base_model {
 			return 1;
 		}	
 	}
-	 public function record_count($id_category=1, $tag='') {
+	public function record_count($id_category=1, $tag='') {
 	 	
 	 	$this->db->select('slug');
 	 	if($tag!=""){

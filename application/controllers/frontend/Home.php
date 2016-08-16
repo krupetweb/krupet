@@ -7,6 +7,7 @@ class Home extends Frontend_base {
 	function __construct(){
 		parent::__construct();
         $this->load->model('frontend/home_model', 'model');
+        $this->load->model('frontend/Search_model', 'mod_spc');
     }
 	
 	function index(){
@@ -55,13 +56,14 @@ class Home extends Frontend_base {
 		$this->page_data['consultant_image'] 				= $this->model->get_health_consultant_images();
 		$this->page_data['hospitals'] 						= $this->model->get_hospitals();
 		$this->page_data['doctors'] 						= $this->model->get_doctors();
-		
+		$this->page_data['specifications'] 					= $this->mod_spc->get_specifications();
         $this->page_data['potential_partners']				= $this->model->get_potential_partners();
 		$this->page_data['official_sponsors']				= $this->model->get_official_sponsors();
         $this->page_data['featured_blogs'] 					= $this->model->get_blogs();
 		$this->page_data['ads_v'] 							= $this->model->get_vertical_ads(1);
 		$this->page_data['page_name'] 						= 'home';
 		$this->page_data["data"] = $this->model->get_data($config["per_page"], $page, $id_category, $tag);
+		$this->page_data['categories']= $this->general->get_blog_categories();
 		// var_dump($this->page_data['provinces']);
 		// exit();
 		$this->load->view('frontend/index', $this->page_data);

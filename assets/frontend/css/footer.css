@@ -4137,17 +4137,6 @@ body {
     height: 100%!important;
     font-weight: 400;
 }
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-img {
-    -ms-interpolation-mode: bicubic;
-}
-
 object,
 embed {
     max-width: 100%;

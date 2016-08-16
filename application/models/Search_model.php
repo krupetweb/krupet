@@ -17,10 +17,13 @@ class Search_model extends Frontend_base_model {
 		return $this->db->get()->result();
 		
 	}
-	function get_specifications(){
+	function get_specifications($where=null){
+		if($where==null){
+            $where = array('is_published'=>1);
+        }
 		$this->db->select($this->lang.'_name as name');
 		$this->db->from('tbl_specialists');
-		$this->db->where('is_published', 1);
+		$this->db->where($where);
 		return $this->db->get()->result();
 	}
 	

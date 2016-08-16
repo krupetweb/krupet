@@ -66,7 +66,7 @@
 										</div>
 						            </div>
 									<div class="col-xs-12 col-sm-6 col-sm-4">
-										<input type="text" class="form-control search-control" value="" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" value="" autocomplete="off">
+										<input type="text" id="target" class="form-control search-control" value="" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" value="" autocomplete="off">
 									</div>
 									<div class="col-xs-12 col-sm-6 col-sm-2">
 										<button id="btn-search-phone_B" class="btn btn-default search-button"><i class="fa fa-search"></i> Search!</button>
@@ -84,120 +84,33 @@
 					<div class="col-xs-12">
 						<section class="nopadding clearfix text-center">
 							<h2 class="color-black border-red"><?php echo get_lang('specialization'); ?></h2>
-							<div class="col-sm-12 text-center">
-								<ul class="spe-list">
-									<li>
-										<a href="">
-											<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-											<p class="text-center">Dentist</p>
-										</a>
-									</li>
-									<li>
-										<a href="">
-											<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-											<p>Dentist</p>
-										</a>
-									</li>
-									<li>
-										<a href="">
-											<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-											<p>Dentist</p>
-										</a>
-									</li>
-									<li>
-										<a href="">
-											<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-											<p>Dentist</p>
-										</a>
-									</li>
-									<li>
-										<a href="">
-											<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-											<p>Dentist</p>
-										</a>
-									</li>
-								</ul>
+							<div class="row text-center">
+								<?php if(!empty($specifications)){?>
+									<?php foreach($specifications as $row) { 
+										$img_path=base_url('assets/frontend/images/icon/news.png');
+										if(isset($row->icon)){
+											if(file_exists(FCPATH.$row->icon)){
+								                $img_path=base_url($row->icon);
+								            }
+										}
+							            
+										?>
+										<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 height-130">
+											<a href="<?php echo $lang_url.'specialist?specification='.str_replace(" ", "+", $row->name);?>" class="thumbnail text-center">
 
+												<img src="<?=$img_path?>" style="width:40px;" >
+												
+												<p><?=$row->name?></p>
+											</a>
+										</div>
+									<?php } ?>
+								<?php } else {echo ' <h3>'.get_lang('blog-caption').'</h3>'; }?>
+								
 							</div>
-
 						</section>
 
 					</div>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-							<a href="" class="thumbnail text-center">
-								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-								Dentist
-							</a>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-							<a href="" class="thumbnail text-center">
-								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-								Dentist
-							</a>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-							<a href="" class="thumbnail text-center">
-								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-								Dentist
-							</a>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-							<a href="" class="thumbnail text-center">
-								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-								Dentist
-							</a>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-							<a href="" class="thumbnail text-center">
-								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-								Dentist
-							</a>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-							<a href="" class="thumbnail text-center">
-								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-								Dentist
-							</a>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-							<a href="" class="thumbnail text-center">
-								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-								Dentist
-							</a>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-							<a href="" class="thumbnail">
-								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-								Dentist
-							</a>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-							<a href="" class="thumbnail text-center">
-								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-								Dentist
-							</a>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-							<a href="" class="thumbnail text-center">
-								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-								Dentist
-							</a>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-							<a href="" class="thumbnail text-center">
-								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-								Dentist
-							</a>
-						</div>
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-							<a href="" class="thumbnail text-center">
-								<img src="<?=$src_url?>assets/frontend/images/icon/news.png" style="width:40px;" >
-								Dentist
-							</a>
-						</div>
-
-					</div>
+					
 				</div>
 				
 				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Hotline << ?>
@@ -283,7 +196,24 @@
 									  singleItem:true
 						        });
 							
-						});	
+					});	
+					// var xTriggered = 0;
+					// $( "#target" ).keyup(function( event ) {
+					//   xTriggered++;
+					//   // var msg = "Handler for .keyup() called " + xTriggered + " time(s).";
+					//   // $.print( msg, "html" );
+					//   console.log($(this).val())
+					//   console.log(event);
+					// }).keydown(function( event ) {
+					//   if ( event.which == 13 ) {
+					//   	console.log(event.which);
+					//     event.preventDefault();
+					//   }
+					// });
+					 
+					// $( "#target").click(function() {
+					//   // $( "#target" ).keyup();
+					// });
 				</script>
 
 
