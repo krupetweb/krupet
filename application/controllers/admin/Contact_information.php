@@ -31,7 +31,8 @@ class Contact_information extends Admin
         $this->load->view('backend/index', $this->page_data);
         
     }
-    function update_contact_info($id=0){
+    function update_contact_info(){
+        $id=1;
         $data['content']=$this->input->post('content');
         $data['modified_dt']    =date('Y-m-d H:i:s');
         $this->db->where('id', $id);

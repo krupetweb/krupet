@@ -52,7 +52,7 @@
 					</div>
 					<div class="row">
 						<a href="http://www.ncbi.nlm.nih.gov/pubmed" target="_blank">
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/a.png"></div></div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/pubmed.png"></div></div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Pubmed</div>
 						</a>
 					</div>

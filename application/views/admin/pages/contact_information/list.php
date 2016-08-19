@@ -54,7 +54,7 @@
 </div>
 <script type="text/JavaScript">
 	function edit_contact_info(id){
-		url="<?=base_url()?>admin/contact_informations/update_contact_info/"+id;
+		var url="<?=base_url()?>admin/contact_informations/update_contact_info/"+id;
 		
 		$.ajax({
 			url: url,
@@ -64,6 +64,7 @@
 			},
 			success: function(response)
 			{
+				console.log(response);
 				toastr.success(response);
 			}
 		});

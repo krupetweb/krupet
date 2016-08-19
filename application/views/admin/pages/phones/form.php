@@ -78,9 +78,9 @@
             method:"POST",
             url: "<?php echo base_url(); ?>/admin/phones/get_distrit",
             data: {
-                 
+
                 "id_province": id_province,
-                "id_distrit": <?php echo $id_distrit; ?> 
+                "id_distrit": <?php echo $id_distrit; ?>
             }
         }).done(function(respond) {
             $("#id_distrit").html(respond);

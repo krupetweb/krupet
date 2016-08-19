@@ -1,4 +1,4 @@
-				<a href="<?=base_url()?>admin/special_blog_form?action=create"  class="btn btn-primary pull-right"><i class="entypo-plus-circled"></i>Add New </a> 
+				<a href="<?=base_url()?>admin/<?php echo $term; ?>/form?action=create"  class="btn btn-primary pull-right"><i class="entypo-plus-circled"></i>Add New </a>
 			   <br><br>
 			   
 				<table class="table table-bordered datatable limited_drop_targets" id="table_export">

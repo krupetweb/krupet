@@ -21,10 +21,10 @@
 									<?php
 							
 									
-									$id				=0;
+										$id				=0;
 										$id_sex			=0;
 										$id_specialist	=0;
-										
+										$created_dt 	=0;
 										$en_name		='';
 										$kh_name		='';
 										$en_title		='';
