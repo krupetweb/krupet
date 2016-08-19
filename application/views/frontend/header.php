@@ -62,52 +62,52 @@
 													<a href="<?php echo base_url();?><?php echo $lang; ?>/doctors" ><i class="fa fa-user-md"></i> &nbsp; <?php echo get_lang('doctor'); ?></a>
 												</li>
 												
-										        <li class="dropdown <?php if(isset($active_menu) AND $active_menu=='speicfication') echo 'active'; ?>">
-											        	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-stethoscope"></i> &nbsp; <?php echo get_lang('specialization'); ?><b class="caret"></b></a>
-											           <ul class="dropdown-menu multi-column columns-3" style="left: -300px !important;">
-												            <?php
-                                                                $row1="";
-                                                                $row2="";
-                                                                $row3="";
-
-                                                                $specification_menu=$this->session->userdata('specification_menu');
-                                                                $i=1;
-                                                                foreach($specification_menu as $row){
-                                                                    $spec='<li><a href="'.$lang_url.'specialist?specification='.str_replace(" ", "+", $row->name).'">'.$row->name.'</a></li>';
-                                                                    if($i==1){
-                                                                    	$row1.=$spec;
-                                                                    }else if($i==2){
-                                                                        $row2.=$spec;
-                                                                    }else if($i==3){
-                                                                        $row3.=$spec;
-                                                                    } 
-                                                                    $i++;
-
-                                                                    if($i>3){
-                                                                    	$i=1;
-                                                                    }
-
-                                                                }
-												            ?>
-												            <div class="col-sm-4">
-																<ul class="multi-column-dropdown">
-																    <?php echo $row1; ?>
-																</ul>
-															</div>
-															<div class="col-sm-4">
-																<ul class="multi-column-dropdown">
-																<?php echo $row2; ?>
-																</ul>
-															</div>
-															<div class="col-sm-4">
-																<ul class="multi-column-dropdown">
-																<?php echo $row3; ?>
-																</ul>
-															</div>
-
-															
-											            </ul>
-										        </li>
+<!--										        <li class="dropdown --><?php //if(isset($active_menu) AND $active_menu=='speicfication') echo 'active'; ?><!--">-->
+<!--											        	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-stethoscope"></i> &nbsp; --><?php //echo get_lang('specialization'); ?><!--<b class="caret"></b></a>-->
+<!--											           <ul class="dropdown-menu multi-column columns-3" style="left: -300px !important;">-->
+<!--												            --><?php
+//                                                                $row1="";
+//                                                                $row2="";
+//                                                                $row3="";
+//
+//                                                                $specification_menu=$this->session->userdata('specification_menu');
+//                                                                $i=1;
+//                                                                foreach($specification_menu as $row){
+//                                                                    $spec='<li><a href="'.$lang_url.'specialist?specification='.str_replace(" ", "+", $row->name).'">'.$row->name.'</a></li>';
+//                                                                    if($i==1){
+//                                                                    	$row1.=$spec;
+//                                                                    }else if($i==2){
+//                                                                        $row2.=$spec;
+//                                                                    }else if($i==3){
+//                                                                        $row3.=$spec;
+//                                                                    }
+//                                                                    $i++;
+//
+//                                                                    if($i>3){
+//                                                                    	$i=1;
+//                                                                    }
+//
+//                                                                }
+//												            ?>
+<!--												            <div class="col-sm-4">-->
+<!--																<ul class="multi-column-dropdown">-->
+<!--																    --><?php //echo $row1; ?>
+<!--																</ul>-->
+<!--															</div>-->
+<!--															<div class="col-sm-4">-->
+<!--																<ul class="multi-column-dropdown">-->
+<!--																--><?php //echo $row2; ?>
+<!--																</ul>-->
+<!--															</div>-->
+<!--															<div class="col-sm-4">-->
+<!--																<ul class="multi-column-dropdown">-->
+<!--																--><?php //echo $row3; ?>
+<!--																</ul>-->
+<!--															</div>-->
+<!---->
+<!--															-->
+<!--											            </ul>-->
+<!--										        </li>-->
 												<?php if($this->session->userdata('hospital_menu')){ ?>
 												<?php $hospital_menu=$this->session->userdata('hospital_menu'); ?>
 													
