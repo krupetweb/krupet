@@ -160,12 +160,12 @@ class Doctors_model extends Admin_model {
 	function get_distrit(){
 		$id_province=$this->input->post('id_province');
 		$id_distrit=$this->input->post('id_distrit');
-		
+
 		$this->db->select('id, en_name');
 		$this->db->from('tbl_distrits');
 		$this->db->order_by('en_name', "DESC");
 		$this->db->where(array('is_published'=>1 ,'id_province'=>$id_province));
-		
+
 		$data= $this->db->get()->result();
 
 		$first='';
@@ -176,7 +176,7 @@ class Doctors_model extends Admin_model {
 			}else{
 				$other.='<option value="'.$row->id.'">'.$row->en_name.'</option>';
 			}
-			
+
 		}
 		echo $first.$other;
 	}

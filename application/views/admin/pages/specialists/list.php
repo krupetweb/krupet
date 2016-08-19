@@ -6,8 +6,9 @@
                         <tr>
                             <th width="80">#</th>
                             <th>Name</th>
+							<th>Image</th>
 							<th>Publish</th>
-							<th> </th> 
+							<th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -16,7 +17,7 @@
 							<tr data-id="<?php echo $row->id;?>" >
 							   <td><?=$i?></td>
 							   <td><?=$row->en_name?></td>
-							 
+							 	<td><img width="50px" height="50px" src="<?=base_url()?><?=$row->image?>"</td>
 							  <td><i id="published_icon_<?php echo $row->id ?>" onclick="is_published(<?php echo $row->id ?>, '<?php echo base_url()?>admin/<?=$term?>/publish/tbl_<?=$term?>/<?php echo $row->id ?>')" class="glyphicon glyphicon-<?php if($row->is_published) echo "check";else echo "unchecked"; ?>"></i></td>
 							   <td>
 									 <div class="btn-group">

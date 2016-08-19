@@ -36,7 +36,7 @@ hisdfsdfsdf
 									$working_hour	='';
 									$website 		='';
 									$image			='https://placeholdit.imgix.net/~text?txtsize=50&txt=300%C3%97200&w=300&h=200';
-									$Lat 			=0;
+									$lat 			=0;
 									$lon 			=0;
 									$is_published	=0;
 									$is_published	=0;

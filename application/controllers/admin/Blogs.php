@@ -100,7 +100,7 @@ class Blogs extends Admin
 	}
     function create_blog(){
 		$data= $this->form_data();
-		$id_hospital=$this->model->create('tbl_hospitals', $data);
+		$id_blog=$this->model->create('tbl_blogs', $data);
 		redirect(base_url().'admin/'.$this->page_data['term'].'/form_blog?action=update&id_blog='.$id_blog, 'refresh');
 	}
 	function update_blog(){

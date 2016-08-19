@@ -46,31 +46,31 @@
 					<p class="footer-title">Medical resource</p>
 					<div class="row">
 						<a href="http://www.medscape.com/" target="_blank">
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/a.png"></div></div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/Medscape.png"></div></div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Medscape</div>
 						</a>
 					</div>
 					<div class="row">
 						<a href="http://www.ncbi.nlm.nih.gov/pubmed" target="_blank">
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/pubmed.png"></div></div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/PubMed.png"></div></div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Pubmed</div>
 						</a>
 					</div>
 					<div class="row">
 						<a href="http://www.uptodate.com/" target="_blank">
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/a.png"></div></div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/UptoDate.png"></div></div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Uptodate</div>
 						</a>
 					</div>
 					<div class="row">
 						<a href="http://www.who.int/hinari/en/" target="_blank">
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/a.png"></div></div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/Hinari.png"></div></div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Hinari</div>
 						</a>
 					</div>
 					<div class="row">
 						<a href="http://www.cochrane.org/" target="_blank">
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/a.png"></div></div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/Cochrane.png"></div></div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Cochrane</div>
 						</a>
 					</div>

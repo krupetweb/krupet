@@ -15,6 +15,7 @@
 					$is_published	=0;
 					$modified_dt='';
 					$button_caption='create';
+					$image			='https://placeholdit.imgix.net/~text?txtsize=50&txt=1500%C3%97500&w=1500&h=500';
 
 					if($action=='update'){
 						$id				= $data->id;
@@ -24,6 +25,7 @@
 						$kh_description	= $data->kh_description;
 						$is_published	= $data->is_published;
 						$modified_dt    = $data->modified_dt;
+						$image			= base_url().$data->image;
 						
 					}
 					
@@ -40,7 +42,8 @@
 					text_field(array('caption'=>'Name (KHM)', 'name'=>'kh_name', 'value'=>$kh_name, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 					ck_editor_field(array('caption'=>'Description (ENG)', 'name'=>'en_description', 'value'=>$en_description, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 					ck_editor_field(array('caption'=>'Description (KHM)', 'name'=>'kh_description', 'value'=>$kh_description, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
-						boolean_field(array('caption'=>'Publish', 'name'=>'is_published', 'value'=>$is_published, 'id'=>$id));
+				image_field(array('caption'=>'Image', 'name'=>'image', 'image_src'=>$image, 'file_required'=>'', 'required_message'=>'Please slet and imaage'));
+				boolean_field(array('caption'=>'Publish', 'name'=>'is_published', 'value'=>$is_published, 'id'=>$id));
 						button_field(array('button_caption'=>$action, 'url_delete'=>base_url().'admin/'.$term.'/delete/'.$id));
 					?>
 					
@@ -50,6 +53,4 @@
     </div>
 </div>
 
-
-<?php echo $term;?>
 		

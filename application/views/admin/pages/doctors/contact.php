@@ -42,14 +42,14 @@
 										foreach($provinces as $row){
 											$provinces_data[$row->en_name]=$row ->id;
 										}
-									
-									
-										$distrits_data=array();
-										
-									
-											
-									
-									
+
+
+									$distrits_data=array();
+									foreach($distrits as $row){
+										$distrits_data[$row ->en_name]=$row -> id;
+									}
+
+
 									?>
 								
 								
@@ -72,7 +72,7 @@
 			</div>	
 		</div>
 	</div>
-</div>	
+</div>
 <script>
 	$(document).ready(function(){
 		get_distrit();
@@ -84,18 +84,18 @@
 	function get_distrit(){
 		id_province=$("#id_province").val();
 		$.ajax({
-            method:"POST",
-            url: "<?php echo base_url(); ?>/admin/<?=$term?>/get_distrit",
-            data: {
-                 
-                "id_province": id_province,
-                "id_distrit": <?php echo $id_distrit; ?>
-              
-            }
+			method:"POST",
+			url: "<?php echo base_url(); ?>/admin/<?=$term?>/get_distrit",
+			data: {
 
-        }).done(function(respond) {
-            $("#id_distrit").html(respond);
-        });
+				"id_province": id_province,
+				"id_distrit": <?php echo $id_distrit; ?>
+
+			}
+
+		}).done(function(respond) {
+			$("#id_distrit").html(respond);
+		});
 	}
 </script>
 

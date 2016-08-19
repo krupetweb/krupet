@@ -26,7 +26,10 @@ class Specialists extends Admin
 		$data['en_description']		=$this->input->post('en_description');
 		$data['kh_description']		=$this->input->post('kh_description');
 		$data['is_published']=$this->input->post('is_published');
-		
+		 $image=$this->upload('image');
+		 if($image!=""){
+			 $data['image']=$image;
+		 }
 		return $data;
 	}
 
