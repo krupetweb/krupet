@@ -21,7 +21,7 @@ class Search_model extends Frontend_base_model {
 		if($where==null){
             $where = array('is_published'=>1);
         }
-		$this->db->select($this->lang.'_name as name');
+		$this->db->select($this->lang.'_name as name,image');
 		$this->db->from('tbl_specialists');
 		$this->db->where($where);
 		return $this->db->get()->result();

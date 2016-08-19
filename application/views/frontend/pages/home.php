@@ -87,7 +87,7 @@
 							<div class="row text-center">
 								<?php if(!empty($specifications)){?>
 									<?php foreach($specifications as $row) { 
-										$img_path=base_url('assets/frontend/images/icon/news.png');
+
 										if(isset($row->icon)){
 											if(file_exists(FCPATH.$row->icon)){
 								                $img_path=base_url($row->icon);
@@ -98,7 +98,7 @@
 										<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 height-130">
 											<a href="<?php echo $lang_url.'specialist?specification='.str_replace(" ", "+", $row->name);?>" class="thumbnail text-center">
 
-												<img src="<?=$img_path?>" style="width:40px;" >
+												<img src="<?=base_url()?>/<?php echo $row->image?>" style="width:50px;" >
 												
 												<p><?=$row->name?></p>
 											</a>
@@ -116,21 +116,21 @@
 				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Hotline << ?>
 				<?php include('parts/hotline.php') ?>
 				
-				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Partner << ?>
+				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> tip << ?>
 				<div class="container pd-right-0">
 					<div class="col-xs-12">
 						<section class="nopadding clearfix">
 							<h2 class="color-black border-red"><?php echo get_lang('tips');?></h2>
 							<div class="col-sm-8">
 								<div id="search_result_container" class="container-fluid">
-									<?php if(!empty($data)){?>
-										<?php foreach($data as $row) { ?>
+									<?php if(!empty($get_tips_home_page)){?>
+										<?php foreach($get_tips_home_page as $row) { ?>
 											<div class="row">
 
 												<div class="col-xs-12 col-sm-12 col-md-5" >
 													<div class="zoom-wrap">
 													  <div class="zoom-icon"></div>
-														<a  href="<?php echo base_url();?><?php echo $lang;?>/blogs/<?php echo $row->slug; ?>">
+														<a  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>">
 															<img alt="" data-src=" <?php echo base_url()?><?php echo $row->image ?> " src=" " class="img-responsive">
 														</a>
 														

@@ -62,7 +62,9 @@ class Home extends Frontend_base {
         $this->page_data['featured_blogs'] 					= $this->model->get_blogs();
 		$this->page_data['ads_v'] 							= $this->model->get_vertical_ads(1);
 		$this->page_data['page_name'] 						= 'home';
-		$this->page_data["data"] = $this->model->get_data($config["per_page"], $page, $id_category, $tag);
+		$this->page_data["data"] 							= $this->model->get_data($config["per_page"], $page, $id_category, $tag);
+		$this->page_data["get_tips_home_page"] 				= $this->model->get_tips_home_page( $tag);
+		
 		$this->page_data['categories']= $this->general->get_blog_categories();
 		// var_dump($this->page_data['provinces']);
 		// exit();
