@@ -44,11 +44,13 @@ class General_model extends CI_model {
     	$data = $this->db->get()->result();
     	echo json_encode($data);
     }
-   
-   function get_blog_categories(){
+    function get_blog_categories($where=null){
+        if($where==null){
+            $where = array('is_published'=>1);
+        }
         $this->db->select('id,slug, '.$this->lang.'_name as name,modified_dt' );
         $this->db->from('tbl_blog_categories');
-        $this->db->where(array('is_published'=>1));
+        $this->db->where($where);
         $this->db->limit(8);
         $this->db->order_by('data_order', 'ASC');
         $query = $this->db->get();
