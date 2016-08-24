@@ -2,7 +2,7 @@
 				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Ads << ?>
 				<?php if(isset($ads_v)) include('parts/ads_v.php'); ?>
 				
-				<div id="search-panel-container" style=" <?php if(isset($banner)){ if(!empty($banner)){ echo "background-image: url(".base_url().$banner[0]->image.")"; }} ?> ">    
+				<div id="search-panel-container">
 							<div id="into" class="container text-right" >
 								<span><?php //echo get_lang('hospital_can_be_searched');?></span>
 							</div>
@@ -101,54 +101,50 @@
 									<div class="subtitle col-xs-12 no-pad col-sm-11 col-md-12 pull-left news-sub"><?php //echo get_lang('found hospitals');?></div>
 								</div>
 							</div>
-							
-							
-							<div class="col-xs-12 col-sm-9" >
-										
-											<div class="container-fluid">
-												<div class="row">
-													<?php if(!empty($data)){ ?>
-														<?php foreach($data as $row){ ?>
-															<div class="col-xs-12 col-sm-6 col-md-4">
-																<div>
-																	<div class="zoom-wrap">
-																	  <div class="zoom-icon"></div>
-																		<a href="<?php echo base_url().$lang; ?>/hospitals/<?php echo $row->slug?>">
-																			<img alt="" class="img-responsive" data-src="<?php echo base_url($row->image)?>" src="" />
-																		</a>
-																	</div>
-																</div>
-																<div >
-																		<div class="doc-name-class">
-																			<a href="<?php echo base_url().$lang?>/hospitals/<?php echo $row->slug; ?>"><h3><?php echo $row->name ?></h3></a>
-																		</div>
-																		<span class="doc-title"> <i class="fa fa-envelope"></i> &nbsp; <?php echo $row->email ?></span><br />
-																		<span class="doc-title"> <i class="fa fa-phone"></i> &nbsp; <?php echo $row->phone ?></span><br />
-																		<span class="doc-title"> <i class="fa fa-map-marker"></i> &nbsp; <?php echo $row->distrit.', '.$row->province; ?></span><br />
-																		
-																</div>
-																<hr />
-															</div>
-														<?php }?>
-													<?php }else{?>
-															<div class="col-xs-12">
-																<h4><?php echo get_lang('no_data');?></h4>
-															</div>
-													<?php }?>
+						</div>
+						<div class="row">
+									<?php if(!empty($data)){ ?>
+										<?php foreach($data as $row){ ?>
+
+												<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+													<div class="thumbnaild">
+														<div class="zoom-wrap">
+															<div class="zoom-icon"></div>
+															<a href="<?php echo base_url().$lang; ?>/hospitals/<?php echo $row->slug?>">
+																<img alt="" class="img-responsive" data-src="<?php echo base_url($row->image)?>" src="" />
+															</a>
+														</div>
+
+														<div class="doc-name-class">
+															<a href="<?php echo base_url().$lang?>/hospitals/<?php echo $row->slug; ?>"><h3><?php echo $row->name ?></h3></a>
+														</div>
+														<span class="doc-title"> <i class="fa fa-envelope"></i> &nbsp; <?php echo $row->email ?></span><br />
+														<span class="doc-title"> <i class="fa fa-phone"></i> &nbsp; <?php echo $row->phone ?></span><br />
+														<span class="doc-title"> <i class="fa fa-map-marker"></i> &nbsp; <?php echo $row->distrit.', '.$row->province; ?></span><br />
+
+													</div>
+													<hr />
 												</div>
-												<div class="col-xs-12  pull-right">
-													<?php if(!empty($data)){ ?>
-													<button class="btn btn-default" onclick="make_map_link()"><?php echo get_lang('view_on_map');?></button>
-													
-													<br />
-													<?php echo $links; ?>
-													<?php }?>
-												</div>
-											</div>		
-										
-									
-									
-							</div>
+												<?php }?>
+												<?php }else{?>
+													<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+														<h4><?php echo get_lang('no_data');?></h4>
+													</div>
+												<?php }?>
+						</div>
+
+
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<?php if(!empty($data)){ ?>
+									<button class="btn btn-default" onclick="make_map_link()"><?php echo get_lang('view_on_map');?></button>
+
+									<br />
+									<?php echo $links; ?>
+									<?php }?>
+								</div>
+
+					</div>
+
 							
 							
 							<div class="col-xs-12 col-sm-3">

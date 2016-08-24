@@ -185,8 +185,8 @@
 				                }
 				            }
 				        });
-						
-					});	
+
+					});
 
 					$( document ).ready(function() {
 								$('#owl-programs').owlCarousel({
@@ -195,8 +195,8 @@
 									  paginationSpeed : 400,
 									  singleItem:true
 						        });
-							
-					});	
+
+					});
 					// var xTriggered = 0;
 					// $( "#target" ).keyup(function( event ) {
 					//   xTriggered++;
@@ -210,7 +210,7 @@
 					//     event.preventDefault();
 					//   }
 					// });
-					 
+
 					// $( "#target").click(function() {
 					//   // $( "#target" ).keyup();
 					// });

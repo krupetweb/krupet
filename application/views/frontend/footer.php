@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?=$src_url?>assets/frontend/css/footer.css">
+<link rel="stylesheet" href="<?=$src_url?>assets/frontend/css/my-footer.css">
 
 <div class="modal fade" id="subscript" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
