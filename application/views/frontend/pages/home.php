@@ -1,5 +1,7 @@
-				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.carousel.css">
-				<script type="text/javascript" src="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.theme.css">
+<link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.transitions.css">
+<script type="text/javascript" src="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.carousel.min.js"></script>
 
 				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/flexslider.css">
 				<link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/jquery-ui.css">
@@ -96,7 +98,7 @@
 							            
 										?>
 										<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 height-130">
-											<a href="<?php echo $lang_url.'specialist?specification='.str_replace(" ", "+", $row->name);?>" class="thumbnail text-center">
+											<a href="<?php echo $lang_url.'specialist?specification='.str_replace(" ", "+", $row->name);?>" class="thumbnaild text-center">
 
 												<img src="<?=base_url()?>/<?php echo $row->image?>" style="width:50px;" >
 												
@@ -190,31 +192,16 @@
 
 					$( document ).ready(function() {
 								$('#owl-programs').owlCarousel({
-										navigation : false, // Show next and prev buttons
+									  navigation : false, // Show next and prev buttons
 									  slideSpeed : 300,
 									  paginationSpeed : 400,
 									  singleItem:true
 						        });
 
 					});
-					// var xTriggered = 0;
-					// $( "#target" ).keyup(function( event ) {
-					//   xTriggered++;
-					//   // var msg = "Handler for .keyup() called " + xTriggered + " time(s).";
-					//   // $.print( msg, "html" );
-					//   console.log($(this).val())
-					//   console.log(event);
-					// }).keydown(function( event ) {
-					//   if ( event.which == 13 ) {
-					//   	console.log(event.which);
-					//     event.preventDefault();
-					//   }
-					// });
 
-					// $( "#target").click(function() {
-					//   // $( "#target" ).keyup();
-					// });
 				</script>
+
 
 
 

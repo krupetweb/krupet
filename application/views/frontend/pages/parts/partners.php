@@ -58,7 +58,7 @@
 		sponsor.owlCarousel({
 			 autoPlay: 5000, //Set AutoPlay to 3 seconds
 
-		      items : 3,
+		      items : 2,
 		      itemsDesktop : [1199,3],
 		      itemsDesktopSmall : [979,2]
 		});	

@@ -109,9 +109,15 @@
 													<a href="<?php echo base_url().$lang?>/doctors/<?php echo $row->slug; ?>"><h3><?php echo $row->name ?></h3></a>
 												</div>
 												<span class="doc-title"> <i class="fa fa-stethoscope"></i> &nbsp; <?php echo $row->specification ?></span><br />
-												<span class="doc-title"> <i class="fa fa-envelope"></i> &nbsp; <?php echo $row->email ?></span><br />
-												<span class="doc-title"> <i class="fa fa-phone"></i> &nbsp; <?php echo $row->phone ?></span><br />
-												<span class="doc-title"> <i class="fa fa-map-marker"></i> &nbsp; <?php echo $row->distrit.', '. $row->province ?></span><br />
+												<?php if(!empty($row->email)){?>
+													<span class="doc-title"> <i class="fa fa-envelope"></i> &nbsp; <?php echo $row->email ?></span><br />
+												<?php }?>
+												<?php if(!empty($row->email)){?>
+													<span class="doc-title"> <i class="fa fa-phone"></i> &nbsp; <?php echo $row->phone ?></span><br />
+												<?php }?>
+												<?php if(!empty($row->email)){?>
+													<span class="doc-title"> <i class="fa fa-map-marker"></i> &nbsp; <?php echo $row->distrit.', '. $row->province ?></span><br />
+												<?php }?>
 
 
 											</div>
