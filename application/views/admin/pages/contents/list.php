@@ -1,4 +1,5 @@
-				<table class="table table-bordered datatable" id="table_export">
+
+<table class="table table-bordered datatable" id="table_export">
                     <thead class="text-center">
                         <tr>
                             <th width="80">#</th>
@@ -23,4 +24,5 @@
 							<?php $i++ ?> 
 						<?php } ?>
                     </tbody>
-                </table>
+
+</table>

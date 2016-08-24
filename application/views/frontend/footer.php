@@ -80,9 +80,9 @@
 				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 							<p class="footer-title">Information</p>
 							<ul class="menu-footer">
-								<li><a href="#">Terms and Conditions</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Press</a></li>
+								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/term"><?php echo get_lang('term');?></a></li>
+								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/privacy_policy"><?php echo get_lang('privacy_policy');?></a></li>
+								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/press"><?php echo get_lang('press');?></a></li>
 							</ul>
 				</div>
 
