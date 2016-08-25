@@ -11,9 +11,7 @@ class Content_model extends Frontend_base_model {
 		$this->db->from('tbl_contents');
 		$this->db->where(array('alais'=>$alais));
 		$query = $this->db->get();
-		if(empty($query->result())){
-			return '';
-		}else return $query->result();
+		return $query->result();
 		
 	}
 	
