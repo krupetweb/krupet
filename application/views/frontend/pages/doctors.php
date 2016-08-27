@@ -1,58 +1,59 @@
-	<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Ads << ?>
-	<?php if(isset($ads_v)) include('parts/ads_v.php'); ?>
-	
-	<div id="search-panel-container" style=" <?php if(isset($banner)){ if(!empty($banner)){ echo "background-image: url(".base_url().$banner[0]->image.")"; }} ?> ">    
-				<div id="into" class="container text-right" >
-					<span><?php echo get_lang('doctors_can_be_searched');?>.</span>
-				</div>
-				<div id="search-panel" class="container" >
-					<div class="row" style="padding:10px;">
-						<div class="col-xs-12 ">
-							<h4 class="heading"> <?php echo get_lang('find a doctor');?></h4>
-						</div>
-						
-						<div class="col-xs-12 col-sm-6 col-md-3 no-padding first-control-container" style="">
-							<select id="province" class="form-control search-control">
-								<?php
-									$province	=isset($_GET['province']) ? $_GET['province'] : "";
-									$default 	='<option value="">'.get_lang('select-province').'</option>';
-									$first 		='';
-									$other 		='';
-									foreach($provinces as $row){
-										if($province==$row->name){
-											$first 		='<option>'.$row->name.'</option>';
-										}else{
-											$other 		.='<option>'.$row->name.'</option>';
-										}
-									}
 
-									if($first==''){
-										echo $default.$other;
-									}else{
-										echo $first.$default.$other;
-									}
-								?>
-							</select>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-3 no-padding">
-							<select id="distrit" class="form-control search-control">
-								<option value=""><?php echo get_lang('select-distrit');?></option>
-							</select>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-3 no-padding">
-							<select id="specification" class="form-control search-control">
-								<?php
-									$specification	=isset($_GET['specification']) ? $_GET['specification'] : "";
-									$default 	='<option value="">'.get_lang('select-specification').'</option>';
-									$first 		='';
-									$other 		='';
-									foreach($specifications as $row){
-										if($specification==$row->name){
-											$first 		='<option>'.$row->name.'</option>';
-										}else{
-											$other 		.='<option>'.$row->name.'</option>';
-										}
-									}
+				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Ads << ?>
+				<?php if(isset($ads_v)) include('parts/ads_v.php'); ?>
+				
+				<div id="search-panel-container">
+							<div id="into" class="container text-right" >
+								<span><?php echo get_lang('doctors_can_be_searched');?>.</span>
+							</div>
+							<div id="search-panel" class="container" >
+								<div class="row" style="padding:10px;">
+									<div class="col-xs-12 ">
+										<h4 class="heading"> <?php echo get_lang('find a doctor');?></h4>
+									</div>
+									
+									<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 no-padding first-control-container" style="">
+										<select id="province" class="form-control search-control">
+											<?php
+												$province	=isset($_GET['province']) ? $_GET['province'] : "";
+												$default 	='<option value="">'.get_lang('select-province').'</option>';
+												$first 		='';
+												$other 		='';
+												foreach($provinces as $row){
+													if($province==$row->name){
+														$first 		='<option>'.$row->name.'</option>';
+													}else{
+														$other 		.='<option>'.$row->name.'</option>';
+													}
+												}
+
+												if($first==''){
+													echo $default.$other;
+												}else{
+													echo $first.$default.$other;
+												}
+											?>
+										</select>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 no-padding">
+										<select id="distrit" class="form-control search-control">
+											<option value=""><?php echo get_lang('select-distrit');?></option>
+										</select>
+									</div>
+									<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 no-padding">
+										<select id="specification" class="form-control search-control">
+											<?php
+												$specification	=isset($_GET['specification']) ? $_GET['specification'] : "";
+												$default 	='<option value="">'.get_lang('select-specification').'</option>';
+												$first 		='';
+												$other 		='';
+												foreach($specifications as $row){
+													if($specification==$row->name){
+														$first 		='<option>'.$row->name.'</option>';
+													}else{
+														$other 		.='<option>'.$row->name.'</option>';
+													}
+												}
 
 									if($first==''){
 										echo $default.$other;
@@ -99,17 +100,17 @@
 											</div>
 										</div>
 										<div>
-											
-											<div class="doc-name-class">
-												<a href="<?php echo base_url().$lang?>/doctors/<?php echo $row->slug; ?>"><h3><?php echo $row->name ?></h3></a>
-											</div>
-											<span class="doc-title"> <i class="fa fa-stethoscope"></i> &nbsp; <?php echo $row->specification ?></span><br />
-											<span class="doc-title"> <i class="fa fa-envelope"></i> &nbsp; <?php echo $row->email ?></span><br />
-											<span class="doc-title"> <i class="fa fa-phone"></i> &nbsp; <?php echo $row->phone ?></span><br />
-											<span class="doc-title"> <i class="fa fa-map-marker"></i> &nbsp; <?php echo $row->distrit.', '. $row->province ?></span><br />
-											
-										</div>
-										<hr />
+									</div>
+									<hr />
+									<div class="col-xs-12 col-sm-6 col-md-2 col-lg-3 no-padding">
+										<?php
+											$key="";
+											if(isset($_GET['key'])){
+												$key=$_GET['key'];
+											}
+										?>
+										<input id="key"  type="text" class="form-control search-control"  placeholder="<?php echo get_lang('place-a-keyword-here');?>" value="<?php echo $key; ?>">
+
 									</div>
 								<?php }?>
 							<?php }else{?>
@@ -126,7 +127,56 @@
 				<div class="col-xs-12 col-sm-3">
 					<div class="container-fluid">
 						<div class="row">
-						<?php include("parts/ads_h.php"); ?>
+								<?php if(!empty($data)){ ?>
+									<?php foreach($data as $row){ ?>
+										<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+											<div class="thumbnaild">
+												<div class="zoom-wrap">
+												  <div class="zoom-icon"></div>
+													<a href="<?php echo base_url().$lang; ?>/doctors/<?php echo $row->slug?>">
+														<img alt="" class="img-responsive" data-src="<?php echo base_url($row->image)?>" src="" />
+													</a>
+												</div>
+
+
+												<div class="doc-name-class">
+													<a href="<?php echo base_url().$lang?>/doctors/<?php echo $row->slug; ?>"><h3><?php echo $row->name ?></h3></a>
+												</div>
+												<span class="doc-title"> <i class="fa fa-stethoscope"></i> &nbsp; <?php echo $row->specification ?></span><br />
+												<?php if(!empty($row->email)){?>
+													<span class="doc-title"> <i class="fa fa-envelope"></i> &nbsp; <?php echo $row->email ?></span><br />
+												<?php }?>
+												<?php if(!empty($row->email)){?>
+													<span class="doc-title"> <i class="fa fa-phone"></i> &nbsp; <?php echo $row->phone ?></span><br />
+												<?php }?>
+												<?php if(!empty($row->email)){?>
+													<span class="doc-title"> <i class="fa fa-map-marker"></i> &nbsp; <?php echo $row->distrit.', '. $row->province ?></span><br />
+												<?php }?>
+
+
+											</div>
+											<hr />
+										</div>
+									<?php }?>
+								<?php }else{?>
+										<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+											<h4><?php echo get_lang('no_data');?></h4>
+										</div>
+								<?php }?>
+
+								<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+									<?php echo $links; ?>
+								</div>
+							<div class="col-xs-12 col-sm-3">
+								
+								<div class="container-fluid">
+									<div class="row">
+									<?php include("parts/ads_h.php"); ?>
+									</div>
+								</div>
+							
+							</div>
+
 						</div>
 					</div>							
 				</div>

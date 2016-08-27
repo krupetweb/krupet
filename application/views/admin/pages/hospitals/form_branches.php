@@ -1,9 +1,12 @@
+
 <div class="row">
 	<div class="col-md-12">
 		
 		<div class="tabs-vertical-env">
-			
-			<?php include('tab.php') ?>
+
+			<?php if($action=='update'){ ?>
+				<?php include('tab.php') ?>
+			<?php } ?>
 
 			<div class="tab-content">
 				<div class="tab-pane active">
@@ -81,7 +84,7 @@
 										text_field(array('caption'=>'Name (ENG)', 'name'=>'en_name', 'value'=>$en_name, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										text_field(array('caption'=>'Name (KHM)', 'name'=>'kh_name', 'value'=>$kh_name, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										text_field(array('caption'=>'Email', 'name'=>'email', 'value'=>$email, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
-										textarea_field(array('caption'=>'Working Hours', 'name'=>'working_hours', 'value'=>$working_hours, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
+										textarea_field(array('caption'=>'Working Hours', 'name'=>'working_hours', 'value'=>$working_hours, 'required'=>'required', 'required_message'=>''));
 										textarea_field(array('caption'=>'Phone', 'name'=>'phone', 'value'=>$phone, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										select_field(array('caption'=>'Provinces', 'name'=>'id_province', 'data'=>$provinces_data, 'id'=>$id_province));
 										select_field(array('caption'=>'Distrit', 'name'=>'id_distrit', 'data'=>$distrits_data, 'id'=>$id_distrit));

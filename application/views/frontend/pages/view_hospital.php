@@ -1,4 +1,4 @@
-				
+
 				<div class="" style="<?php if(isset($banner)){ if(!empty($banner)){ echo "background-image: url(".base_url().$banner[0]->image.")"; }} ?> ">
 					<div class="container">
 						<div class="inner-page-title-wrap col-xs-12 col-md-12 col-sm-12">
@@ -57,9 +57,9 @@
 											<tr>
 												<td width=25%><?php echo get_lang('name');?></td><td >:&nbsp;<b><?php echo $data[0]->name; ?></b></td>
 											</tr>
-											<tr>
-												<td ><?php echo get_lang('director');?></td><td >:&nbsp;<?php echo $data[0]->director; ?></td>
-											</tr>
+<!--											<tr>-->
+<!--												<td >--><?php //echo get_lang('director');?><!--</td><td >:&nbsp;--><?php //echo $data[0]->director; ?><!--</td>-->
+<!--											</tr>-->
 											<tr>
 												<td ><?php echo get_lang('type');?></td><td >:&nbsp;<?php echo $data[0]->type; ?></td>
 											</tr>
@@ -75,14 +75,19 @@
 											<tr>
 												<td ><?php echo get_lang('email');?></td><td >:&nbsp;<?php echo $email; ?></td>
 											</tr>
-											<tr>
-												<td ><?php echo get_lang('website');?></td><td >:&nbsp;<a href="<?php echo $website; ?>"><?php echo $website; ?></a></td>
-											</tr>
-											<?php if($data[0]->id_cat==2){ ?>
-											<tr>
-												<td >Facebook</td><td >:&nbsp;<a href="<?php echo $facebook_link; ?>"><?php echo $facebook_link; ?></a></td>
-											</tr>
-											<?php } ?>
+											<?php if(!empty($website)){?>
+												<tr>
+													<td ><?php echo get_lang('website');?></td><td >:&nbsp;<a href="<?php echo $website; ?>"><?php echo $website; ?></a></td>
+												</tr>
+											<?php }?>
+											<?php if(!empty($facebook_link)){?>
+												<?php if($data[0]->id_cat==2){ ?>
+													<tr>
+														<td >Facebook</td><td >:&nbsp;<a href="<?php echo $facebook_link; ?>"><?php echo $facebook_link; ?></a></td>
+													</tr>
+												<?php } ?>
+											<?php }?>
+
 										</table>
 
 									</div>
@@ -399,4 +404,3 @@
 							margin-bottom:10px;
 						}
 	</style>
-			   

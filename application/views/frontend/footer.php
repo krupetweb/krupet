@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?=$src_url?>assets/frontend/css/footer.css">
+<link rel="stylesheet" href="<?=$src_url?>assets/frontend/css/my-footer.css">
 
 <div class="modal fade" id="subscript" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -29,10 +29,10 @@
 
 			<div class="row">
 
-				<div class="col-xs-12 col-sm-12 col-sm-3 col-md-3 col-lg-3">
+				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 
 					<p class="footer-title">Like us in social</p>
-					<div class="fb-like" data-href="https://www.facebook.com/Krupetcom-137344823272389/" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+					<div class="fb-like" data-href="https://www.facebook.com/Krupetcom-137344823272389/" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
 					<p class="footer-title mg-top-5">Visitor counter</p>
 					<div align="" style="margin-top: -1px">
 						<a href="http://www.amazingcounters.com">
@@ -42,62 +42,71 @@
 				</div>
 
 
-				<div class="col-xs-12 col-sm-12 col-sm-3 col-md-3 col-lg-3">
+				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<p class="footer-title">Medical resource</p>
 					<div class="row">
 						<a href="http://www.medscape.com/" target="_blank">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/Medscape.png"></div></div>
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Medscape</div>
+<!--							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Medscape</div>-->
 						</a>
 					</div>
 					<div class="row">
 						<a href="http://www.ncbi.nlm.nih.gov/pubmed" target="_blank">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/PubMed.png"></div></div>
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Pubmed</div>
+<!--							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Pubmed</div>-->
 						</a>
 					</div>
 					<div class="row">
 						<a href="http://www.uptodate.com/" target="_blank">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/UptoDate.png"></div></div>
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Uptodate</div>
+<!--							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Uptodate</div>-->
 						</a>
 					</div>
 					<div class="row">
 						<a href="http://www.who.int/hinari/en/" target="_blank">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/Hinari.png"></div></div>
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Hinari</div>
+<!--							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Hinari</div>-->
 						</a>
 					</div>
 					<div class="row">
 						<a href="http://www.cochrane.org/" target="_blank">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/Cochrane.png"></div></div>
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Cochrane</div>
+<!--							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Cochrane</div>-->
 						</a>
 					</div>
 				</div>
 
 
-				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 							<p class="footer-title">Information</p>
 							<ul class="menu-footer">
-								<li><a href="#">Terms and Conditions</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Press</a></li>
+								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/term"><?php echo get_lang('term');?></a></li>
+								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/privacy_policy"><?php echo get_lang('privacy_policy');?></a></li>
+								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/press"><?php echo get_lang('press');?></a></li>
 							</ul>
 				</div>
 
-				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 							<p class="footer-title">Subscribe For Special Update</p>
 								<form id="subscribe_form" action="">
-									<input id="subscribe-email" type="email" required class="news-tb" placeholder="Email Address" />
-									<button id="btn-subscription" type="submit" class="news-button"><i class="fa fa-send"></i>&nbsp; <?php echo get_lang('subscribe');?></button><br />
+									<div class="row">
+										<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+											<input id="subscribe-email" type="email" required class="news-tb" placeholder="Email Address" /><br>
+										</div>
+										
+									</div>
+									<div class="row">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+										<button id="btn-subscription" type="submit" class="news-button"><i class="fa fa-send"></i>&nbsp; <?php echo get_lang('subscribe');?></button><br />
+									</div>
+									</div>
+
 								</form>
 
 							<div class="clear mb-30"></div>
-
-							<p class="footer-title">Want to ask a question?</p>
+							<br>
 							<p class="footer-phone-number">(+855) 17 567 099</p>
-							<p class="footer-email">EMAIL US AT <a href="#">support@krupet.com</a></p>
+							<p class="footer-email"><a href="#">contact@krupet.com</a></p>
 
 				</div>
 

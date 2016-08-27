@@ -14,6 +14,7 @@ class Hospitals extends Admin
 		parent::__construct();
         $this->load->model('admin/Hospitals_model', 'model');
         $this->page_data['term']='hospitals';
+		
     }
      //:::::::::::::::::::::::::::::::::::::::::::::::>> get_distrits_province_id April 22, 2016
     function get_distrits_province_id($id_province=0){

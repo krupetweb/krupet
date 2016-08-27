@@ -1,7 +1,7 @@
 
 				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Ads << ?>
 				<?php if(isset($ads_v)) include('parts/ads_v.php'); ?>
-				<div id="search-panel-container" style=" <?php if(isset($banner)){ if(!empty($banner)){ echo "background-image: url(".base_url().$banner[0]->image.")"; }} ?> ">    
+				<div id="search-panel-container">
 							<div id="into" class="container text-right" >
 								<span><?php echo get_lang('hospital_can_be_searched');?>.</span>
 							</div>
