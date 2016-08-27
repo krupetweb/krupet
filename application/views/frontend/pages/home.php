@@ -49,9 +49,8 @@
 					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 		             	<div class="no-margin-bottom form-group ">
 							<select class="form-control search-control" id="province_B" name="province">
-								<option value="">Select Province</option>
+								<option value=""><?php echo get_lang('select-province');?></option>
 								<?php 
-								// var_dump($provinces);
 								foreach($provinces as $row){ ?>
 									<option value="<?php echo $row->name; ?>"  ><?php echo $row->name; ?></option>
 								<?php } ?>
@@ -62,13 +61,14 @@
 		            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 		             	<div class="no-margin-bottom form-group ">
 							<select class="form-control search-control" id="distrit_B" name="distrit" >
-								<option value="">Select Distrit</option>
+								<option value=""><?php echo get_lang('select-distrit');?></option>
 							</select>
 							
 						</div>
 		            </div>
 					<div class="col-xs-12 col-sm-6 col-sm-4">
-						<input type="text" id="target" name="key" class="form-control search-control" value="" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" value="" autocomplete="off">
+						<input type="text" id="target" name="key" class="form-control search-control" value=""
+						placeholder="<?php echo get_lang('specialization').','.get_lang('doctor').','.get_lang('clinics').','.get_lang('hospital'); ?> " value="" autocomplete="off">
 					</div>
 					<div class="col-xs-12 col-sm-6 col-sm-2">
 						<button id="btn-search-phone_B" class="btn btn-default search-button"><i class="fa fa-search"></i> Search!</button>

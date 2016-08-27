@@ -49,7 +49,7 @@
 					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 		             	<div class="no-margin-bottom form-group ">
 							<select class="form-control search-control" id="province_B" name="province">
-								<option value="">Select Province</option>
+								<option value=""><?php echo get_lang('select-province');?></option>
 								<?php foreach($provinces as $row){ ?>
 									<option value="<?php echo $row->name; ?>" <?php echo isset($_GET['province']) && $row->name==$_GET['province'] ? "selected":"" ?> ><?php echo $row->name; ?></option>
 								<?php } ?>

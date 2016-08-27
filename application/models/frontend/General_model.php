@@ -75,7 +75,7 @@ class General_model extends CI_model {
             $data_distrit=$this->db->get()->result();
 
 
-            $default='<option value="">Select Distrit</option>';
+            $default='<option value="">'.$this->get_lang('select-distrit').'</option>';
             $first='';
             $other='';
 
@@ -92,7 +92,16 @@ class General_model extends CI_model {
                 echo $first.$default.$other;
             }
         }else{
-            echo '<option value="">Select Distrit</option>';
+            echo '<option value="">'.$this->get_lang('select-distrit').'</option>';
         }
+    }
+
+    public function get_lang($alais='') {
+        
+        $this->db->select($this->lang.' as name');
+        $this->db->from('tbl_languages');
+        $this->db->where('alais', $alais);
+        $data_distrit=$this->db->get()->result();
+        return $data_distrit[0]->name;
     }
 }	
