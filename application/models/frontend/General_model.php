@@ -37,10 +37,13 @@ class General_model extends CI_model {
 
     }
 
-    function get_distrits($id_province=0){
+    function get_distrits($id_province=0,$where=null){
+        if($where == null){
+            $where = array('id_province'=>$id_province, 'is_published'=>1);
+        }
     	$this->db->select('id, '.$this->lang.'_name as name');
     	$this->db->from('tbl_distrits');
-    	$this->db->where(array('id_province'=>$id_province, 'is_published'=>1));
+    	$this->db->where($where);
     	$data = $this->db->get()->result();
     	echo json_encode($data);
     }

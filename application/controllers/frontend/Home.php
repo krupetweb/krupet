@@ -49,7 +49,8 @@ class Home extends Frontend_base {
         $config['num_tag_close'] = '</li>';
 		
         $this->pagination->initialize($config);
-		$this->page_data['provinces'] 						= $this->model->get_provinces();
+		$this->page_data['provinces'] 						= $this->mod_spc->get_provinces();
+		
 		$this->page_data['phone_types'] 					= $this->model->get_phone_types();
 
 		$this->page_data['programes'] 						= $this->model->get_programes();
@@ -66,7 +67,7 @@ class Home extends Frontend_base {
 		$this->page_data["get_tips_home_page"] 				= $this->model->get_tips_home_page( $tag);
 		
 		$this->page_data['categories']= $this->general->get_blog_categories();
-		// var_dump($this->page_data['provinces']);
+		// echo  json_encode($this->page_data['provinces']);
 		// exit();
 		$this->load->view('frontend/index', $this->page_data);
 	}
