@@ -1,3 +1,4 @@
+
 				<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Ads << ?>
 				<?php if(isset($ads_v)) include('parts/ads_v.php'); ?>
 				
@@ -54,45 +55,78 @@
 													}
 												}
 
-												if($first==''){
-													echo $default.$other;
-												}else{
-													echo $first.$default.$other;
-												}
-											?>
-											
-										</select>
+									if($first==''){
+										echo $default.$other;
+									}else{
+										echo $first.$default.$other;
+									}
+								?>
+								
+							</select>
+						</div>
+						<hr />
+						<div class="col-xs-12 col-sm-6 col-md-2 no-padding">
+							<?php
+								$key="";
+								if(isset($_GET['key'])){
+									$key=$_GET['key'];
+								}
+							?>
+							<input id="key"  type="text" class="form-control search-control"  placeholder="<?php echo get_lang('place-a-keyword-here');?>" value="<?php echo $key; ?>">
+							
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-1 no-padding tex-center last-control-container" >
+							<button id="btn-search" onclick="search()" class="btn btn-default search-control search-button"><i class="fa fa-search"></i> <b><?php echo get_lang('search');?><b></button>
+						</div>
+					</div>
+				</div>		
+	</div>
+	
+   <div class="testimonial-wrap ihome-testi-wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-9" >
+					<div class="container-fluid">
+						<div class="row">
+							<?php if(!empty($data)){ ?>
+								<?php foreach($data as $row){ ?>
+									<div class="col-xs-12 col-sm-6 col-md-4">
+										<div>
+											<div class="zoom-wrap">
+											  <div class="zoom-icon"></div>
+												<a href="<?php echo base_url().$lang; ?>/doctors/<?php echo $row->slug?>">
+													<img alt="" class="img-responsive" data-src="<?php echo base_url($row->image)?>" src="" />
+												</a>
+											</div>
+										</div>
+										<div>
 									</div>
 									<hr />
 									<div class="col-xs-12 col-sm-6 col-md-2 col-lg-3 no-padding">
-											<?php
-												$key="";
-												if(isset($_GET['key'])){
-													$key=$_GET['key'];
-												}
-											?>
-											<input id="key"  type="text" class="form-control search-control"  placeholder="<?php echo get_lang('place-a-keyword-here');?>" value="<?php echo $key; ?>">
-										
+										<?php
+											$key="";
+											if(isset($_GET['key'])){
+												$key=$_GET['key'];
+											}
+										?>
+										<input id="key"  type="text" class="form-control search-control"  placeholder="<?php echo get_lang('place-a-keyword-here');?>" value="<?php echo $key; ?>">
+
 									</div>
-									<div class="col-xs-12 col-sm-12 col-md-1 no-padding tex-center last-control-container" >
-										<button id="btn-search" onclick="search()" class="btn btn-default search-control search-button"><i class="fa fa-search"></i> <b><?php echo get_lang('search');?><b></button>
+								<?php }?>
+							<?php }else{?>
+									<div class="col-xs-12">
+										<h4><?php echo get_lang('no_data');?></h4>
 									</div>
-								</div>
-							</div>		
+							<?php }?>
+						</div>
+						<div class="col-xs-12  pull-right">
+							<?php echo $links; ?>
+						</div>
+					</div>	
 				</div>
-				
-			   <div class="testimonial-wrap ihome-testi-wrap">
-					<div class="container">
+				<div class="col-xs-12 col-sm-3">
+					<div class="container-fluid">
 						<div class="row">
-
-<!--							<div class="col-xs-12  pull-left">-->
-<!--								<div class="latest-post-wrap pull-left wow fadeInLeft" data-wow-delay="0.5s" data-wow-offset="100">-->
-<!--									<div class="subtitle col-xs-12 no-pad col-sm-11 col-md-12 pull-left news-sub">--><?php //echo get_lang('we_found_doctors');?><!--!</div>-->
-<!--								</div>-->
-<!--							</div>-->
-
-
-
 								<?php if(!empty($data)){ ?>
 									<?php foreach($data as $row){ ?>
 										<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
@@ -133,10 +167,6 @@
 								<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 									<?php echo $links; ?>
 								</div>
-
-										
-									
-
 							<div class="col-xs-12 col-sm-3">
 								
 								<div class="container-fluid">
@@ -146,12 +176,15 @@
 								</div>
 							
 							</div>
+
 						</div>
-						<br />
-						 
-					</div>
-					<br />
+					</div>							
 				</div>
+			</div>
+			<br />			 
+		</div>
+		<br />
+	</div>
 <?php
 	$type="";
 	if(isset($_GET['type'])){
@@ -192,6 +225,7 @@
 	function get_distrits(){
 		var province=$('#province').val();
 		var distrit ='<?php echo isset($_GET['distrit']) ? $_GET['distrit'] : "" ?>';
+		console.log(province);
 		if(province!=''){
 			$.ajax({
 	                method:"POST",

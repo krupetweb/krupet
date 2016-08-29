@@ -140,6 +140,10 @@ $route['kh/faqs']							= 'frontend/fqa/fqas';
 $route['en/map']							= 'frontend/map/search';
 $route['kh/map']							= 'frontend/map/search';
 
+//::::::::::::::::::::::::::::::::::::::::::>> Hospital
+$route['en/search']						= 'frontend/Search/Search';
+$route['kh/search']						= 'frontend/Search/Search';
+
 //::::::::::::::::::::::::::::::::::::::::::>> Map
 $route['en/feedback']							= 'frontend/feedback';
 $route['kh/feedback']							= 'frontend/feedback';

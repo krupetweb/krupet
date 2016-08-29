@@ -19,7 +19,6 @@ class Doctor_model extends Frontend_base_model {
 							$this->lang.'_specification as specification, '.
 							$this->lang.'_province as province,'.
 							$this->lang.'_distrit as distrit'
-							
 						);
 
 		$this->db->from('view_doctors_for_searching');

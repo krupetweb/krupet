@@ -1,6 +1,4 @@
 <link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.carousel.css">
-<link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.theme.css">
-<link rel="stylesheet" href="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.transitions.css">
 <script type="text/javascript" src="<?=$src_url?>assets/frontend/plugin/owl-carousel/owl.carousel.min.js"></script>
 
 <link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/flexslider.css">
@@ -9,6 +7,8 @@
 <link rel="stylesheet" href="<?=$src_url?>assets/frontend/banner-plugin/colors.css">
 <script type="text/javascript" src="<?=$src_url?>assets/frontend/banner-plugin/jquery-ui.min.js"></script>
 <script type="text/javascript" src="<?=$src_url?>assets/frontend/banner-plugin/range-slider.js"></script>
+
+
 
 <?php include('parts/ads_v.php'); ?>
 
@@ -50,25 +50,25 @@
 		             	<div class="no-margin-bottom form-group ">
 							<select class="form-control search-control" id="province_B" name="province">
 								<option value=""><?php echo get_lang('select-province');?></option>
-								<?php 
-								foreach($provinces as $row){ ?>
-									<option value="<?php echo $row->name; ?>"  ><?php echo $row->name; ?></option>
+								<?php foreach($provinces as $row){ ?>
+									<option value="<?php echo $row->name; ?>" <?php echo isset($_GET['province']) && $row->name==$_GET['province'] ? "selected":"" ?> ><?php echo $row->name; ?></option>
 								<?php } ?>
 							</select>
-							
 						</div>
 		            </div>
 		            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 		             	<div class="no-margin-bottom form-group ">
 							<select class="form-control search-control" id="distrit_B" name="distrit" >
-								<option value=""><?php echo get_lang('select-distrit');?></option>
+								<?php foreach($distrits as $row){ ?>
+									<option value=""><?php echo get_lang('select-distrit');?></option>
+									<option value="<?php echo $row->name; ?>" <?php echo isset($_GET['distrits']) && $row->name==$_GET['distrits'] ? "selected":"" ?> ><?php echo $row->name; ?></option>
+								<?php } ?>
 							</select>
 							
 						</div>
 		            </div>
 					<div class="col-xs-12 col-sm-6 col-sm-4">
-						<input type="text" id="target" name="key" class="form-control search-control" value=""
-						placeholder="<?php echo get_lang('specialization').','.get_lang('doctor').','.get_lang('clinics').','.get_lang('hospital'); ?> " value="" autocomplete="off">
+						<input type="text" id="target" name="key" class="form-control search-control" value="" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" value="" autocomplete="off">
 					</div>
 					<div class="col-xs-12 col-sm-6 col-sm-2">
 						<button id="btn-search-phone_B" class="btn btn-default search-button"><i class="fa fa-search"></i> Search!</button>
@@ -85,33 +85,28 @@
 <?php if(isset($search)){?>
 <div class="container pd-right-0">
 	<div class="col-xs-12">
-		<section class="nopadding clearfix text-center">
+		<section class="nopadding clearfix">
 			<div class="row">
-				<div class="col-xs-12 col-sm-9" >
+				<div class="col-xs-12 col-sm-12" >
 						<div class="container-fluid">
 							<div class="row">
 								<?php if(!empty($search)){ ?>
 									<?php foreach($search as $row){ ?>
-										<div class="col-xs-12 col-sm-6 col-md-4">
-											<div>
-												<div class="zoom-wrap">
-												  <div class="zoom-icon"></div>
-													<a href="<?php echo base_url().$lang; ?>/doctors/<?php echo $row->slug?>">
-														<img alt="" class="img-responsive" data-src="<?php echo base_url($row->image)?>" src="" />
-													</a>
-												</div>
+										<div class="col-xs-12 col-sm-6 col-md-3">
+											<div class="zoom-wrap">
+											  <div class="zoom-icon"></div>
+												<a href="<?php echo base_url().$lang; ?>/hospitals/<?php echo $row->slug?>">
+													<img alt="" class="img-responsive" data-src="<?php echo base_url($row->image)?>" src="" />
+												</a>
 											</div>
-											<div>
-												
-												<div class="doc-name-class">
-													<a href="<?php echo base_url().$lang?>/doctors/<?php echo $row->slug; ?>"><h3><?php echo $row->name ?></h3></a>
-												</div>
-												<!-- <span class="doc-title"> <i class="fa fa-stethoscope"></i> &nbsp; <?php echo $row->specification ?></span><br /> -->
-												<span class="doc-title"> <i class="fa fa-envelope"></i> &nbsp; <?php echo $row->email ?></span><br />
-												<span class="doc-title"> <i class="fa fa-phone"></i> &nbsp; <?php echo $row->phone ?></span><br />
-												<span class="doc-title"> <i class="fa fa-map-marker"></i> &nbsp; <?php echo $row->distrit.', '. $row->province ?></span><br />
-												
+											
+											<div class="doc-name-class">
+												<a href="<?php echo base_url().$lang?>/doctors/<?php echo $row->slug; ?>"><h3><?php echo $row->name ?></h3></a>
 											</div>
+											<span class="doc-title"> <i class="fa fa-envelope"></i> &nbsp; <?php echo $row->email ?></span><br />
+											<span class="doc-title"> <i class="fa fa-phone"></i> &nbsp; <?php echo $row->phone ?></span><br />
+											<span class="doc-title"> <i class="fa fa-map-marker"></i> &nbsp; <?php echo $row->distrit.', '. $row->province ?></span><br />
+											<br>
 											<hr />
 										</div>
 									<?php }?>
@@ -139,32 +134,50 @@
 </div>
 <?php } ?>
 <?php //::::::::::::::::::::::::::::::::::::::::::::::::>> specifications << ?>
-<?php if(isset($specifications)){?>
+<?php if(isset($doctor)){?>
 <div class="container pd-right-0">
 	<div class="col-xs-12">
-		<section class="nopadding clearfix text-center">
-			<h2 class="color-black border-red"><?php echo get_lang('specialization'); ?></h2>
-			<div class="row text-center">
-				<?php if(!empty($specifications)){?>
-					<?php foreach($specifications as $row) { 
-
-						if(isset($row->icon)){
-							if(file_exists(FCPATH.$row->icon)){
-				                $img_path=base_url($row->icon);
-				            }
-						}
-			            
-						?>
-						<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 height-130">
-							<a href="<?php echo $lang_url.'specialist?specification='.str_replace(" ", "+", $row->name);?>" class="thumbnaild text-center">
-
-								<img src="<?=base_url()?>/<?php echo $row->image?>" style="width:50px;" >
-								
-								<p><?=$row->name?></p>
-							</a>
-						</div>
-					<?php } ?>
-				<?php } else {echo ' <h3>'.get_lang('blog-caption').'</h3>'; }?>
+		<section class="nopadding clearfix">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12" >
+						<div class="container-fluid">
+							<div class="row">
+								<?php if(!empty($doctor)){ ?>
+									<?php foreach($doctor as $row){ ?>
+										<div class="col-xs-12 col-sm-6 col-md-3">
+											<div class="zoom-wrap">
+											  <div class="zoom-icon"></div>
+												<a href="<?php echo base_url().$lang; ?>/doctors/<?php echo $row->slug?>">
+													<img alt="" class="img-responsive" data-src="<?php echo base_url($row->image)?>" src="" />
+												</a>
+											</div>
+											
+											<div class="doc-name-class">
+												<a href="<?php echo base_url().$lang?>/doctors/<?php echo $row->slug; ?>"><h3><?php echo $row->name ?></h3></a>
+											</div>
+											<span class="doc-title"> <i class="fa fa-envelope"></i> &nbsp; <?php echo $row->email ?></span><br />
+											<span class="doc-title"> <i class="fa fa-phone"></i> &nbsp; <?php echo $row->phone ?></span><br />
+											<span class="doc-title"> <i class="fa fa-map-marker"></i> &nbsp; <?php echo $row->distrit.', '. $row->province ?></span><br />
+											<br>
+											<hr />
+										</div>
+									<?php }?>
+								<?php }else{?>
+										<div class="col-xs-12">
+											<h4><?php echo get_lang('no_data');?></h4>
+										</div>
+								<?php }?>
+							</div>
+							
+						</div>	
+					</div>
+					<div class="col-xs-12 col-sm-3">
+						<div class="container-fluid">
+							<div class="row">
+							<?php include("parts/ads_h.php"); ?>
+							</div>
+						</div>							
+					</div>
 			</div>
 		</section>
 
@@ -172,72 +185,14 @@
 	
 </div>
 <?php } ?>
-<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Hotline << ?>
-<?php 
-	if(isset($search)){
-		
-	}else{
-		include('parts/hotline.php') ;
-	}
 
-?>
-
-<?php //::::::::::::::::::::::::::::::::::::::::::::::::>> tip << ?>
-<?php if(isset($get_tips_home_page)){?>
-<div class="container pd-right-0" >
-	<div class="col-xs-12">
-		<section class="nopadding clearfix">
-			<h2 class="color-black border-red"><?php echo get_lang('tips');?></h2>
-			<div class="col-sm-8">
-				<div id="search_result_container" class="container-fluid">
-					<?php if(!empty($get_tips_home_page)){?>
-						<?php foreach($get_tips_home_page as $row) { ?>
-							<div class="row">
-
-								<div class="col-xs-12 col-sm-12 col-md-5" >
-									<div class="zoom-wrap">
-									  <div class="zoom-icon"></div>
-										<a  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>">
-											<img alt="" data-src=" <?php echo base_url()?><?php echo $row->image ?> " src=" " class="img-responsive">
-										</a>
-										
-									</div>
-								</div>
-								<div class="col-xs-12 col-sm-12 col-md-7" >
-									<div class="text-left">
-										<div class="blogs-box-title blogs-box-title-news">
-											<a  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>">
-												<?php echo $row->title ?>
-											</a>
-										</div>
-										<span  class="post-date"><b><i class="fa fa-calendar"></i>:  <?php echo date_format1($row->created_dt) ?> </b></span>
-										<p >
-											<?php echo $row->pre_content ?>
-										</p>
-
-										<a style="float:right"  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>"><?php echo get_lang('read more');?> &gt;&gt;</a>
-									</div>
-								</div>
-
-							</div>
-							<hr />
-						<?php } ?>
-					<?php }else {echo ' <h3>'.get_lang('blog-caption').'</h3>'; }?>
-				</div>
-			</div>
-		</section>
-	</div>
-</div>
-<?php } ?>
 <?php //::::::::::::::::::::::::::::::::::::::::::::::::>> Partner << ?>
 <?php include("parts/partners.php"); ?>
-<script>
-	$(document).ready(function(){
-		
-		$("#province_B").change(function(){
-			get_distritb();
-		});
-		$('.owl-fullwidth').owlCarousel({
+
+<script type="text/javascript">
+	$( document ).ready(function() {
+	 	//alert('yest')
+	 	$('.owl-fullwidth').owlCarousel({
             loop:true,
             margin:10,
             nav:true,
@@ -254,16 +209,33 @@
                 }
             }
         });
-        $('#owl-programs').owlCarousel({
-			  navigation : false, // Show next and prev buttons
-			  slideSpeed : 300,
-			  paginationSpeed : 400,
-			  singleItem:true
-        });
-	});
+		
+	});	
+
+	$( document ).ready(function() {
+				$('#owl-programs').owlCarousel({
+						navigation : false, // Show next and prev buttons
+					  slideSpeed : 300,
+					  paginationSpeed : 400,
+					  singleItem:true
+		        });
+			
+	});	
+</script>
+
+
+
+<script>
+	$(document).ready(function(){
+		get_distritb();
+		$("#province_B").change(function(){
+			get_distritb();
+		})
+	})
 	function get_distritb(){
 		var id_province=$("#province_B").val();
 		var distrit ='<?php echo isset($_GET['distrit']) ? $_GET['distrit'] : "" ?>';
+		console.log(distrit);
 		$.ajax({
             method:"POST",
             url: "<?=$lang_url?>get-data-distrits",
@@ -280,7 +252,11 @@
             
         });
 	}
-	jQuery(function( $ ) {
+
+</script>
+ <script>
+            
+  jQuery(function( $ ) {
     var $register = $('#register-forms');
     var $search = $('#btn-search-phone_B');
     $search.click(function(){
@@ -288,11 +264,14 @@
         var distrit_B = $("#distrit_B").val();
         var target = $("#target").val();
         if(province_B !='' || distrit_B !='' || target !=''){
-        	window.location.replace("<?php echo base_url().$lang; ?>/search?province="+province_B+"&distrit="+distrit_B+"&key="+target);
+        	// $register.submit()
+        		window.location.replace("<?php echo base_url().$lang; ?>/search?province="+province_B+"&distrit="+distrit_B+"&key="+target);
         }
 
     });
 
   });
+
+
 
 </script>

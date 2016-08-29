@@ -18,7 +18,7 @@
 		            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 		             	<div class="no-margin-bottom form-group ">
 								<select class="form-control search-control" onchange="get_distrits()" id="province" name="id_type">
-									<option value="">Select Province</option>
+									<option value=""><?php echo get_lang('select-province');?></option>
 									<?php foreach($provinces as $row){ ?>
 										<option value="<?php echo $row->id; ?>"><?php echo $row->name; ?></option>
 									<?php } ?>
@@ -29,7 +29,7 @@
 		            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 		             	<div class="no-margin-bottom form-group ">
 								<select class="form-control search-control" id="distrit" >
-									<option value="">Select Distrit</option>
+									<option value=""><?php echo get_lang('select-distrit');?></option>
 								</select>
 							
 						</div>
@@ -98,7 +98,7 @@
 	               			others+="<option value='"+obj[i].id+"'>"+obj[i].name+"</option>";
 	               		}
 	               }
-	               $("#distrit").html(first+"<option value='0'>Select A Distrit</option>"+others);
+	               $("#distrit").html(first+"<option value='0'><?php echo get_lang('select-distrit');?></option>"+others);
 	            });
 		}
 	}
