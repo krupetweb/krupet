@@ -31,9 +31,9 @@
 
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 
-					<p class="footer-title">Like us in social</p>
+					<p class="footer-title"><?php echo get_lang('findus_insocial');?></p>
 					<div class="fb-like" data-href="https://www.facebook.com/Krupetcom-137344823272389/" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
-					<p class="footer-title mg-top-5">Visitor counter</p>
+					<p class="footer-title mg-top-5"><?php echo get_lang('visitor_counter');?></p>
 					<div align="" style="margin-top: -1px">
 						<a href="http://www.amazingcounters.com">
 							<img border="0" src="http://cc.amazingcounters.com/counter.php?i=3205533&c=9616912" alt="AmazingCounters.com">
@@ -43,7 +43,7 @@
 
 
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-					<p class="footer-title">Medical resource</p>
+					<p class="footer-title"><?php echo get_lang('medical_resource');?></p>
 					<div class="row">
 						<a href="http://www.medscape.com/" target="_blank">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/Medscape.png"></div></div>
@@ -78,7 +78,7 @@
 
 
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-							<p class="footer-title">Information</p>
+							<p class="footer-title"><?php echo get_lang('information');?></p>
 							<ul class="menu-footer">
 								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/term"><?php echo get_lang('term');?></a></li>
 								<li><a href="<?php echo base_url();?><?php echo $lang; ?>/privacy_policy"><?php echo get_lang('privacy_policy');?></a></li>
@@ -87,7 +87,7 @@
 				</div>
 
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-							<p class="footer-title">Subscribe For Special Update</p>
+							<p class="footer-title"><?php echo get_lang('subcription_footer');?></p>
 								<form id="subscribe_form" action="">
 									<div class="row">
 										<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -194,3 +194,4 @@ window.onload = init;
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 </script>
+

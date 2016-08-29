@@ -89,6 +89,7 @@ class Blogs extends Admin
 		$data['is_published']=$this->input->post('is_published');
 		$data['is_featured']=$this->input->post('is_featured');
 		$data['is_specialed']=$this->input->post('is_specialed');
+		$data['created_dt']		=    date("Y-m-d H:i:s");
 		$data['modified_dt']	=date("Y-m-d H:i:s");
 		$data['slug']=$this->generate_slug('tbl_'.$this->page_data['term'], $data['en_title']);
 		$data['id_category']=$this->input->post('id_category');
