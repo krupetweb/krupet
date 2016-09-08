@@ -1,16 +1,16 @@
-	
-				
-				<a href="<?=base_url()?>admin/phone_type_form/create/"  class="btn btn-primary pull-right"><i class="entypo-plus-circled"></i>Add New </a> 
-			   
+
+
+				<a href="<?=base_url()?>admin/phone_type_form/create/"  class="btn btn-primary pull-right"><i class="entypo-plus-circled"></i>Add New </a>
+
 			   <br><br>
-			   
+
 				<table class="table table-bordered datatable limited_drop_targets" id="table_export">
                     <thead class="text-center">
                         <tr>
                             <th width="80">#</th>
                             <th>Name</th>
 							<th>Modified Date</th>
-							<th></th>
+							<th>gsdgsdgdfg</th>
                         </tr>
                     </thead>
                     <tbody>

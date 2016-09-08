@@ -71,7 +71,7 @@
 						<input type="text" id="target" name="key" class="form-control search-control" value="" placeholder="Specialities, Doctors, Clinics, Hospitals, Labs, Spas and Salons, Gyms and Yoga Centers etc" value="" autocomplete="off">
 					</div>
 					<div class="col-xs-12 col-sm-6 col-sm-2">
-						<button id="btn-search-phone_B" class="btn btn-default search-button"><i class="fa fa-search"></i> Search!</button>
+						<button id="btn-search-phone_B" class="btn btn-default search-button"><i class="fa fa-search"></i><?php echo get_lang('search');?></button>
 						<!-- <input type='submit' id='btnValidate' name="submit" Value='Login' /> -->
 					</div>
 				</div>

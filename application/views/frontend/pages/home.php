@@ -71,7 +71,7 @@
 						placeholder="<?php echo get_lang('specialization').','.get_lang('doctor').','.get_lang('clinics').','.get_lang('hospital'); ?> " value="" autocomplete="off">
 					</div>
 					<div class="col-xs-12 col-sm-6 col-sm-2">
-						<button id="btn-search-phone_B" class="btn btn-default search-button"><i class="fa fa-search"></i> Search!</button>
+						<button id="btn-search-phone_B" class="btn btn-default search-button"><i class="fa fa-search"></i> <?php echo get_lang('search');?></button>
 						<!-- <input type='submit' id='btnValidate' name="submit" Value='Login' /> -->
 					</div>
 				</div>

@@ -8,7 +8,7 @@
 		          	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 		             	<div class="no-margin-bottom form-group ">
 								<select class="form-control search-control" id="phone_type" name="phone_type" style="margin:auto;">
-									<option value="">Select Type</option>
+									<option value=""><?php echo get_lang('hot_line_select_type');?></option>
 									<?php foreach($phone_types as $row){ ?>
 										<option value="<?php echo $row->id; ?>"><?php echo $row->name; ?></option>
 									<?php } ?>
@@ -35,7 +35,7 @@
 						</div>
 		            </div>
 		            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 text-center">
-		             	<button id="btn-search-phone" class="btn btn-default search-button" ><i class="fa fa-search"></i> Search!</button>
+		             	<button id="btn-search-phone" class="btn btn-default search-button" ><i class="fa fa-search"></i><?php echo get_lang('search');?></button>
 		            </div>
 		        </div>
 
@@ -71,7 +71,7 @@
 	                    "distrit" 	: distrit
 	                }
 	            }).done(function(respond) {
-	            	$("#btn-search-phone").html('<i class="fa fa-search"></i> Search!');
+	            	$("#btn-search-phone").html('<i class="fa fa-search"></i> <?php echo get_lang('search');?>');
 
 	                $("#phone-container").html(respond);
 	            });

@@ -11,7 +11,7 @@
                             <th>Name</th>
 							<th>Phone</th>
 							<th>Published </th>
-							<th>Featered</th>
+							<th>Feature</th>
 							<th></th>
                         </tr>
                     </thead>
