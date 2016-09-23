@@ -17,6 +17,7 @@ class Search_model extends Frontend_base_model {
         }
 		$this->db->select($this->lang.'_name as name,image');
 		$this->db->from('tbl_specialists');
+		$this->db->order_by($this->lang.'_name', 'ASC');
 		$this->db->where($where);
 		return $this->db->get()->result();
 	}
