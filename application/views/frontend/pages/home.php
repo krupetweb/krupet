@@ -210,12 +210,12 @@
 												<?php echo $row->title ?>
 											</a>
 										</div>
-										<span  class="post-date"><b><i class="fa fa-calendar"></i>:  <?php echo date_format1($row->created_dt) ?> </b></span>
+										<div  class="data-formate-front"><i class="fa fa-calendar"></i>:  <?php echo date_format1($row->created_dt) ?></div>
 										<p >
 											<?php echo $row->pre_content ?>
 										</p>
 
-										<a style="float:right"  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>"><?php echo get_lang('read more');?> &gt;&gt;</a>
+										<a style="float:right;font-size: 11px"  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>"><?php echo get_lang('read more');?> &gt;&gt;</a>
 									</div>
 								</div>
 
