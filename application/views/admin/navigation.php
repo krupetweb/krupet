@@ -77,7 +77,7 @@
         </li>
 		<li class="<?php if ($active_page == 'programes') echo 'active';?>">
 			<a href="<?php echo base_url(); ?>admin/programes">
-				<span><i class="fa fa-university"></i>Health Programes</span>
+				<span><i class="fa fa-university"></i>Slide Show</span>
 			</a>
 		</li>
 		<li class="<?php if ($active_page == 'doctors') echo 'active';?>">
@@ -87,18 +87,18 @@
 		</li>
 		<li class="<?php if ($active_page == 'hospitals') echo 'active';?>">
 			<a href="<?php echo base_url(); ?>admin/hospitals">
-				<span><i class="fa fa-hospital-o"></i>Hospitals</span>
+				<span><i class="fa fa-hospital-o"></i>Health Hub</span>
 			</a>
 		</li>
-		<li class="<?php if ($active_page == 'phamacies') echo 'active';?>">
-			<a href="<?php echo base_url(); ?>admin/phamacies">
-				<span><i class="fa fa-hospital-o"></i>Phamacies</span>
-			</a>
-		</li>
+<!--		<li class="--><?php //if ($active_page == 'phamacies') echo 'active';?><!--">-->
+<!--			<a href="--><?php //echo base_url(); ?><!--admin/phamacies">-->
+<!--				<span><i class="fa fa-hospital-o"></i>Phamacies</span>-->
+<!--			</a>-->
+<!--		</li>-->
 		 <li class="<?php if ( $active_page == 'special_blogs' || $active_page == 'featured_blog' || $active_page == 'blogs' || $active_page == 'blog_categories') echo 'opened active has-sub'; ?> ">
             <a href="#">
                 <i class="fa fa-book"></i>
-                <span>Blogs</span>
+                <span>Health Topic</span>
             </a>
             <ul>
             	
@@ -146,7 +146,7 @@
 		 <li class="<?php if ( $active_page == 'phones' || $active_page == 'phone_types' ) echo 'opened active has-sub'; ?> ">
             <a href="#">
                 <i class="fa fa-phone"></i>
-                <span>Phone Numbers</span>
+                <span>Hot Line</span>
             </a>
             <ul>
 				<li class="<?php if ($active_page == 'phones') echo 'active'; ?> ">

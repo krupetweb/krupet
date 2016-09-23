@@ -62,12 +62,7 @@
 <!--							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Uptodate</div>-->
 						</a>
 					</div>
-					<div class="row">
-						<a href="http://www.who.int/hinari/en/" target="_blank">
-							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/Hinari.png"></div></div>
-<!--							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 md-text-footer">Hinari</div>-->
-						</a>
-					</div>
+
 					<div class="row">
 						<a href="http://www.cochrane.org/" target="_blank">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="medical-logo"><img width="80px" height="30px" src="<?=$src_url?>assets/frontend/images/m_logo/Cochrane.png"></div></div>

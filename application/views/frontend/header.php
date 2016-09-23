@@ -39,25 +39,29 @@
 										        <li>
 													<a href="<?php echo base_url();?><?php echo $lang; ?>" ><i class="fa fa-home"></i> &nbsp; <?php echo get_lang('home'); ?></a>
 												</li>
-										        <?php if($this->session->userdata('hospital_menu')){ ?>
-												<?php $hospital_menu=$this->session->userdata('hospital_menu'); ?>
-													
+
+												<?php if($this->session->userdata('hospital_menu')){ ?>
+													<?php $hospital_menu=$this->session->userdata('hospital_menu'); ?>
+
 													<li class="dropdown <?php if(isset($active_menu) AND $active_menu=='hospitals') echo 'active'; ?>">
-											        	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hospital-o"></i> &nbsp; <?php echo get_lang('hospital'); ?><b class="caret"></b></a>
-											            <ul class="dropdown-menu multi-column columns-3" style="left: -280px !important;">
-												            <?php foreach($hospital_menu as $row){ ?>
-																<div class="col-sm-4">
-																    <ul class="multi-column-dropdown">
-																        <li><a href="<?php echo base_url();?><?php echo $lang; ?>/hospitals?cat=<?php echo str_replace(" ", "+", $row['name']); ?>"><strong><?php echo $row['name']; ?></strong></a></li>
-																        <?php foreach($row['items'] as $item){ ?>
-																			<li><a href="<?php echo base_url();?><?php echo $lang; ?>/hospitals?cat=<?php echo str_replace(" ", "+", $row['name']); ?>&type=<?php echo str_replace(" ", "+", $item->name); ?>"><?php echo $item->name; ?></a></li>
+														<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hospital-o"></i> &nbsp; <?php echo get_lang('hospital'); ?><b class="caret"></b></a>
+														<ul class="dropdown-menu multi-column columns-3" style="left:0px !important;">
+															<?php foreach($hospital_menu as $row){ ?>
+
+																	<ul class="multi-column-dropdown">
+																		<li class="header-sub-manu ">
+																			<a href="<?php echo base_url();?><?php echo $lang; ?>/hospitals?cat=<?php echo str_replace(" ", "+", $row['name']); ?>"><strong><?php echo $row['name']; ?></strong> <span class="fa fa-caret-right pull-right"></span></a>
+																		</li>
+																		<?php foreach($row['items'] as $item){ ?>
+																			<li class="body-sub-manu"><a href="<?php echo base_url();?><?php echo $lang; ?>/hospitals?cat=<?php echo str_replace(" ", "+", $row['name']); ?>&type=<?php echo str_replace(" ", "+", $item->name); ?>"><?php echo $item->name; ?></a></li>
 																		<?php }?>
-																    </ul>
-															    </div>
+																	</ul>
+
 															<?php }?>
-											            </ul>
-										        </li>
+														</ul>
+													</li>
 												<?php }?>
+
 										      	<li class="<?php if(isset($active_menu) AND $active_menu=='doctors') echo 'active'; ?>">
 													<a href="<?php echo base_url();?><?php echo $lang; ?>/doctors" ><i class="fa fa-user-md"></i> &nbsp; <?php echo get_lang('doctor'); ?></a>
 												</li>
@@ -113,16 +117,16 @@
 													
 													<li class="dropdown <?php if(isset($active_menu) AND $active_menu=='map') echo 'active'; ?>">
 											        	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-hospital-o"></i> &nbsp; <?php echo get_lang('map'); ?><b class="caret"></b></a>
-											            <ul class="dropdown-menu multi-column columns-3" style="left: -400px !important;">
+											            <ul class="dropdown-menu multi-column columns-3" style="left: 0px !important;">
 												            <?php foreach($hospital_menu as $row){ ?>
-																<div class="col-sm-4">
+
 																    <ul class="multi-column-dropdown">
-																        <li><a href="<?php echo base_url();?><?php echo $lang; ?>/map?cat=<?php echo str_replace(" ", "+", $row['name']); ?>"><strong><?php echo $row['name']; ?></strong></a></li>
+																        <li class="header-sub-manu "><a href="<?php echo base_url();?><?php echo $lang; ?>/map?cat=<?php echo str_replace(" ", "+", $row['name']); ?>"><strong><?php echo $row['name']; ?></strong><span class="fa fa-caret-right pull-right"></span></a></li>
 																        <?php foreach($row['items'] as $item){ ?>
-																			<li><a href="<?php echo base_url();?><?php echo $lang; ?>/map?cat=<?php echo str_replace(" ", "+", $row['name']); ?>&type=<?php echo str_replace(" ", "+", $item->name); ?>"><?php echo $item->name; ?></a></li>
+																			<li class="body-sub-manu "><a href="<?php echo base_url();?><?php echo $lang; ?>/map?cat=<?php echo str_replace(" ", "+", $row['name']); ?>&type=<?php echo str_replace(" ", "+", $item->name); ?>"><?php echo $item->name; ?></a></li>
 																		<?php }?>
 																    </ul>
-															    </div>
+
 															<?php }?>
 											            </ul>
 										            </li>
