@@ -17,6 +17,9 @@
 				<li class="<?php if($page=='hospitals'  or $page=='form_hospitals') echo 'active' ?>">
 					<a <?php if($page=='doctor_form' AND $action=='create'){?>  href="#" style='cursor:not-allowed;' <?php }else { ?> href="<?=base_url()?>admin/<?=$term?>/hospitals?id_doctor=<?=$id_doctor?>"<?php } ?>>Hospitals</a>
 				</li>
+				<li class="<?php if($page=='hospitals'  or $page=='form_hospitals') echo 'active' ?>">
+					<a <?php if($page=='doctor_form' AND $action=='create'){?>  href="#" style='cursor:not-allowed;' <?php }else { ?> href="<?=base_url()?>admin/<?=$term?>/galleries?id_doctor=<?=$id_doctor?>"<?php } ?>>Gallery</a>
+				</li>
 				<li class="<?php if($page=='services'  or $page=='form_services') echo 'active' ?>">
 					<a <?php if($page=='doctor_form' AND $action=='create'){?>  href="#" style='cursor:not-allowed;' <?php }else { ?> href="<?=base_url()?>admin/<?=$term?>/services?id_doctor=<?=$id_doctor?>"<?php } ?>>Services</a>
 				</li>

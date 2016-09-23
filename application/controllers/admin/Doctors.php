@@ -91,7 +91,16 @@ class Doctors extends Admin
            redirect(base_url().'admin/'.$this->page_data['term'], 'refresh');
 		}
 	}
-	
+	 //==========================================================================>> Hospital_gallery
+	function get_valid_id_gallery(){
+		 $id_gallery    =isset($_GET['id_gallery'])?$_GET['id_gallery']:'';
+		 if(!is_numeric($id_gallery)){
+		 	$id_doctor   = $this->get_valid_id_doctor();
+		 	redirect(base_url().'admin/'.$this->page_data['term'].'/galleries?id_doctor='.$id_doctor, 'refresh');
+		 }else{
+		 	return $id_gallery;
+		 }
+	}
     function form_doctors(){
 		$action         = $this->get_valid_action();
 		
@@ -106,6 +115,7 @@ class Doctors extends Admin
             $this->session->set_userdata('tab_name', $this->page_data['data']->en_name);
         }
 		
+		// var_dump($this->page_data['data']);
 		$this->page_data['active_page']		=$this->page_data['term'];
 		$this->page_data['active_nav']		='form_doctor';
 		$this->page_data['page']			='form';
@@ -376,6 +386,67 @@ class Doctors extends Admin
 		$this->model->update('tbl_'.$this->page_data['term'].'', $id, $data);
 		redirect(base_url().'admin/'.$this->page_data['term'].'/featured', 'refresh');
 	}
+	function galleries(){
+		$id_doctor    =isset($_GET['id_doctor'])?$_GET['id_doctor']:0;
+
+		$this->page_data['id_doctor']		=$id_doctor;
+		$this->db->where('id_doctor', $id_doctor);
+		$this->page_data['data']			=$this->model->get_doctors_galleries($id_doctor);
+		
+		$this->page_data['active_page']		=$this->page_data['term'];
+		$this->page_data['page']			='galleries';
+		$this->page_data['active_nav']		='galleries';
+		$this->page_data['page_title']		='galleries';
+		$this->load->view('admin/index', $this->page_data);
+	}
+	function form_galleries(){
+		$action         = $this->get_valid_action();
+        $id_doctor    = $this->get_valid_id_doctor();
+		$id_gallery      = $this->get_valid_id_gallery();
+		$this->page_data['action']			=$action;
+		$this->page_data['id_doctor']		=$id_doctor;
+		
+		// $this->page_data["doctors"]= $this->model->get_doctors();
+		$this->page_data['page']		    ='form_galleries';
+		$this->page_data['active_nav']		='form_galleries';
+		$this->page_data['active_page']		=$this->page_data['term'];
+	    $this->load->view('admin/index', $this->page_data);
+		// var_dump($this->page_data);
+	}
+	function create_gallery(){
+		$id_doctor    = $this->get_valid_id_doctor();
+		$data=$this->get_gallery_form_data($id_doctor);
+		$id_gallery=$this->model->create('tbl_doctors_galleries', $data);
+		redirect(base_url().'admin/'.$this->page_data['term'].'/galleries?id_doctor='.$id_doctor, 'refresh');
+	}
+	function update_gallery(){
+		$id_doctor    = $this->get_valid_id_doctor();
+		$id_gallery      = $this->get_valid_id_gallery();
+		$data=$this->get_gallery_form_data($id_hospital);
+		$this->model->update('tbl_doctors_galleries', $id_gallery, $data);
+		redirect(base_url().'admin/'.$this->page_data['term'].'/form_galleries?action=update&id_doctor='.$id_doctor.'&id_gallery='.$id_gallery, 'refresh');
+	}
+    function delete_gallery(){
+    	$id_doctor    = $this->get_valid_id_doctor();
+		$id_gallery      = $this->get_valid_id_gallery();
+		$this->model->delete('tbl_doctors_galleries', $id_gallery);
+		redirect(base_url().'admin/'.$this->page_data['term'].'/galleries?id_doctor='.$id_doctor, 'refresh');
+    }
+	//==========================================================================>> Hospital_gallery
+	
+	function get_gallery_form_data($id_doctor=0){
+		$data['id_doctor']	=$id_doctor;
+		$data['en_name']		=$this->input->post('en_name');
+		$data['kh_name']		=$this->input->post('kh_name');
+		$data['is_published']		=$this->input->post('is_published');
+		$data['modified_dt']	=date("Y-m-d H:i:s");
+		$image=$this->upload('image');
+		if($image!=""){
+			$data['image']=$image;
+		}
+		return $data;
+	}
+	
 
 
 }

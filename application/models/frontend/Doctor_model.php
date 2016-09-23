@@ -41,8 +41,16 @@ class Doctor_model extends Frontend_base_model {
 		$this->db->group_by($this->lang.'_name'); 
 
 		return $this->db->get()->result();
-		
-		
+	}
+	function specification_by_doctor($id_doctor){
+		$sql = 'SELECT dr.id,(SELEC '.$this->lang.'_name as name FROM tbl_specialists WHERE id=dr.id_specialist ';
+		$sql .= ' FROM  tbl_doctor_specialists as dr ';
+		$sql .= ' WHERE id_doctor='.$id_doctor;
+
+		$query = $this->db->query($sql);
+		$row = $query->row();
+
+		return $row;
 	}
 	
 
@@ -79,6 +87,7 @@ class Doctor_model extends Frontend_base_model {
 	}
 	function doctor_detail_info($id_hospital=0){
 		$this->db->select(			$this->lang.'_name as name, '.
+			
 									$this->lang.'_title as title, '.
 									$this->lang.'_degree as degree, '.
 									$this->lang.'_title as title, '.

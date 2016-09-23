@@ -366,20 +366,31 @@ if ( ! function_exists('hidden_field')){
 }
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::>> Select
 if ( ! function_exists('select_field')){
-	function select_field($param=array('caption'=>'Category', 'name'=>'id_category', 'data'=>array('Nissan'=>1, 'Toyota'=>2, 'Masda'=>3), 'id'=>0)) {
+	function select_field($param=array('caption'=>'Category', 'name'=>'id_category', 'data'=>array('Nissan'=>1, 'Toyota'=>2, 'Masda'=>3), 'id'=>0),$def_option=0) {
 		
 		$caption	=$param['caption']; 
 		$name		=$param['name']; 
 		$data		=$param['data']; 
 		$id			=$param['id']; 
-		
+		$def_option =$def_option; 
+
 		$options='';
 		$default='';
 		foreach($data as $item=>$value){
+			$selected = '';
 			if($id==$value){
-				$default='<option value="'.$value.'">'.$item.'</option>';
+				if($value ==$def_option ){
+					$default .='<option value="'.$value.'" selected="selected">'.$item.'</option>';
+				}else{
+					$default .='<option value="'.$value.'" >'.$item.'</option>';
+				}
+				
 			}else{
-				$options.='<option value="'.$value.'">'.$item.'</option>';
+				if($value ==$def_option ){
+					$options .='<option value="'.$value.'" selected="selected">'.$item.'</option>';
+				}else{
+					$options .='<option value="'.$value.'" >'.$item.'</option>';
+				}
 			}
 		}
 		echo '	<div class="form-group">

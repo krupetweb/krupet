@@ -20,6 +20,7 @@
 									<?php
 										
 										$id				=0;
+										$def_option 	=0;
 										$price		='';
 										$en_note		='';
 										$kh_note		='';
@@ -53,9 +54,8 @@
 								
 									<?=form_open(base_url().'admin/'.$term.'/'.$action.'_service?id_doctor='.$id_doctor.'&id_service='.$id , array('method'=>'POST', 'class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data'));?>
 									<?php 
-										text_field(array('caption'=>'Price', 'name'=>'price', 'value'=>$price, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
-										
-										select_field(array('caption'=>'Service', 'name'=>'id_service', 'data'=>$service_data, 'id'=>$id_service));
+										text_field(array('caption'=>'Price', 'name'=>'price', 'value'=>$price, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));										
+										select_field(array('caption'=>'Service', 'name'=>'id_service', 'data'=>$service_data, 'id'=>$id_service),$def_option);
 										ck_editor_field(array('caption'=>'Note (ENG)', 'name'=>'en_note', 'value'=>$en_note, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										ck_editor_field(array('caption'=>'Note (KHM)', 'name'=>'kh_note', 'value'=>$kh_note, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										button_field(array('button_caption'=>$button_caption, 'url_delete'=>base_url().'admin/'.$term.'/delete_service?id_doctor='.$id_doctor.'&id_service='.$id));

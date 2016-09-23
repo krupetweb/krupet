@@ -83,8 +83,6 @@
 									text_field(array('caption'=>'Name (KHM)', 'name'=>'kh_name', 'value'=>$kh_name, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 									select_field(array('caption'=>'Categoey', 'name'=>'id_hospital_category', 'data'=>$categories_data, 'id'=>$id_hospital_category));
 									select_field(array('caption'=>'Type', 'name'=>'id_hospital_type', 'data'=>$types_data, 'id'=>$id_hospital_type));
-									text_field(array('caption'=>'Director (ENG)', 'name'=>'en_director', 'value'=>$en_director, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
-									text_field(array('caption'=>'Director (KHM)', 'name'=>'kh_director', 'value'=>$kh_director, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 									ck_editor_field(array('caption'=>'Background (ENG)', 'name'=>'en_background', 'value'=>$en_background, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 									ck_editor_field(array('caption'=>'Background (KHM)', 'name'=>'kh_background', 'value'=>$kh_background, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 									image_field(array('caption'=>'Image', 'name'=>'image', 'image_src'=>$image, 'file_required'=>'', 'required_message'=>'Please slet and imaage'));

@@ -235,4 +235,10 @@ class Doctors_model extends Admin_model {
 		$this->db->where('is_featured', 1);
 		return $this->db->get()->result();
 	}
+	function get_doctors_galleries($id_doctor=0){
+		$this->db->select('image,en_name as name,hs.id,hs.modified_dt,is_published');
+		$this->db->from('tbl_doctors_galleries as hs');
+		$this->db->where('id_doctor', $id_doctor);
+		return $this->db->get()->result();
+	}
 }

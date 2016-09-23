@@ -20,7 +20,8 @@
 								<div class="panel-body">
 									<?php
 							
-									
+										$id_sex 		= 0;
+										$id_specialist 	= 0;
 										$id				=0;
 										$id_sex			=0;
 										$id_specialist	=0;
@@ -56,7 +57,8 @@
 										$is_published	= $data->is_published;
 										$is_featured	= $data->is_featured;
 										$modified_dt    = $data->modified_dt;
-										
+										$id_sex 		= $data->id_sex;
+										$id_specialist 	= $data->id_specialist;
 										$button_caption='update';
 									}
 									$sex_data=array();
@@ -80,10 +82,10 @@
 								
 									<?=form_open(base_url().'admin/'.$term.'/'.$action.'_doctor?id_doctor='.$id_doctor , array('method'=>'POST', 'class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data'));?>
 										<?php
-								   text_field(array('caption'=>'Name (ENG)', 'name'=>'en_name', 'value'=>$en_name, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
+								   		text_field(array('caption'=>'Name (ENG)', 'name'=>'en_name', 'value'=>$en_name, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										text_field(array('caption'=>'Name (KHM)', 'name'=>'kh_name', 'value'=>$kh_name, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
-										select_field(array('caption'=>'Sex', 'name'=>'id_sex', 'data'=>$sex_data, 'id'=>$id_sex));
-										select_field(array('caption'=>'Specialist', 'name'=>'id_specialist', 'data'=>$specialists_data, 'id'=>$id_specialist));
+										select_field(array('caption'=>'Sex', 'name'=>'id_sex', 'data'=>$sex_data, 'id'=>$id_sex),$id_sex);
+										select_field(array('caption'=>'Specialist', 'name'=>'id_specialist', 'data'=>$specialists_data, 'id'=>$id_specialist),$id_specialist);
 										text_field(array('caption'=>'Title (ENG)', 'name'=>'en_title', 'value'=>$en_title, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										text_field(array('caption'=>'Title (KHM)', 'name'=>'kh_title', 'value'=>$kh_title, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										text_field(array('caption'=>'Degree (ENG)', 'name'=>'en_degree', 'value'=>$en_degree, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
@@ -112,29 +114,29 @@
 		</div>
 	</div>
 </div>	
-<script>
-	$(document).ready(function(){
-		get_type();
-		$("#id_doctor_category").change(function(){
-			get_type();
-		})
-	});
+// <script>
+// 	$(document).ready(function(){
+// 		get_type();
+// 		$("#id_doctor_category").change(function(){
+// 			get_type();
+// 		})
+// 	});
 
-	function get_type(){
-		id_doctor_category=$("#id_doctor_category").val();
-		$.ajax({
-            method:"POST",
-            url: "<?php echo base_url(); ?>/admin/<?=$term?>/get_type",
-            data: {
+// 	function get_type(){
+// 		id_doctor_category=$("#id_doctor_category").val();
+// 		$.ajax({
+//             method:"POST",
+//             url: "<?php echo base_url(); ?>/admin/<?=$term?>/get_type",
+//             data: {
                  
-                "id_doctor_category": id_doctor_category,
-                "id_doctor_type": <?php echo $id_doctor_type; ?>
+//                 "id_doctor_category": id_doctor_category,
+//                 "id_doctor_type": <?php echo $id_doctor_type; ?>
               
-            }
+//             }
 
-        }).done(function(respond) {
-            $("#id_doctor_type").html(respond);
-        });
-	}
-</script>
+//         }).done(function(respond) {
+//             $("#id_doctor_type").html(respond);
+//         });
+// 	}
+// </script>
 			
