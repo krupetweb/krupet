@@ -111,7 +111,27 @@
 													</div>               
 												</div>
 												<?php } ?>
-												
+												<?php if(!empty($galleries)){ ?>
+												<h3  class=" last-child-ac ilast-child-acc ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-accordion-imedica-dep-accordion-header-2" aria-controls="ui-accordion-imedica-dep-accordion-panel-2" aria-selected="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-circle-arrow-e"></span><i class="fa fa-photo dept-icon"></i><span class="dep-txt"><?php echo get_lang('galleries');?></span></h3>
+												<div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-imedica-dep-accordion-panel-2" aria-labelledby="ui-accordion-imedica-dep-accordion-header-2" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+												   <div class="dept-content pull-left col-md-12">
+														<div class="container-fluid">
+															<div class="row">
+																<script type="text/javascript" src="<?php echo base_url();?>assets/frontend/plugin/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+																<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/frontend/plugin/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+																<?php foreach($galleries as $row){?>
+																<div class="col-xs-12 col-sm-2 col-md-4">
+																	<a class="fancybox" href="<?php echo base_url().$row->image; ?>" data-fancybox-group="gallery" title="<?php echo $row->name; ?>">
+																		<img class="img img-responsive thumbnail" src="<?php echo base_url().$row->image; ?>"/>
+																	</a>
+																</div>
+																<?php }?>
+															</div>
+														</div>
+													</div>               
+												</div>
+												<?php } ?>
 												
 												<!-- Accordion Item -->
 												<?php if(!empty($map)){ ?>

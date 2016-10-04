@@ -78,13 +78,13 @@ class Doctor extends Frontend_base {
 				$this->page_data['map']= $this->doctor_model->get_doctor_map($id_doctor);
 				$this->page_data['page_title']="doctor-profile";
 				// $this->page_data['specialization']=$this->doctor_model->specification_by_doctor($id_doctor);
-
+				$this->page_data['galleries']			= $this->doctor_model->get_doctor_galleries($id_doctor);
 				$this->page_data['ads_v'] 			= $this->doctor_model->get_vertical_ads(5);
 				$this->page_data['ads_h'] 			= $this->doctor_model->get_horizontal_ads(5);
                 $this->page_data['active_menu']='doctors';
                 //$this->page_data['page_title']="Doctor Detail";  //get_lang('doctor-profile');
 				$this->page_data['page_name']='view_doctor';
-
+				// echo json_encode($this->page_data);
 				$this->load->view('frontend/index', $this->page_data);
 			}else{
 				$this->found_404();

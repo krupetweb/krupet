@@ -111,6 +111,14 @@ class Doctor_model extends Frontend_base_model {
 		$query = $this->db->get();
 		return $query->result();
 	}
+	function get_doctor_galleries($id_doctor){
+		$this->db->select('id, '.$this->lang.'_name as name, image');
+		$this->db->from('tbl_doctors_galleries');
+		$this->db->where('is_published', 1);
+		$this->db->where('id_doctor', $id_doctor);
+		$query = $this->db->get();
+		return $query->result();
+	}
 	function get_doctor_hospitals($id_doctor){
 		$this->db->select($this->lang.'_name as name, slug, id_hospital as id, image');
 		$this->db->from('view_doctor_hospitals');
