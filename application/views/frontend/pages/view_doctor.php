@@ -49,6 +49,9 @@
 												</td>
 											</tr>
 											<tr>
+												<td >Hotline </td><td >:&nbsp;<?php echo $data[0]->hot_line; ?></td>
+											</tr>
+											<tr>
 												<td ><?php echo get_lang('phone_number');?></td><td >:&nbsp;<?php echo $data[0]->phone; ?></td>
 											</tr>
 											<tr>

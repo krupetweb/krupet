@@ -196,7 +196,7 @@
 
 								<div class="col-xs-12 col-sm-12 col-md-5" >
 									<div class="zoom-wrap">
-									  <div class="zoom-icon"></div>
+									  <!-- <div class="zoom-icon"></div> -->
 										<a  href="<?php echo base_url();?><?php echo $lang;?>/blog-detail/<?php echo $row->slug; ?>">
 											<img alt="" data-src=" <?php echo base_url()?><?php echo $row->image ?> " src=" " class="img-responsive">
 										</a>

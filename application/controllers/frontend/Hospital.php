@@ -78,7 +78,7 @@ class Hospital extends Frontend_base {
 				$this->page_data['contact']				= $this->hospital_model->get_contact($id_hospital);
 				$this->page_data['branches']			= $this->hospital_model->get_hospital_branches($id_hospital);
 				$this->page_data['doctors']				= $this->hospital_model->get_hospital_doctors($id_hospital);
-				//$this->page_data['services']			= $this->hospital_model->get_hospital_services($id_hospital);
+				$this->page_data['services']			= $this->hospital_model->get_hospital_services($id_hospital);
 				
 				$this->page_data['ads_v'] 			= $this->hospital_model->get_vertical_ads(3);
 				$this->page_data['ads_h'] 			= $this->hospital_model->get_horizontal_ads(3);
@@ -90,6 +90,7 @@ class Hospital extends Frontend_base {
 				$this->page_data['active_menu']		='hospitals';
 				$this->page_data['page_title']="Hospital Detail";  //get_lang('hospital Profile');
 				$this->page_data['page_name']='view_hospital';
+				// echo json_encode ($this->page_data['departments']);
 				$this->load->view('frontend/index', $this->page_data);
 		    }else{
 		    	$this->found_404();
@@ -141,8 +142,8 @@ class Hospital extends Frontend_base {
 	public function get_price($id_hospital=0, $id_department=0){
 		//echo $id_department;die;
 		$this->page_data['data']=$this->hospital_model->get_hospital_services($id_hospital, $id_department);
-
-		$this->load->view('frontend/pages/parts/hospital_service_data', $this->page_data);
+		echo json_encode($this->page_data['data']);
+		// $this->load->view('frontend/pages/parts/hospital_service_data', $this->page_data);
 	}
 
 	

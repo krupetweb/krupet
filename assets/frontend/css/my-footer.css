@@ -1,8 +1,6 @@
 .main-footer {
     background: #F2F2F2;
     color: #333;
-    padding-top: 70px;
-    padding-bottom: 60px;
 }
 
 .main-footer a {
@@ -113,4 +111,5 @@ p.footer-title {
     letter-spacing: 1px;
     color: black;
     margin: 15px 0 8px;
+    font-weight: bold;
 }

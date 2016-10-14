@@ -26,6 +26,7 @@
 										$en_name		='';
 										$kh_name		='';
 										$working_hours		='';
+										$kh_working_hours		='';
 										$phone		='';
 										$email		='';
 										$en_address		='';
@@ -50,7 +51,8 @@
 											$id				= $data->id;
 											$en_name		= $data->en_name;
 											$kh_name		= $data->kh_name;
-											$working_hours		= $data->working_hours;
+											$working_hours		= $data->en_working_hours;
+											$kh_working_hours		=$data->kh_working_hours;
 											$phone		= $data->phone;
 											$email		= $data->email;
 											$en_address		= $data->en_address;
@@ -84,7 +86,8 @@
 										text_field(array('caption'=>'Name (ENG)', 'name'=>'en_name', 'value'=>$en_name, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										text_field(array('caption'=>'Name (KHM)', 'name'=>'kh_name', 'value'=>$kh_name, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										text_field(array('caption'=>'Email', 'name'=>'email', 'value'=>$email, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
-										textarea_field(array('caption'=>'Working Hours', 'name'=>'working_hours', 'value'=>$working_hours, 'required'=>'required', 'required_message'=>''));
+										textarea_field(array('caption'=>'Working Hours ENG)', 'name'=>'en_working_hours', 'value'=>$working_hours, 'required'=>'required', 'required_message'=>''));
+										textarea_field(array('caption'=>'Working Hours (KHM)', 'name'=>'kh_working_hours', 'value'=>$kh_working_hours, 'required'=>'required', 'required_message'=>''));
 										textarea_field(array('caption'=>'Phone', 'name'=>'phone', 'value'=>$phone, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										select_field(array('caption'=>'Provinces', 'name'=>'id_province', 'data'=>$provinces_data, 'id'=>$id_province));
 										select_field(array('caption'=>'Distrit', 'name'=>'id_distrit', 'data'=>$distrits_data, 'id'=>$id_distrit));

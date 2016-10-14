@@ -967,9 +967,9 @@ h1:after {
 
 .reservation-bar {
     overflow: hidden;
-    padding: 12px 0 20px;
-    background: rgba(53, 53, 53, 0.7);
-    margin-top: -81px;
+    padding: 5px 0 12px;
+    background: rgba(53, 53, 53, 0.38);
+    margin-top: -67px;
     position: absolute;
     z-index: 99;
     width: 100%;

@@ -215,6 +215,7 @@ class Doctors extends Admin
 		$data['id_distrit']			=$this->input->post('id_distrit');
 		$data['phone']				=$this->input->post('phone');
 		$data['email']		        =$this->input->post('email');
+		$data['hot_line']		        =$this->input->post('hot_line');
 		return $data;
 	}
 	function update_contact(){

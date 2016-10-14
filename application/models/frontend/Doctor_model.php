@@ -15,7 +15,7 @@ class Doctor_model extends Frontend_base_model {
 		$key		=isset($_GET['key']) ? $_GET['key'] : "";
 		
 		$this->db->select(	$this->lang.'_name as name, 
-							image, id, phone, email, slug,'.
+							image, id, phone,hot_line, email, slug,'.
 							$this->lang.'_specification as specification, '.
 							$this->lang.'_province as province,'.
 							$this->lang.'_distrit as distrit'
@@ -94,7 +94,7 @@ class Doctor_model extends Frontend_base_model {
 									$this->lang.'_experience as experience, '.
 									$this->lang.'_province as province, '.
 									$this->lang.'_specification as specification, '.
-									$this->lang.'_background as background, image, phone, email, slug');
+									$this->lang.'_background as background, image, phone,hot_line, email, slug');
 		
 		$this->db->from('view_doctors_for_searching');
 		$this->db->where('id', $id_hospital);

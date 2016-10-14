@@ -9,7 +9,10 @@
 						<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 							<article>
 								<?php 
-									echo $data[0]->content; 
+									if(isset($data[0])){
+										echo $data[0]->content;
+									}
+									 
 								?> 
 							</article>
 						</div>

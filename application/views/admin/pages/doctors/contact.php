@@ -24,6 +24,7 @@
 									    $id_province 	=0;
 									    $id_distrit     =0;
 										$phone			='';
+										$hot_line			='';
 										$email 			='';
 										
 									$button_caption='create';
@@ -34,7 +35,7 @@
 										$id_distrit		    = $data->id_distrit;
 										$phone		        = $data->phone;
 										$email	            = $data->email;
-										
+										$hot_line			= $data->hot_line;
 										
 										$button_caption='update';
 									}
@@ -60,6 +61,7 @@
 										select_field(array('caption'=>'Distrit', 'name'=>'id_distrit', 'data'=>$distrits_data, 'id'=>$id_distrit));
 										email_field(array('caption'=>'Email', 'name'=>'email', 'value'=>$email, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										textarea_field(array('caption'=>'Phone', 'name'=>'phone', 'value'=>$phone, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
+										textarea_field(array('caption'=>'Hot line', 'name'=>'hot_line', 'value'=>$hot_line, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 									    button_field(array('button_caption'=>$action, 'url_delete'=>base_url().'admin/'.$term.'/delete/'.$id_doctor));
 										?>
 										

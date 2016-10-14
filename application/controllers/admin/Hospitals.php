@@ -162,7 +162,8 @@ class Hospitals extends Admin
 		$data['kh_name']		=$this->input->post('kh_name');
 		$data['id_province']		=$this->input->post('id_province');
 		$data['id_distrit']		=$this->input->post('id_distrit');
-		$data['working_hours']	=$this->input->post('working_hours');
+		$data['en_working_hours']	=$this->input->post('en_working_hours');
+		$data['kh_working_hours']	=$this->input->post('kh_working_hours');
 		$data['phone']			=$this->input->post('phone');
 		$data['email']			=$this->input->post('email');
 		$data['en_address']		=$this->input->post('en_address');
@@ -271,6 +272,7 @@ class Hospitals extends Admin
 		$this->page_data['page']			='services';
 		$this->page_data['active_nav']		='services';
 		$this->page_data['page_title']		='services';
+		// var_dump($this->page_data['data']);
 		$this->load->view('admin/index', $this->page_data);
 	}
 	function form_services(){
@@ -290,7 +292,7 @@ class Hospitals extends Admin
 		    }
 		}
 		$this->page_data["services"]= $this->model->get_services();
-		//print_r($this->model->get_hospital_departments($id_hospital));die;
+		// echo json_encode($this->model->get_hospital_departments($id_hospital));die;
 		$this->page_data["hospital_departments"]= $this->model->get_hospital_departments($id_hospital);
 		$this->page_data['page']		    ='form_services';
 		$this->page_data['active_nav']		='form_services';

@@ -334,6 +334,7 @@
 			$.ajax({
 			  url: "<?php echo base_url(); ?><?php echo $lang; ?>/get-price/"+<?php echo $id_hospital; ?>+"/"+id_department,
 			}).done(function(respond) {
+				console.log(respond);
 			  $("#price-container").html(respond);
 			});
 		}
