@@ -27,7 +27,7 @@ class Blog extends Frontend_base {
 		if($tag!=""){
 			$url.='?tag='.$tag;
 		}
-		// echo $id_category;
+		echo $id_category;
         $config["base_url"] =$url;
         $config["total_rows"] = $this->model->record_count($id_category, $tag);
         $config["per_page"] = 10;
@@ -59,8 +59,8 @@ class Blog extends Frontend_base {
 
         $this->page_data["data"] = $this->model->get_data($config["per_page"], $page, $id_category, $tag);
         $this->page_data["links"] = $this->pagination->create_links();
-		// var_dump($this->page_data["data"]);
-		// exit();
+		var_dump($this->page_data["data"]);
+		exit();
 		$this->page_data['page_name']=$page_name;
 		$this->page_data['ads_v'] 			= $this->model->get_vertical_ads(7);
 		$this->page_data['ads_h'] 			= $this->model->get_horizontal_ads(7);

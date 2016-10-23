@@ -137,7 +137,7 @@ class Doctor_model extends Frontend_base_model {
 		if(!empty($data)){
 			$id_hospital=$data[0]->id_hospital;
 			
-			$this->db->select($this->lang.'_name as name,  '.$this->lang.'_address as address, website, facebook_link, phone, email, website, lat, lon, working_hours');
+			$this->db->select($this->lang.'_name as name, '.$this->lang.'_address as working_hours, '.$this->lang.'_address as address, website, facebook_link, phone, email, website, lat, lon');
 			$this->db->from('tbl_hospital_branches');
 			$this->db->where('id_hospital', $id_hospital);
 			$this->db->where('is_default', 1);

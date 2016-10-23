@@ -71,6 +71,7 @@
 	                    "distrit" 	: distrit
 	                }
 	            }).done(function(respond) {
+	            	console.log(respond);
 	            	$("#btn-search-phone").html('<i class="fa fa-search"></i> <?php echo get_lang('search');?>');
 
 	                $("#phone-container").html(respond);

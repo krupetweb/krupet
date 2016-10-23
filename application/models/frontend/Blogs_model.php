@@ -52,7 +52,9 @@ class Blogs_model extends Frontend_base_model {
 		$this->db->limit($limit, $start);
 		$this->db->group_by($this->lang.'_title');
 		if($tag!=""){
-	 		$this->db->like($this->lang.'_tag', $tag);
+	 		$this->db->escape_like_str($this->lang.'_title', $tag);
+	 		// $this->db->like('slug', $tag);
+	 		$this->db->escape_like_str($this->lang.'_tag', $tag);
 	 	}
 		$data= $this->db->get()->result();
 		return $data;

@@ -89,7 +89,8 @@ class Home_model extends Frontend_base_model {
 		$this->db->join('tbl_phone_types as t', 't.id=p.id_type');
 		$this->db->join('tbl_provinces as pro', 'pro.id=p.id_province');
 		$this->db->join('tbl_distrits as d', 'd.id=p.id_distrit');
-		
+		$this->db->where('p.is_published', 1);
+		$this->db->where('p.is_featured', 1);
 		if($type!=0){
 			$this->db->where('t.id', $type);
 		}
