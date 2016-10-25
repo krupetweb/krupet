@@ -41,7 +41,7 @@
 
 										$is_published	=0;
 										$modified_dt='';
-										
+										$hot_line			='';
 										//print_r($data);die;
 
 										$button_caption='create';
@@ -65,7 +65,7 @@
 											$facebook_link		= $data->facebook_link;
 											$is_published	= $data->is_published;
 											$modified_dt    = $data->modified_dt;
-											
+											$hot_line			= $data->hot_line;
 											$button_caption='update';
 										}
 
@@ -89,6 +89,7 @@
 										textarea_field(array('caption'=>'Working Hours ENG)', 'name'=>'en_working_hours', 'value'=>$working_hours, 'required'=>'required', 'required_message'=>''));
 										textarea_field(array('caption'=>'Working Hours (KHM)', 'name'=>'kh_working_hours', 'value'=>$kh_working_hours, 'required'=>'required', 'required_message'=>''));
 										textarea_field(array('caption'=>'Phone', 'name'=>'phone', 'value'=>$phone, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
+										textarea_field(array('caption'=>'Hot line', 'name'=>'hot_line', 'value'=>$hot_line, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										select_field(array('caption'=>'Provinces', 'name'=>'id_province', 'data'=>$provinces_data, 'id'=>$id_province));
 										select_field(array('caption'=>'Distrit', 'name'=>'id_distrit', 'data'=>$distrits_data, 'id'=>$id_distrit));
 									

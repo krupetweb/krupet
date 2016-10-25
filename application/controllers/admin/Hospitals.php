@@ -173,6 +173,8 @@ class Hospitals extends Admin
 		$data['website']		=$this->input->post('website');
 		$data['facebook_link']	=$this->input->post('facebook_link');
 		$data['is_published']	=$this->input->post('is_published');
+		$data['hot_line']	=$this->input->post('hot_line');
+		
 		$data['is_default']		=1;
 		$data['modified_dt']	=date("Y-m-d H:i:s");
 		return $data;

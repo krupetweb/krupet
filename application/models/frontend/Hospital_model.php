@@ -15,24 +15,24 @@ class Hospital_model extends Frontend_base_model {
 		$specification	=isset($_GET['specification']) ? $_GET['specification'] : "";
 		$key		=isset($_GET['key']) ? $_GET['key'] : "";
 		
-		$this->db->select($this->lang.'_name as name, image, slug, id,'.$this->lang.'_province as province, '.$this->lang.'_distrit as distrit,'.$this->lang.'_address as address, phone, email, lat, lon');
+		$this->db->select($this->lang.'_name as name, image, slug, id,'.$this->lang.'_province as province, '.$this->lang.'_distrit as distrit,'.$this->lang.'_address as address,hot_line, phone, email, lat, lon');
 		$this->db->from('view_hospitals_for_searhing');
 		$this->db->limit($limit, $start);
 		
-		$this->db->like($this->lang.'_cat', $cat); 
-		$this->db->like($this->lang.'_type', $type); 
+		$this->db->escape_like_str($this->lang.'_cat', $cat); 
+		$this->db->escape_like_str($this->lang.'_type', $type); 
 
 		if($key!=""){
-			$this->db->like($this->lang.'_name', $key);
+			$this->db->escape_like_str($this->lang.'_name', $key);
 		}
 		if($province!=""){
-			$this->db->like($this->lang.'_province', $province);
+			$this->db->escape_like_str($this->lang.'_province', $province);
 		}
 		if($distrit!=""){
-			$this->db->like($this->lang.'_distrit', $distrit);
+			$this->db->escape_like_str($this->lang.'_distrit', $distrit);
 		}
 		if($specification!=""){
-			$this->db->like($this->lang.'_specification', $specification); 
+			$this->db->escape_like_str($this->lang.'_specification', $specification); 
 		}
 
 		$this->db->order_by('name', 'ASC');
@@ -54,20 +54,20 @@ class Hospital_model extends Frontend_base_model {
 		$this->db->select('id');
 		$this->db->from('view_hospitals_for_searhing');
 		
-		$this->db->like($this->lang.'_cat', $cat); 
-		$this->db->like($this->lang.'_type', $type); 
+		$this->db->escape_like_str($this->lang.'_cat', $cat); 
+		$this->db->escape_like_str($this->lang.'_type', $type); 
 
 		if($key!=""){
-			$this->db->like($this->lang.'_name', $key);
+			$this->db->escape_like_str($this->lang.'_name', $key);
 		}
 		if($province!=""){
-			$this->db->like($this->lang.'_province', $province);
+			$this->db->escape_like_str($this->lang.'_province', $province);
 		}
 		if($distrit!=""){
-			$this->db->like($this->lang.'_distrit', $distrit);
+			$this->db->escape_like_str($this->lang.'_distrit', $distrit);
 		}
 		if($specification!=""){
-			$this->db->like($this->lang.'_specification', $specification); 
+			$this->db->escape_like_str($this->lang.'_specification', $specification); 
 		}
 
 		$this->db->group_by($this->lang.'_name'); 
@@ -87,7 +87,7 @@ class Hospital_model extends Frontend_base_model {
 		return $query->result();
 	}
 	function get_contact($id_hospital=0){
-		$this->db->select($this->lang.'_name as name,  '. $this->lang.'_working_hours as working_hours,  '.$this->lang.'_address as address, website, facebook_link, phone, email, website, lat, lon');
+		$this->db->select($this->lang.'_name as name,  '. $this->lang.'_working_hours as working_hours,  '.$this->lang.'_address as address, website, facebook_link, hot_line,phone, email, website, lat, lon');
 		$this->db->from('tbl_hospital_branches');
 		$this->db->where('id_hospital', $id_hospital);
 		$this->db->where('is_default', 1);
@@ -317,7 +317,7 @@ class Hospital_model extends Frontend_base_model {
 		$this->db->order_by('h.data_order', 'ASC');
 		$this->db->group_by('r.id_hospital');
 
-		$this->db->like('h.'.$this->lang.'_name', $this->input->post('name'));
+		$this->db->escape_like_str('h.'.$this->lang.'_name', $this->input->post('name'));
 		$this->db->limit(100);
 		return $this->db->get()->result();
 	}

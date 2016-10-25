@@ -61,7 +61,7 @@
 										select_field(array('caption'=>'Distrit', 'name'=>'id_distrit', 'data'=>$distrits_data, 'id'=>$id_distrit));
 										email_field(array('caption'=>'Email', 'name'=>'email', 'value'=>$email, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										textarea_field(array('caption'=>'Phone', 'name'=>'phone', 'value'=>$phone, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
-										textarea_field(array('caption'=>'Hot line', 'name'=>'hot_line', 'value'=>$hot_line, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
+										// textarea_field(array('caption'=>'Hot line', 'name'=>'hot_line', 'value'=>$hot_line, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 									    button_field(array('button_caption'=>$action, 'url_delete'=>base_url().'admin/'.$term.'/delete/'.$id_doctor));
 										?>
 										

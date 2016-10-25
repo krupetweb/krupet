@@ -18,6 +18,7 @@
 					$branch_name 	="";
 					$working_hours	="";
 					$phone      	="";
+					$hot_line		="";
 					$email			="";
 					$website		="#";
 					$facebook_link 	="#";
@@ -35,6 +36,7 @@
 						$facebook_link	=$contact[0]->facebook_link;
 						$lat 			=$contact[0]->lat;
 						$lon 			=$contact[0]->lon;
+						$hot_line       =$contact[0]->hot_line;
 						//$image 			=$contact[0]->image;
 					}
 
@@ -68,6 +70,9 @@
 											</tr>
 											<tr>
 												<td ><?php echo get_lang('open hour');?></td><td >:&nbsp;<?php echo $working_hours; ?></td>
+											</tr>											
+											<tr>
+												<td >Hotline </td><td >:&nbsp;<?php echo $hot_line ; ?></td>
 											</tr>
 											<tr>
 												<td ><?php echo get_lang('phone_number');?></td><td >:&nbsp;<?php echo $phone; ?></td>

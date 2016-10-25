@@ -106,8 +106,8 @@
 												<?php if(!empty($row->email)){?>
 													<span class="doc-title"> <i class="fa fa-envelope"></i> &nbsp; <?php echo $row->email ?></span><br />
 												<?php }?>
-												<?php if(!empty($row->hot_line)){?>
-													<span class="doc-title"> <i class="fa fa-phone"></i> &nbsp; <?php echo $row->hot_line ?></span><br />
+												<?php if(!empty($row->phone)){?>
+													<span class="doc-title"> <i class="fa fa-phone"></i> &nbsp; <?php echo $row->phone ?></span><br />
 												<?php }?>
 												<?php if(!empty($row->distrit)){?>
 													<span class="doc-title"> <i class="fa fa-map-marker"></i> &nbsp; <?php echo $row->distrit.', '. $row->province ?></span><br />
