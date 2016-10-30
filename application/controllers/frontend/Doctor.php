@@ -84,7 +84,7 @@ class Doctor extends Frontend_base {
                 $this->page_data['active_menu']='doctors';
                 //$this->page_data['page_title']="Doctor Detail";  //get_lang('doctor-profile');
 				$this->page_data['page_name']='view_doctor';
-				// echo json_encode($this->page_data);
+				
 				$this->load->view('frontend/index', $this->page_data);
 			}else{
 				$this->found_404();

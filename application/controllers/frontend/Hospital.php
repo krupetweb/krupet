@@ -90,7 +90,8 @@ class Hospital extends Frontend_base {
 				$this->page_data['active_menu']		='hospitals';
 				$this->page_data['page_title']="Hospital Detail";  //get_lang('hospital Profile');
 				$this->page_data['page_name']='view_hospital';
-				// echo json_encode ($this->page_data['departments']);
+				// echo json_encode ($this->page_data['services']);
+				
 				$this->load->view('frontend/index', $this->page_data);
 		    }else{
 		    	$this->found_404();
@@ -142,8 +143,8 @@ class Hospital extends Frontend_base {
 	public function get_price($id_hospital=0, $id_department=0){
 		//echo $id_department;die;
 		$this->page_data['data']=$this->hospital_model->get_hospital_services($id_hospital, $id_department);
-		echo json_encode($this->page_data['data']);
-		// $this->load->view('frontend/pages/parts/hospital_service_data', $this->page_data);
+		// echo json_encode($this->page_data['data']);
+		$this->load->view('frontend/pages/parts/hospital_service_data', $this->page_data);
 	}
 
 	

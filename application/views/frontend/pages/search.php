@@ -94,14 +94,14 @@
 									<?php foreach($search as $row){ ?>
 										<div class="col-xs-12 col-sm-6 col-md-3">
 											<div class="zoom-wrap">
-											  <div class="zoom-icon"></div>
+											  
 												<a href="<?php echo base_url().$lang; ?>/hospitals/<?php echo $row->slug?>">
 													<img alt="" class="img-responsive" data-src="<?php echo base_url($row->image)?>" src="" />
 												</a>
 											</div>
 											
 											<div class="doc-name-class">
-												<a href="<?php echo base_url().$lang?>/doctors/<?php echo $row->slug; ?>"><h3><?php echo $row->name ?></h3></a>
+												<a href="<?php echo base_url().$lang?>/hospitals/<?php echo $row->slug; ?>"><h3><?php echo $row->name ?></h3></a>
 											</div>
 											<span class="doc-title"> <i class="fa fa-envelope"></i> &nbsp; <?php echo $row->email ?></span><br />
 											<span class="doc-title"> <i class="fa fa-phone"></i> &nbsp; <?php echo $row->phone ?></span><br />
@@ -146,7 +146,7 @@
 									<?php foreach($doctor as $row){ ?>
 										<div class="col-xs-12 col-sm-6 col-md-3">
 											<div class="zoom-wrap">
-											  <div class="zoom-icon"></div>
+											 
 												<a href="<?php echo base_url().$lang; ?>/doctors/<?php echo $row->slug?>">
 													<img alt="" class="img-responsive" data-src="<?php echo base_url($row->image)?>" src="" />
 												</a>

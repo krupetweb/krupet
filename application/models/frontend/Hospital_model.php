@@ -109,28 +109,21 @@ class Hospital_model extends Frontend_base_model {
 		return $query->result();
 	}
 	function get_hospital_services($id_hospital=0, $id_department=0){
-		// $this->db->select($this->lang.'_name as name, '.$this->lang.'_note as note, '.$this->lang.'_department as department, price');
-		// $this->db->from('view_hospital_services');
-		// $this->db->where('id_hospital', $id_hospital);
-		// $this->db->where('id_department', $id_department);
-		// $this->db->order_by('department', 'ASC');
-		// $query = $this->db->get();
-		// return $query->result();
-        // echo $id_department;die;
-		// $this->db->select('h_s.id, d.'.$this->lang.'_name as department, s.'.$this->lang.'_name as service, h_s.price, h_s.'.$this->lang.'_note as note,  h_s.modified_dt');
-		// $this->db->from('tbl_hospital_services as h_s');
-		// $this->db->join('tbl_services as s', 's.id=h_s.id_service');
-		// $this->db->join('tbl_departments as d', 'd.id=h_s.id_department');
-		// $this->db->where(array('h_s.id_hospital'=>$id_hospital));
-		// $this->db->order_by ("h_s.modified_dt","DESC");
-		// $data=$this->db->get()->result();
-		// return $id_hospital;
-		// echo $this->db->last_query();die;
-		$this->db->select('s.en_name as name,hs.id,hs.price,hs.modified_dt,hs.is_published');
-		$this->db->from('tbl_hospital_services as hs');
-		$this->db->join('tbl_services as s','s.id = hs.id_service' );
+		$this->db->select($this->lang.'_services as service');
+		$this->db->from('tbl_hospital_service');
 		$this->db->where('id_hospital', $id_hospital);
 		return $this->db->get()->result();
+
+		// $this->db->select('s.en_name as name,hs.id,hs.price,hs.modified_dt,hs.is_published, hs.'.$this->lang.'_note as note');
+		// $this->db->from('tbl_hospital_services as hs');
+		// $this->db->join('tbl_services as s','s.id = hs.id_service' );
+		// $this->db->where('id_hospital', $id_hospital);
+		// if($id_department !=0){
+		// 	$this->db->where('id_department', $id_department);
+		// }
+		// return $id_department;
+		// exit();
+		// return $this->db->get()->result();
 	}
 	function get_hospital_galleries($id_hospital){
 		$this->db->select('id, '.$this->lang.'_name as name, image');
@@ -321,15 +314,12 @@ class Hospital_model extends Frontend_base_model {
 		$this->db->limit(100);
 		return $this->db->get()->result();
 	}
+	
+	//====================================================================== Department
 	function get_hospital_departments($id_hospital=0){
-		// $this->db->select('d.'.$this->lang.'_name as name, d.id');
-		// $this->db->from('tbl_hospital_departments as h_d');
-		// $this->db->Join('tbl_departments as d', 'd.id=h_d.id_department');
-		// $this->db->where(array('d.is_published'=>1, 'h_d.id_hospital'=>$id_hospital));
-		// return $this->db->get()->result();
-		$this->db->select('s.en_name as name,hs.id,hs.price,hs.modified_dt,hs.is_published');
-		$this->db->from('tbl_hospital_services as hs');
-		$this->db->join('tbl_services as s','s.id = hs.id_service' );
+		$this->db->select('s.en_name as name,hs.id,hs.modified_dt');
+		$this->db->from('tbl_hospital_departments as hs');
+		$this->db->join('tbl_departments as s','s.id = hs.id_department' );
 		$this->db->where('id_hospital', $id_hospital);
 		return $this->db->get()->result();
 	}

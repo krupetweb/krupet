@@ -168,21 +168,18 @@
 				</div>
 
 
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>		
+<script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
 	<script style="text/javascript">
-	
-
-    function lookup () {
-       
+    	function lookup (lat, lon, name, address, phone, email) {
             //Scroll to top
             if(scroll == true){
                 $('html,body').animate({ scrollTop: 0 }, 'slow');
             }
-
+           // alert(lat);
            // var latlng = new google.maps.LatLng(lat,lng);
-            var latlng = new google.maps.LatLng(<?php echo $map[0]->lat; ?>,<?php echo $map[0]->lon; ?>)
+            var latlng = new google.maps.LatLng(lat,lon)
             var myOptions = {
-                                 zoom: 15,
+                                zoom: 15,
                                 zoomControl:true,
                                  mapTypeControl:true,
                                  scaleControl:true,
@@ -195,8 +192,10 @@
                             };
 
            var contentString = '<div id="content">'+
-			  '<h6><?php echo $map[0]->name; ?></h6>'+
-			  '<p><i class="fa fa-hospital-o"></i>: <?php echo $map[0]->address; ?><br /><i class="fa fa-phone"></i>:: <?php echo $map[0]->phone; ?><br /> <i class="fa fa-envelope-o"></i>: <?php echo $map[0]->email; ?>' +
+			  '<h6>'+name+'</h6>'+
+			  '<p>'+
+			  		'<i class="fa fa-hospital-o"></i>: '+address+'<br />'+
+			  		'<i class="fa fa-envelope-o"></i>: ' + email +
 			  '</p>'+
 			  '</div>';
 
@@ -217,23 +216,80 @@
             });
     };
 
-
-	$( function(){
-	            lookup();
-	    });
-
-
-
+        
 		//::::::::::::::::::::::::::::::::::::::::::::::>> Fancy Box
 		$(document).ready(function() {
+			<?php if(!empty($galleries)){ ?>
+			$('.fancybox').fancybox();
+			<?php } ?>
 			
-			$( "#map_viewer" ).click(function() {
-				if($("#ui-accordion-imedica-dep-accordion-panel-5").show()){
-					lookup();
-				}
-			 	
-			});
 		});
+        
+		
 		
     </script>
-					
+
+    <style>
+      #map {
+        width: 100%;
+        height: 500px;
+
+      }
+      .doctor-bg{
+      	padding: 15px 10px;
+      }
+      .doctor-bg p{
+      		font-size:14px;
+      		font-family: Hanuman, Arial, serif;
+      }
+      ul{
+      	padding-left:20px;
+      }
+      .doctor-bg ul li{
+      		list-style-type: circle !important;
+      		line-height:1.8;
+      		font-family: Hanuman, Arial, serif;
+      }
+      .star-rate{
+      	display:inline;
+      	padding:0px;
+      }
+      .star-rate li{
+      	display:inline;
+      }
+      .star-rate li img{
+      		width:20px;
+      }
+      .table-rating{
+      	width:100%;
+      	color:grey;
+      }
+      .table-rating tr td b i{
+      	font-size:50px;
+      	color:red;
+      }
+      .star-rate-sumary{
+      	width:90% !important;
+      	color:grey;
+      }
+      .star-rate-sumary li img{
+      	width:20px;
+      }	
+       .star-rate-sumary tr td b{
+      	float:right;
+      }	
+       .star-rate-sumary li{
+      	display:inline;
+      }	
+
+      .faq-tabs-wrap .tab-pane img {
+			    margin: 0;
+			    border: 0px solid #fff; 
+			    box-shadow: 0px 0px 0px 0px;
+			}
+			select{
+				color:gray !important;
+				border-color:gray !important;
+				margin-bottom:10px;
+			}
+</style>

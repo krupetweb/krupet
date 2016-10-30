@@ -255,9 +255,10 @@ class Hospitals extends Admin
 	}
 	function get_service_form_data($id_hospital=0){
 		$data['id_hospital']	=$id_hospital;
-		$data['price']		=$this->input->post('price');
-		$data['id_service']		=$this->input->post('id_service');
-		$data['id_department']		=$this->input->post('id_department');
+		$data['en_services']			=$this->input->post('en_services');
+		$data['kh_services']			=$this->input->post('kh_services');
+		// $data['id_service']		=$this->input->post('id_service');
+		// $data['id_department']		=$this->input->post('id_department');
 		$data['is_published']	=$this->input->post('is_published');
 		$data['modified_dt']	=date("Y-m-d H:i:s");
 		return $data;
@@ -269,7 +270,8 @@ class Hospitals extends Admin
 		$this->page_data['id_hospital']		=$id_hospital;
 		$this->db->where('id_hospital', $id_hospital);
 		$this->page_data['data']			=$this->model->get_hospital_services($id_hospital);
-		
+
+
 		$this->page_data['active_page']		=$this->page_data['term'];
 		$this->page_data['page']			='services';
 		$this->page_data['active_nav']		='services';
@@ -280,22 +282,17 @@ class Hospitals extends Admin
 	function form_services(){
 		$action         = $this->get_valid_action();
         $id_hospital    = $this->get_valid_id_hospital();
-        $id_service      = $this->get_valid_id_service();
 
-		$this->page_data['action']			=$action;
+		
 		$this->page_data['id_hospital']		=$id_hospital;
-		if($action=='update'){
-		    $data			=$this->model->get_hospital_service($id_service);
-		    if(!empty($data)){
-		    	$this->page_data['data']			=$data;
-		    	
-		    }else{
-                redirect(base_url().'admin/'.$this->page_data['term'].'/services?id_hospital='.$id_hospital, 'refresh');
-		    }
+		
+		$this->page_data["data"]= $data_service = $this->model->get_hospital_services($id_hospital);
+		if(isset($data_service[0]->Id)){
+			$action = 'update';
 		}
-		$this->page_data["services"]= $this->model->get_services();
-		// echo json_encode($this->model->get_hospital_departments($id_hospital));die;
-		$this->page_data["hospital_departments"]= $this->model->get_hospital_departments($id_hospital);
+		$this->page_data['action']			=$action;
+		// echo json_encode($this->page_data["data"]);die;
+		// $this->page_data["hospital_departments"]= $this->model->get_hospital_departments($id_hospital);
 		$this->page_data['page']		    ='form_services';
 		$this->page_data['active_nav']		='form_services';
 		$this->page_data['active_page']		='hospitals';
@@ -304,21 +301,21 @@ class Hospitals extends Admin
 	function create_service(){
 		$id_hospital    = $this->get_valid_id_hospital();
 		$data=$this->get_service_form_data($id_hospital);
-		$id_service=$this->model->create('tbl_hospital_services', $data);
+		$id_service=$this->model->create('tbl_hospital_service', $data);
 		redirect(base_url().'admin/'.$this->page_data['term'].'/form_services?action=update&id_hospital='.$id_hospital.'&id_service='.$id_service, 'refresh');
 	}
 	function update_service(){
 		$id_hospital    = $this->get_valid_id_hospital();
 		$id_service      = $this->get_valid_id_service();
 		$data=$this->get_service_form_data($id_hospital);
-		$this->model->update('tbl_hospital_services', $id_service, $data);
-		redirect(base_url().'admin/'.$this->page_data['term'].'/form_services?action=update&id_hospital='.$id_hospital.'&id_service='.$id_service, 'refresh');
+		$this->model->update('tbl_hospital_service', $id_service, $data);
+		redirect(base_url().'admin/'.$this->page_data['term'].'/form_services?action=update&id_hospital='.$id_hospital, 'refresh');
 	}
     function delete_service(){
     	$id_hospital    = $this->get_valid_id_hospital();
 		$id_service      = $this->get_valid_id_service();
-		$this->model->delete('tbl_hospital_services', $id_service);
-		redirect(base_url().'admin/'.$this->page_data['term'].'/services?id_hospital='.$id_hospital, 'refresh');
+		$this->model->delete('tbl_hospital_service', $id_service);
+		redirect(base_url().'admin/'.$this->page_data['term'].'/form_hospitals?action=update&id_hospital='.$id_hospital, 'refresh');
     }
     //==========================================================================>> Hospital_specialists
 	function get_valid_id_specialist(){

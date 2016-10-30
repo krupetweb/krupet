@@ -14,7 +14,7 @@
 					<a <?php if($page=='hospital_form' AND $action=='create'){?>  href="#" style='cursor:not-allowed;' <?php }else { ?> href="<?=base_url()?>admin/<?=$term?>/departments?id_hospital=<?=$id_hospital?>"<?php } ?>>Departments</a>
 				</li>
 				<li class="<?php if($page=='services' or $page=='form_services') echo 'active' ?>">
-					<a <?php if($page=='hospital_form' AND $action=='create'){?>  href="#" style='cursor:not-allowed;' <?php }else { ?> href="<?=base_url()?>admin/<?=$term?>/services?id_hospital=<?=$id_hospital?>"<?php } ?>>Services</a>
+					<a <?php if($page=='hospital_form' AND $action=='create'){?>  href="#" style='cursor:not-allowed;' <?php }else { ?> href="<?=base_url()?>admin/<?=$term?>/form_services?action=create&id_hospital=<?=$id_hospital?>"<?php } ?>>Services</a>
 				</li>
 				<li class="<?php if($page=='specialists'  or $page=='form_specialists') echo 'active' ?>">
 					<a <?php if($page=='hospital_form' AND $action=='create'){?>  href="#" style='cursor:not-allowed;' <?php }else { ?> href="<?=base_url()?>admin/<?=$term?>/specialists?id_hospital=<?=$id_hospital?>"<?php } ?>>Specialists</a>

@@ -30,9 +30,11 @@ class Hospitals_model extends Admin_model {
 		return $this->db->get()->result();
 	}
 	function get_hospital_services($id_hospital=0){
-		$this->db->select('s.en_name as name,hs.id,hs.price,hs.modified_dt,hs.is_published');
-		$this->db->from('tbl_hospital_services as hs');
-		$this->db->join('tbl_services as s','s.id = hs.id_service' );
+		// $this->db->select('s.en_name as name,hs.id,hs.price,hs.modified_dt,hs.is_published');
+		// $this->db->from('tbl_hospital_services as hs');
+		// $this->db->join('tbl_services as s','s.id = hs.id_service' );
+		$this->db->select('*');
+		$this->db->from('tbl_hospital_service');
 		$this->db->where('id_hospital', $id_hospital);
 		return $this->db->get()->result();
 	}
@@ -40,7 +42,7 @@ class Hospitals_model extends Admin_model {
 		$this->db->select('*');
 		$this->db->from('tbl_hospital_services');
 		$this->db->where('id', $id);
-		return $this->db->get()->row();
+		return $this->db->get()->result();
 	}
 	//:::::::::::::::::::::::::::::::::::::::::::::::>> Get hospital Category and Dstrit April 22, 2016
 	public function get_hospital_categories(){
@@ -56,7 +58,7 @@ class Hospitals_model extends Admin_model {
 		
 	}
 	//===========================================================================>> Pagination Hospital
-	 public function record_count() {
+	public function record_count() {
 	   $limit=isset($_GET['limit']) ? $_GET['limit'] : 10;
 		$page=isset($_GET['page']) ? $_GET['page'] : 0;
 
@@ -351,7 +353,7 @@ class Hospitals_model extends Admin_model {
     	
     }
     //===========================================================================>> Pagination Hospital
-	 public function record_count_code() {
+	public function record_count_code() {
 	   $id_hospital=isset($_GET['id_hospital']) ? $_GET['id_hospital'] : 10;
 		$type=isset($_GET['type']) ? $_GET['type'] : 'all';
 		$from=isset($_GET['from']) ? $_GET['from'] : '';
@@ -378,7 +380,7 @@ class Hospitals_model extends Admin_model {
 		return count($this->db->get()->result());
 		
     }
-     function get_codes(){
+    function get_codes(){
         
         $id_hospital=isset($_GET['id_hospital']) ? $_GET['id_hospital'] : 10;
 		$limit=isset($_GET['limit']) ? $_GET['limit'] : 10;

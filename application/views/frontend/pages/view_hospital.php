@@ -141,36 +141,20 @@
 												</div>
 												<?php } ?>
 												
-												<?php //if(!empty($services)){ ?>
+												<?php if(!empty($services)){ ?>
 												<h3  class=" last-child-ac ilast-child-acc ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-accordion-imedica-dep-accordion-header-2" aria-controls="ui-accordion-imedica-dep-accordion-panel-2" aria-selected="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-circle-arrow-e"></span><i class="fa fa-medkit dept-icon"></i><span class="dep-txt"><?php echo get_lang('service & price');?></span></h3>
 												<div  class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-imedica-dep-accordion-panel-2" aria-labelledby="ui-accordion-imedica-dep-accordion-header-2" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
 												    <br />
-												    <div>
-																	<select onchange="get_price()" id="price_department"  class="form-control search-control">
-																		<?php foreach($departments as $row){ ?>
-																		<option value="<?php echo $row->id; ?>"><?php echo $row->name; ?></option>
-																		<?php } ?>
-																	</select>
+												    <div class="container-fluid doctor-bg">
+														<?php echo $services[0]->service; ?>		
 													</div>
 													<div>
-														<table class="table">
-															<thead>
-																 <tr>
-																 	<th><?php echo get_lang('no.');?></th>
-																 	<th><?php echo get_lang('name');?></th>
-																 	<th><?php echo get_lang('price');?></th>
-																 	<th><?php echo get_lang('note');?></th>
-																 <tr>
-															</thead>
-															<tbody id="price-container">
-																
-															</tbody>
-														</table>
+														
 														
 														<div class="vspacer"></div>
 													</div>                
 												</div>
-												<?php //} ?>
+												<?php } ?>
 												
 												<?php if(!empty($galleries)){ ?>
 												<h3  class=" last-child-ac ilast-child-acc ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-accordion-imedica-dep-accordion-header-2" aria-controls="ui-accordion-imedica-dep-accordion-panel-2" aria-selected="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-circle-arrow-e"></span><i class="fa fa-photo dept-icon"></i><span class="dep-txt"><?php echo get_lang('galleries');?></span></h3>
@@ -255,158 +239,158 @@
 				</div>
 
 
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
-	<script style="text/javascript">
+<script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+<script style="text/javascript">
 	
 
-    	function lookup (lat, lon, name, address, phone, email) {
-            //Scroll to top
-            if(scroll == true){
-                $('html,body').animate({ scrollTop: 0 }, 'slow');
-            }
-           // alert(lat);
-           // var latlng = new google.maps.LatLng(lat,lng);
-            var latlng = new google.maps.LatLng(lat,lon)
-            var myOptions = {
-                                zoom: 15,
-                                zoomControl:true,
-                                 mapTypeControl:true,
-                                 scaleControl:true,
-                                 rotateControl:true,
-                                 streetViewControl:true,
-                                center: latlng,
-                                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                                disableDefaultUI: true,
-                                scrollwheel: false
-                            };
+	function lookup (lat, lon, name, address, phone, email) {
+        //Scroll to top
+        if(scroll == true){
+            $('html,body').animate({ scrollTop: 0 }, 'slow');
+        }
+       // alert(lat);
+       // var latlng = new google.maps.LatLng(lat,lng);
+        var latlng = new google.maps.LatLng(lat,lon)
+        var myOptions = {
+                            zoom: 15,
+                            zoomControl:true,
+                             mapTypeControl:true,
+                             scaleControl:true,
+                             rotateControl:true,
+                             streetViewControl:true,
+                            center: latlng,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            disableDefaultUI: true,
+                            scrollwheel: false
+                        };
 
-           var contentString = '<div id="content">'+
-			  '<h6>'+name+'</h6>'+
-			  '<p>'+
-			  		'<i class="fa fa-hospital-o"></i>: '+address+'<br />'+
-			  		'<i class="fa fa-envelope-o"></i>: ' + email +
-			  '</p>'+
-			  '</div>';
+       var contentString = '<div id="content">'+
+		  '<h6>'+name+'</h6>'+
+		  '<p>'+
+		  		'<i class="fa fa-hospital-o"></i>: '+address+'<br />'+
+		  		'<i class="fa fa-envelope-o"></i>: ' + email +
+		  '</p>'+
+		  '</div>';
 
-            var infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
-            var map = new google.maps.Map(document.getElementById('map'), myOptions);
-            var image = '<?php echo base_url()?>assets/frontend/images/icon/marker.png';
-            var marker = new google.maps.Marker({
-            position: latlng,
-            map: map,
-            title: "<?=$data[0]->name?>",
-            icon: image
-            });
-            infowindow.open(map,marker);
-            google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map,marker);
-            });
-    };
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+        var map = new google.maps.Map(document.getElementById('map'), myOptions);
+        var image = '<?php echo base_url()?>assets/frontend/images/icon/marker.png';
+        var marker = new google.maps.Marker({
+        position: latlng,
+        map: map,
+        title: "<?=$data[0]->name?>",
+        icon: image
+        });
+        infowindow.open(map,marker);
+        google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map,marker);
+        });
+};
 
-        
-		//::::::::::::::::::::::::::::::::::::::::::::::>> Fancy Box
-		$(document).ready(function() {
-			<?php if(!empty($galleries)){ ?>
-			$('.fancybox').fancybox();
-			<?php } ?>
-			
-			$( "#map_viewer" ).click(function() {
-				if($("#ui-accordion-imedica-dep-accordion-panel-5").show()){
-					lookup(<?php echo $lat; ?>, <?php echo $lon; ?>, "<?php echo $branch_name ?>", "<?php echo $address ?>", "", "<?php echo $email; ?>")
-				}
-			});
-			
-			//get_comments();
-			//$('#rating-data').show();
-			get_price();
-
-			
-		});
-        
-		function get_comments(){
-			id_department=$("#department").val();
-			$.ajax({
-			  url: "<?php echo base_url(); ?>hospital/get_comments/"+id_department+"/"+<?php echo $id_hospital; ?>,
-			}).done(function(respond) {
-			  $("#comment-container").html(respond);
-			});
-		}
-		function get_price(){
-			id_department=$("#price_department").val();
-			
-			$.ajax({
-			  url: "<?php echo base_url(); ?><?php echo $lang; ?>/get-price/"+<?php echo $id_hospital; ?>+"/"+id_department,
-			}).done(function(respond) {
-				console.log(respond);
-			  $("#price-container").html(respond);
-			});
-		}
+    
+	//::::::::::::::::::::::::::::::::::::::::::::::>> Fancy Box
+	$(document).ready(function() {
+		<?php if(!empty($galleries)){ ?>
+		$('.fancybox').fancybox();
+		<?php } ?>
 		
-    </script>
+		$( "#map_viewer" ).click(function() {
+			if($("#ui-accordion-imedica-dep-accordion-panel-5").show()){
+				lookup(<?php echo $lat; ?>, <?php echo $lon; ?>, "<?php echo $branch_name ?>", "<?php echo $address ?>", "", "<?php echo $email; ?>")
+			}
+		});
+		
+		//get_comments();
+		//$('#rating-data').show();
+		get_price();
+
+		
+	});
+    
+	function get_comments(){
+		id_department=$("#department").val();
+		$.ajax({
+		  url: "<?php echo base_url(); ?>hospital/get_comments/"+id_department+"/"+<?php echo $id_hospital; ?>,
+		}).done(function(respond) {
+		  $("#comment-container").html(respond);
+		});
+	}
+	function get_price(){
+		id_department=$("#price_department").val();
+		console.log("<?php echo $id_hospital; ?>");
+		$.ajax({
+		  url: "<?php echo base_url(); ?><?php echo $lang; ?>/get-price/"+<?php echo $id_hospital; ?>+"/"+id_department,
+		}).done(function(respond) {
+			console.log(respond);
+		  $("#price-container").html(respond);
+		});
+	}
+	
+</script>
 
     <style>
-			      #map {
-			        width: 100%;
-			        height: 500px;
+  #map {
+    width: 100%;
+    height: 500px;
 
-			      }
-			      .doctor-bg{
-			      	padding: 15px 10px;
-			      }
-			      .doctor-bg p{
-			      		font-size:14px;
-			      		font-family: Hanuman, Arial, serif;
-			      }
-			      ul{
-			      	padding-left:20px;
-			      }
-			      .doctor-bg ul li{
-			      		list-style-type: circle !important;
-			      		line-height:1.8;
-			      		font-family: Hanuman, Arial, serif;
-			      }
-			      .star-rate{
-			      	display:inline;
-			      	padding:0px;
-			      }
-			      .star-rate li{
-			      	display:inline;
-			      }
-			      .star-rate li img{
-			      		width:20px;
-			      }
-			      .table-rating{
-			      	width:100%;
-			      	color:grey;
-			      }
-			      .table-rating tr td b i{
-			      	font-size:50px;
-			      	color:red;
-			      }
-			      .star-rate-sumary{
-			      	width:90% !important;
-			      	color:grey;
-			      }
-			      .star-rate-sumary li img{
-			      	width:20px;
-			      }	
-			       .star-rate-sumary tr td b{
-			      	float:right;
-			      }	
-			       .star-rate-sumary li{
-			      	display:inline;
-			      }	
+  }
+  .doctor-bg{
+  	padding: 15px 10px;
+  }
+  .doctor-bg p{
+  		font-size:14px;
+  		font-family: Hanuman, Arial, serif;
+  }
+  ul{
+  	padding-left:20px;
+  }
+  .doctor-bg ul li{
+  		list-style-type: circle !important;
+  		line-height:1.8;
+  		font-family: Hanuman, Arial, serif;
+  }
+  .star-rate{
+  	display:inline;
+  	padding:0px;
+  }
+  .star-rate li{
+  	display:inline;
+  }
+  .star-rate li img{
+  		width:20px;
+  }
+  .table-rating{
+  	width:100%;
+  	color:grey;
+  }
+  .table-rating tr td b i{
+  	font-size:50px;
+  	color:red;
+  }
+  .star-rate-sumary{
+  	width:90% !important;
+  	color:grey;
+  }
+  .star-rate-sumary li img{
+  	width:20px;
+  }	
+   .star-rate-sumary tr td b{
+  	float:right;
+  }	
+   .star-rate-sumary li{
+  	display:inline;
+  }	
 
-			      .faq-tabs-wrap .tab-pane img {
-						    margin: 0;
-						    border: 0px solid #fff; 
-						    box-shadow: 0px 0px 0px 0px;
-						}
-						select{
-							color:gray !important;
-							border-color:gray !important;
-							margin-bottom:10px;
-						}
-	</style>
+  .faq-tabs-wrap .tab-pane img {
+		    margin: 0;
+		    border: 0px solid #fff; 
+		    box-shadow: 0px 0px 0px 0px;
+		}
+		select{
+			color:gray !important;
+			border-color:gray !important;
+			margin-bottom:10px;
+		}
+</style>
