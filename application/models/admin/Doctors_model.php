@@ -216,11 +216,13 @@ class Doctors_model extends Admin_model {
 	}
 
 	function get_services($id_doctor=0){
-		$this->db->select('s.en_name as name,hs.id,hs.price,hs.modified_dt,hs.is_published');
-		$this->db->from('tbl_doctor_services as hs');
-		$this->db->join('tbl_services as s','s.id = hs.id_service' );
+		// $this->db->select('s.en_name as name,hs.id,hs.price,hs.modified_dt,hs.is_published');
+		// $this->db->from('tbl_doctor_services as hs');
+		// $this->db->join('tbl_services as s','s.id = hs.id_service' );
+		$this->db->select('*');
+		$this->db->from('tbl_doctor_service');
 		$this->db->where('id_doctor', $id_doctor);
-		return $this->db->get()->result();
+		return $this->db->get()->row();
 	}
 	function get_service($id=0){
 		$this->db->select('*');

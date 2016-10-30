@@ -92,7 +92,7 @@
 										<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 											<div class="thumbnaild">
 												<div class="zoom-wrap">
-												  <div class="zoom-icon"></div>
+												  
 													<a href="<?php echo base_url().$lang; ?>/doctors/<?php echo $row->slug?>">
 														<img alt="" class="img-responsive" data-src="<?php echo base_url($row->image)?>" src="" />
 													</a>

@@ -86,27 +86,9 @@
 												<div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-imedica-dep-accordion-panel-2" aria-labelledby="ui-accordion-imedica-dep-accordion-header-2" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
 												   
 													<div class="dept-content pull-left col-md-12">
-														<table class="table">
-															<thead>
-																 <tr>
-																 	<th><?php echo get_lang('no.');?></th>
-																 	<th><?php echo get_lang('name');?></th>
-																 	<th><?php echo get_lang('price');?></th>
-																 	<th><?php echo get_lang('note');?></th>
-																 <tr>
-															</thead>
-															<tbody>
-																<?php $i=1;?>
-																<?php foreach($services as $row){ ?>
-																	 <tr>
-																	 	<td><?php echo $i; $i++?></td>
-																	 	<td><?php echo $row->name ?></td>
-																	 	<td><?php echo $row->price ?></td>
-																	 	<td><?php echo $row->note; ?></td>
-																	 </tr>
-																<?php }?>
-															</tbody>
-														</table>
+														<div class="container-fluid doctor-bg">
+															<?php echo $services->service; ?>		
+														</div>
 														<div class="vspacer"></div>
 													</div>               
 												</div>
@@ -134,16 +116,16 @@
 												<?php } ?>
 												
 												<!-- Accordion Item -->
-												<?php if(!empty($map)){ ?>
-												<h3  id="map_viewer" class="last-child-ac ilast-child-acc ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-accordion-imedica-dep-accordion-header-5" aria-controls="ui-accordion-imedica-dep-accordion-panel-5" aria-selected="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-circle-arrow-e"></span><i class="fa fa-map-marker dept-icon"></i><span class="dep-txt"><?php echo get_lang('view map');?></span></h3>
+												<?php //if(!empty($map)){ ?>
+												<!-- <h3  id="map_viewer" class="last-child-ac ilast-child-acc ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-accordion-imedica-dep-accordion-header-5" aria-controls="ui-accordion-imedica-dep-accordion-panel-5" aria-selected="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-circle-arrow-e"></span><i class="fa fa-map-marker dept-icon"></i><span class="dep-txt"><?php echo get_lang('view map');?></span></h3>
 												<div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-imedica-dep-accordion-panel-5" aria-labelledby="ui-accordion-imedica-dep-accordion-header-5" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
 												  
 													<div class="dept-content " >
 														<div id="map"></div>	
 														<div class="vspacer"></div>
 													</div>                
-												</div>
-												<?php } ?>
+												</div> -->
+												<?php //} ?>
 												
 											</div>
 											

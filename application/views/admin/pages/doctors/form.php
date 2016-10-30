@@ -90,8 +90,8 @@
 										text_field(array('caption'=>'Title (KHM)', 'name'=>'kh_title', 'value'=>$kh_title, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										text_field(array('caption'=>'Degree (ENG)', 'name'=>'en_degree', 'value'=>$en_degree, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										text_field(array('caption'=>'Degree (KHM)', 'name'=>'kh_degree', 'value'=>$kh_degree, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
-										number_field(array('caption'=>'Lon', 'name'=>'lon', 'value'=>$lon, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
-										number_field(array('caption'=>'Lat', 'name'=>'lat', 'value'=>$lat, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
+										number_field(array('caption'=>'Lon', 'name'=>'lon', 'value'=>$lon, 'required'=>'', 'required_message'=>'Name is not allowed to be empty.'));
+										number_field(array('caption'=>'Lat', 'name'=>'lat', 'value'=>$lat, 'required'=>'', 'required_message'=>'Name is not allowed to be empty.'));
 										//textarea_field(array('caption'=>'Background (ENG)', 'name'=>'en_background', 'value'=>$en_background, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										//textarea_field(array('caption'=>'Background (KHM)', 'name'=>'kh_background', 'value'=>$kh_background, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));
 										//textarea_field(array('caption'=>'Experien (ENG)', 'name'=>'en_experien', 'value'=>$en_experien, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));

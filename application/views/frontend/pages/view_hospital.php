@@ -125,11 +125,11 @@
 														<?php foreach($doctors as $row){ ?>
 															<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" >
 																<div class="zoom-wrap">
-																  <div class="zoom-icon"></div>
+																  <!-- <div class="zoom-icon"></div> -->
 																	<img alt="" class="img-responsive" data-src="<?php echo base_url().$row->image?>" src="" />
 																</div>
 																<div class="doc-name">
-																	<a href="<?php echo base_url().$lang?>/view-doctor/<?php echo $row->slug;?>">
+																	<a href="<?php echo base_url().$lang?>/doctors/<?php echo $row->slug;?>">
 																		<div class="doc-name-class"><?php echo $row->name?></div><span class="doc-title"> <i class="fa fa-stethoscope"></i> &nbsp; <?php echo $row->specification?></span></a>
 																	<br />
 																</div>
@@ -298,7 +298,7 @@
 		
 		$( "#map_viewer" ).click(function() {
 			if($("#ui-accordion-imedica-dep-accordion-panel-5").show()){
-				lookup(<?php echo $lat; ?>, <?php echo $lon; ?>, "<?php echo $branch_name ?>", "<?php echo $address ?>", "", "<?php echo $email; ?>")
+				lookup(<?php echo $lat; ?>, <?php echo $lon; ?>, <?php echo "'".$branch_name."'";?>,<?php echo "'".$address."'";?>, "", <?php echo "'".$email."'";?>)
 			}
 		});
 		
@@ -323,7 +323,7 @@
 		$.ajax({
 		  url: "<?php echo base_url(); ?><?php echo $lang; ?>/get-price/"+<?php echo $id_hospital; ?>+"/"+id_department,
 		}).done(function(respond) {
-			console.log(respond);
+			// console.log(respond);
 		  $("#price-container").html(respond);
 		});
 	}

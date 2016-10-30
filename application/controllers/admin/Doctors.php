@@ -309,10 +309,13 @@ class Doctors extends Admin
 	}
 	function get_service_form_data($id_doctor=0){
 		$data['id_doctor']	=$id_doctor;
-		$data['price']		=$this->input->post('price');
-		$data['en_note']		=$this->input->post('en_note');
-		$data['kh_note']		=$this->input->post('kh_note');
-		$data['id_service']		=$this->input->post('id_service');
+		// $data['price']		=$this->input->post('price');
+		// $data['en_note']		=$this->input->post('en_note');
+		// $data['kh_note']		=$this->input->post('kh_note');
+		// $data['id_service']		=$this->input->post('id_service');
+		$data['en_services']			=$this->input->post('en_services');
+		$data['kh_services']			=$this->input->post('kh_services');
+		$data['is_published']	=$this->input->post('is_published');
 		$data['modified_dt']	=date("Y-m-d H:i:s");
 		return $data;
 	}
@@ -333,20 +336,16 @@ class Doctors extends Admin
 	function form_services(){
 		$action         = $this->get_valid_action();
         $id_doctor    = $this->get_valid_id_doctor();
-        $id_service      = $this->get_valid_id_service();
+        // $id_service      = $this->get_valid_id_service();
 
 		$this->page_data['action']			=$action;
 		$this->page_data['id_doctor']		=$id_doctor;
-		if($action=='update'){
-		    $data			=$this->model->get_service($id_service);
-		    if(!empty($data)){
-		    	$this->page_data['data']			=$data;
-		    	
-		    }else{
-                redirect(base_url().'admin/'.$this->page_data['term'].'/services?id_doctor='.$id_doctor, 'refresh');
-		    }
+		$data			=$this->model->get_services($id_doctor);
+		// var_dump($data);die();
+		if(isset($data->Id)){
+			$action = 'update';
 		}
-		$this->page_data["services"]= $this->model->get_data_services();
+		$this->page_data['data']		    =$data;
 		$this->page_data['page']		    ='form_services';
 		$this->page_data['active_nav']		='form_services';
 		$this->page_data['active_page']		='doctors';
@@ -355,21 +354,21 @@ class Doctors extends Admin
 	function create_service(){
 		$id_doctor    = $this->get_valid_id_doctor();
 		$data=$this->get_service_form_data($id_doctor);
-		$id_service=$this->model->create('tbl_doctor_services', $data);
+		$id_service=$this->model->create('tbl_doctor_service', $data);
 		redirect(base_url().'admin/'.$this->page_data['term'].'/form_services?action=update&id_doctor='.$id_doctor.'&id_service='.$id_service, 'refresh');
 	}
 	function update_service(){
 		$id_doctor    = $this->get_valid_id_doctor();
 		$id_service      = $this->get_valid_id_service();
 		$data=$this->get_service_form_data($id_doctor);
-		$this->model->update('tbl_doctor_services', $id_service, $data);
+		$this->model->update('tbl_doctor_service', $id_service, $data);
 		redirect(base_url().'admin/'.$this->page_data['term'].'/form_services?action=update&id_doctor='.$id_doctor.'&id_service='.$id_service, 'refresh');
 	}
     function delete_service(){
     	$id_doctor    = $this->get_valid_id_doctor();
 		$id_service      = $this->get_valid_id_service();
-		$this->model->delete('tbl_doctor_services', $id_service);
-		redirect(base_url().'admin/'.$this->page_data['term'].'/services?id_doctor='.$id_doctor, 'refresh');
+		$this->model->delete('tbl_doctor_service', $id_service);
+		redirect(base_url().'admin/'.$this->page_data['term'].'/form_services?id_doctor='.$id_doctor, 'refresh');
     }
     //==========================================================================>> Featured Blog
 	public function featured(){

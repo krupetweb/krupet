@@ -38,9 +38,6 @@
                                     	
 									
 									?>
-								
-								
-								
 									<?=form_open(base_url().'admin/'.$term.'/'.$action.'_service?id_hospital='.$id_hospital.'&id_service='.$id, array('method'=>'POST', 'class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data'));?>
 									<?php 
 										ck_editor_field(array('caption'=>'services (ENG)', 'name'=>'en_services', 'value'=>$en_services, 'required'=>'required', 'required_message'=>'Name is not allowed to be empty.'));

@@ -153,7 +153,7 @@
 												</li>
 												<li class="divider"></li>
 												<li>
-													<a target="blank" href="<?=base_url()?>en/view-doctor/<?=$row->slug?>">
+													<a target="blank" href="<?=base_url()?>en/doctors/<?=$row->slug?>">
 													<i class="entypo-eye"></i>VIEW DETAILS</a>
 												</li>
 												<li class="divider"></li>

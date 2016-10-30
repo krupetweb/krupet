@@ -52,7 +52,7 @@ class Doctor extends Frontend_base {
        
 		$this->page_data['banner'] 				= $this->doctor_model->get_banner('doctors');
 		$this->page_data['data']= $this->doctor_model->search_doctors($config["per_page"], $page);
-		
+
 		$this->page_data["links"] = $this->pagination->create_links();
 
 		$this->page_data['ads_v'] 			= $this->doctor_model->get_vertical_ads(4);
@@ -85,6 +85,7 @@ class Doctor extends Frontend_base {
                 //$this->page_data['page_title']="Doctor Detail";  //get_lang('doctor-profile');
 				$this->page_data['page_name']='view_doctor';
 				
+				// var_dump($this->page_data['map']);die();
 				$this->load->view('frontend/index', $this->page_data);
 			}else{
 				$this->found_404();

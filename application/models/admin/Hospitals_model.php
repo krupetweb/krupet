@@ -291,7 +291,7 @@ class Hospitals_model extends Admin_model {
 		$this->db->select('s.image,s.en_name as name,hs.id,hs.modified_dt');
 		$this->db->from('tbl_hospital_doctors as hs');
 		$this->db->join('tbl_doctors as s','s.id = hs.id_doctor' );
-		$this->db->where('id_hospital', $id_hospital);
+		$this->db->where('id_hospitals', $id_hospital);
 		return $this->db->get()->result();
 	}
     function get_hospital_doctor($id=0){

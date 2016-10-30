@@ -105,11 +105,16 @@ class Doctor_model extends Frontend_base_model {
 
 
 	function get_doctor_services($id_doctor){
-		$this->db->select($this->lang.'_name as name, '.$this->lang.'_note as note, price');
-		$this->db->from('view_doctor_services');
+		// $this->db->select($this->lang.'_name as name, '.$this->lang.'_note as note, price');
+		// $this->db->from('view_doctor_services');
+		$this->db->select($this->lang.'_services as service');
+		$this->db->from('tbl_doctor_service');
 		$this->db->where('id_doctor', $id_doctor);
-		$query = $this->db->get();
-		return $query->result();
+		return $this->db->get()->row();
+
+		// $this->db->where('id_doctor', $id_doctor);
+		// $query = $this->db->get();
+		// return $query->result();
 	}
 	function get_doctor_galleries($id_doctor){
 		$this->db->select('id, '.$this->lang.'_name as name, image');
@@ -142,7 +147,10 @@ class Doctor_model extends Frontend_base_model {
 			$this->db->where('id_hospital', $id_hospital);
 			$this->db->where('is_default', 1);
 			$query = $this->db->get();
-			return $query->result();
+			if($query->row()->lat > 0 || $query->row()->lon > 0){
+				return $query->row();
+			}
+			return array();
 			
 		}
 		return array();
