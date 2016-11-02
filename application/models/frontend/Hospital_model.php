@@ -19,8 +19,8 @@ class Hospital_model extends Frontend_base_model {
 		$this->db->from('view_hospitals_for_searhing');
 		$this->db->limit($limit, $start);
 		
-		$this->db->escape_like_str($this->lang.'_cat', $cat); 
-		$this->db->escape_like_str($this->lang.'_type', $type); 
+		$this->db->like($this->lang.'_cat', $cat); 
+		$this->db->like($this->lang.'_type', $type); 
 
 		if($key!=""){
 			$this->db->escape_like_str($this->lang.'_name', $key);

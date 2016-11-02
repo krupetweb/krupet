@@ -49,7 +49,8 @@ class Hospital extends Frontend_base {
        
 		
         $this->pagination->initialize($config);
-
+        // echo $cat;
+        // exit();
        
 		$this->page_data['banner'] 			= $this->hospital_model->get_banner('hospitals');
 		$this->page_data['data']			= $this->hospital_model->search_hospitals($config["per_page"], $page);
