@@ -11,11 +11,11 @@ class Search_model extends Frontend_base_model {
 		return $query->result();
 	}
 	function get_provinces(){
-		$this->db->select($this->lang.'_name as name');
-		$this->db->from('tbl_provinces');
-		$this->db->order_by($this->lang.'_name', 'ASC');
-		return $this->db->get()->result();
 		
+		$this->db->select($this->lang.'_name as name, id');
+		$this->db->from('tbl_provinces');
+		$this->db->where('is_published', 1);
+		return $this->db->get()->result();
 	}
 	function get_specifications($where=null){
 		if($where==null){

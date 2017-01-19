@@ -67,7 +67,7 @@ class Home extends Frontend_base {
 		$this->page_data["get_tips_home_page"] 				= $this->model->get_tips_home_page($tag);
 		
 		$this->page_data['categories']= $this->general->get_blog_categories();
-		// echo  json_encode($this->page_data['provinces']);
+		// var_dump($this->page_data['provinces']);
 		// exit();
 		$this->load->view('frontend/index', $this->page_data);
 	}
